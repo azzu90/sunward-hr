@@ -10,19 +10,19 @@ const primaryEmail = site.emails.find((e) => e.primary);
 
 export function Footer() {
   return (
-    <footer className="bg-shell text-on-shell">
+    <footer className="surface-brand">
       <div className="mx-auto max-w-site px-4 py-10 sm:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Spalte 1: Firma + Adresse (ANALYSIS.md §1 Footer-Struktur) */}
           <div className="flex flex-col gap-3">
-            <p className="text-lg leading-none font-black tracking-tight">
+            <p className="font-heading text-lg leading-none font-black tracking-tight">
               {"SUNWARD"}
-              <span className="text-brand">{"."}</span>
-              <span className="ml-1.5 align-middle text-xs font-normal text-on-shell-muted">
+              <span className="text-accent">{"."}</span>
+              <span className="ml-1.5 align-middle text-xs font-normal text-on-brand-muted">
                 {"HR"}
               </span>
             </p>
-            <address className="text-sm leading-relaxed text-on-shell-muted not-italic">
+            <address className="text-sm leading-relaxed text-on-brand-muted not-italic">
               {site.legalName}
               <br />
               {site.address.street}
@@ -36,7 +36,7 @@ export function Footer() {
 
           {footerColumns.map((column) => (
             <div key={column.id} className="flex flex-col gap-3">
-              <h2 className="text-xs font-bold tracking-wider text-on-shell uppercase">
+              <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
                 {column.heading}
               </h2>
               <ul className="flex flex-col gap-1.5">
@@ -54,7 +54,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={link.href ?? "#"}
-                        className="text-sm text-on-shell-muted hover:text-brand"
+                        className="text-sm text-on-brand-muted hover:text-on-brand"
                       >
                         {link.label}
                       </Link>
@@ -68,14 +68,14 @@ export function Footer() {
 
         {/* Kontaktzeile */}
         <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm">
-          <h2 className="text-xs font-bold tracking-wider text-on-shell uppercase">
+          <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
             {ui.footer.contactHeading}
           </h2>
           <ul className="flex flex-wrap gap-x-6 gap-y-1.5">
             {site.phones.map((phone) => (
               <li key={phone.id}>
-                <a href={phone.href} className="text-on-shell-muted hover:text-brand">
-                  <span className="text-on-shell">{phone.label}</span>
+                <a href={phone.href} className="text-on-brand-muted hover:text-on-brand">
+                  <span className="text-on-brand">{phone.label}</span>
                   {": "}
                   {phone.display}
                 </a>
@@ -85,7 +85,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${primaryEmail.address}`}
-                  className="text-on-shell-muted hover:text-brand"
+                  className="text-on-brand-muted hover:text-on-brand"
                 >
                   {primaryEmail.address}
                 </a>
@@ -94,7 +94,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-shell-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-brand-muted sm:flex-row sm:items-center sm:justify-between">
           <p>{site.parent.footerNote}</p>
           <p>
             {"© "}

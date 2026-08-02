@@ -23,15 +23,20 @@ export const metadata = pageMetadata({
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-shell text-on-shell">
-        <SiteImage id="pocetna/hero" priority overlay className="opacity-40" sizes="100vw" />
+      {/* Hero — hell und fotogetrieben (DESIGN.md).
+          Das Foto liegt bewusst gedämpft hinter dem Text: so bleibt der
+          dunkle Text lesbar, egal welches Motiv später in public/slike
+          landet. Ohne diese Dämpfung hinge der Kontrast am Bildinhalt. */}
+      <section className="relative overflow-hidden bg-surface-alt">
+        <SiteImage id="pocetna/hero" priority overlay className="opacity-30" sizes="100vw" />
         <Container className="relative z-10 py-16 sm:py-24">
-          <p className="mb-3 text-xs font-bold tracking-widest text-brand uppercase">{site.role}</p>
-          <h1 className="max-w-3xl text-3xl leading-tight font-black text-on-shell sm:text-5xl">
+          <p className="mb-3 text-xs font-bold tracking-widest text-brand-text uppercase">
+            {site.role}
+          </p>
+          <h1 className="max-w-3xl text-3xl leading-tight font-black sm:text-5xl">
             {site.tagline}
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-on-shell-muted">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">
             {`Bageri od 1 do 40 tona, utovarivači i kompletna dodatna oprema — s cijenama koje su javno objavljene. ${site.warranty.headline}.`}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
@@ -50,7 +55,7 @@ export default function HomePage() {
                   ? routes.kontakt()
                   : `mailto:${site.emails.find((e) => e.primary)?.address}`
               }
-              className="border border-white/30 px-6 py-3 text-base font-bold tracking-wide text-on-shell uppercase hover:border-brand hover:text-brand"
+              className="border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
             >
               {ui.cta.requestQuote}
             </a>
@@ -130,7 +135,7 @@ export default function HomePage() {
             href={site.parent.url}
             target="_blank"
             rel="noopener"
-            className="text-sm font-semibold text-brand-text underline underline-offset-4"
+            className="text-sm font-bold text-brand-text underline underline-offset-4"
           >
             {site.parent.url.replace("https://", "")}
           </a>

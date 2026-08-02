@@ -10,6 +10,11 @@ import { site } from "@/content/site";
  *
  * Kroatische Diakritika (č ć š ž đ) werden von der Default-Schrift der
  * ImageResponse gezeichnet — Prüfpunkt in der Verifikation.
+ *
+ * Hier stehen ausnahmsweise rohe Hex-Werte statt Tokens: ImageResponse
+ * rendert ausserhalb der CSS-Pipeline, `var(--color-…)` existiert dort
+ * nicht. Die Werte sind Kopien aus globals.css und müssen bei einer
+ * Palettenänderung mitgezogen werden.
  */
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -24,7 +29,7 @@ export default function OpengraphImage() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        background: "#14212b",
+        background: "#00655f",
         padding: "72px",
         fontFamily: "sans-serif",
       }}
@@ -33,8 +38,8 @@ export default function OpengraphImage() {
         <span style={{ fontSize: 52, fontWeight: 900, color: "#ffffff", letterSpacing: -1 }}>
           {"SUNWARD"}
         </span>
-        <span style={{ fontSize: 52, fontWeight: 900, color: "#00a19a" }}>{"."}</span>
-        <span style={{ fontSize: 28, fontWeight: 400, color: "#b4b9bd", marginLeft: 12 }}>
+        <span style={{ fontSize: 52, fontWeight: 900, color: "#f39a2e" }}>{"."}</span>
+        <span style={{ fontSize: 28, fontWeight: 400, color: "#cddcda", marginLeft: 12 }}>
           {"hr"}
         </span>
       </div>
@@ -43,11 +48,11 @@ export default function OpengraphImage() {
         {site.role}
       </div>
 
-      <div style={{ display: "flex", marginTop: 36, gap: 28, fontSize: 25, color: "#b4b9bd" }}>
+      <div style={{ display: "flex", marginTop: 36, gap: 28, fontSize: 25, color: "#cddcda" }}>
         <span>{`${site.employeeCount} zaposlenika`}</span>
-        <span style={{ color: "#00a19a" }}>·</span>
+        <span style={{ color: "#f39a2e" }}>·</span>
         <span>{`Garancija ${site.warranty.years} god. / 5.000 h`}</span>
-        <span style={{ color: "#00a19a" }}>·</span>
+        <span style={{ color: "#f39a2e" }}>·</span>
         <span>{`Servis ${site.service.responseHours} h`}</span>
       </div>
     </div>,

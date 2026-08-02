@@ -173,7 +173,7 @@ export default async function ProductPage({ params }: Params) {
               <li key={related.slug}>
                 <Link
                   href={routes.product(related)}
-                  className="border border-line px-4 py-2 text-sm font-semibold text-brand-text hover:bg-surface-alt"
+                  className="border border-line px-4 py-2 text-sm font-bold text-brand-text hover:bg-surface-alt"
                 >
                   {related.name}
                 </Link>

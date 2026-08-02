@@ -11,7 +11,7 @@ export function ShortSpecList({ specs }: { specs: ShortSpecs }) {
       {specs.map((row) => (
         <div key={row.key} className="flex justify-between gap-4 py-2 text-sm">
           <dt className="text-ink-muted">{specLabels[row.key]}</dt>
-          <dd className="text-right font-medium text-ink-body">
+          <dd className="text-right text-ink">
             <SpecValue value={row.value} />
           </dd>
         </div>
@@ -40,7 +40,7 @@ export function DatasheetTables({ blocks }: { blocks: readonly DatasheetBlock[] 
               {block.rows.map((row) => (
                 <div key={row.key} className="flex justify-between gap-4 py-2 text-sm">
                   <dt className="text-ink-muted">{specLabels[row.key]}</dt>
-                  <dd className="text-right font-medium text-ink-body">
+                  <dd className="text-right text-ink">
                     <SpecValue value={row.value} />
                   </dd>
                 </div>

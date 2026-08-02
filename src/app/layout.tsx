@@ -12,7 +12,7 @@ import { organizationSchema } from "@/lib/schema";
 import { rootMetadata } from "@/lib/seo";
 import { isProduction, siteUrl } from "@/lib/site-url";
 
-import { sans } from "./fonts";
+import { heading, sans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,7 +23,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="hr" className={sans.variable} data-dev={IS_DEV ? "true" : undefined}>
+    <html
+      lang="hr"
+      className={`${sans.variable} ${heading.variable}`}
+      data-dev={IS_DEV ? "true" : undefined}
+    >
       <body className="flex min-h-screen flex-col">
         <a
           href="#sadrzaj"

@@ -20,7 +20,7 @@ export function Logo({ className }: { className?: string }) {
       className={className ?? "h-8 w-auto"}
       imgClassName="object-contain object-left"
       fallback={
-        <span className="flex h-full items-center text-xl leading-none font-black tracking-tight text-on-shell">
+        <span className="flex h-full items-center font-heading text-xl leading-none font-black tracking-tight text-ink">
           {"SUNWARD"}
           <span className="text-brand">{"."}</span>
           <span className="sr-only">{` ${site.brandName}`}</span>

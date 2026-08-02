@@ -21,7 +21,9 @@ export function PriceTag({ price, size = "md" }: { price: Price; size?: "md" | "
 
   return (
     <p className="flex flex-wrap items-baseline gap-x-2">
-      <span className={big ? "text-3xl font-black text-ink" : "text-lg font-bold text-ink"}>
+      <span
+        className={big ? "font-heading text-3xl font-black text-ink" : "text-lg font-bold text-ink"}
+      >
         {formatEur(price.amount)}
       </span>
       <span className="text-xs text-ink-muted">

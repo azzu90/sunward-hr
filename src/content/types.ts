@@ -68,14 +68,6 @@ export interface Certificate {
   readonly logo?: ImageId;
 }
 
-export interface LanguageOption {
-  readonly code: string;
-  readonly label: string;
-  /** Nur `hr` ist in Phase 1 aktiv (CLAUDE.md §9). */
-  readonly available: boolean;
-  readonly href?: string;
-}
-
 export interface SiteData {
   readonly brandName: string;
   readonly legalName: string;
@@ -131,7 +123,6 @@ export interface SiteData {
     readonly footerNote: string;
     readonly crossLink: string;
   };
-  readonly languages: readonly LanguageOption[];
 }
 
 /* ════════════════════════════════════════════════════════════════════════

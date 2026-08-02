@@ -79,7 +79,7 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => choose("necessary")}
-            className="border border-line-strong px-4 py-2 text-sm font-semibold text-ink-body hover:bg-surface-alt"
+            className="border border-line-strong px-4 py-2 text-sm font-bold text-ink-body hover:bg-surface-alt"
           >
             {ui.cookies.necessaryOnly}
           </button>

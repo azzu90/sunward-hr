@@ -20,7 +20,7 @@ export function MobileNav() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-nav"
-        className="flex size-9 items-center justify-center border border-white/20 text-on-shell"
+        className="flex size-9 items-center justify-center border border-line-strong text-ink"
       >
         <span className="sr-only">{open ? ui.nav.mobileClose : ui.nav.mobileOpen}</span>
         <svg
@@ -51,15 +51,15 @@ export function MobileNav() {
         <nav
           id="mobile-nav"
           aria-label={ui.nav.main}
-          className="absolute inset-x-0 z-40 border-t border-white/10 bg-shell px-4 pb-4 shadow-lg"
+          className="absolute inset-x-0 z-40 border-t border-line bg-surface px-4 pb-4 shadow-lg"
         >
           <ul className="flex flex-col">
             {mainNav.map((item) => (
-              <li key={item.id} className="border-b border-white/10 last:border-0">
+              <li key={item.id} className="border-b border-line last:border-0">
                 <Link
                   href={item.href ?? "#"}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-sm font-medium text-on-shell"
+                  className="block py-3 text-sm text-ink"
                 >
                   {item.label}
                 </Link>

@@ -70,7 +70,7 @@ export default async function AttachmentPage({ params }: Params) {
 
           {attachment.sizeRange ? (
             <p className="text-sm text-ink-body">
-              <span className="font-semibold">{"Raspon: "}</span>
+              <span className="font-bold">{"Raspon: "}</span>
               {val(attachment.sizeRange)}
             </p>
           ) : null}

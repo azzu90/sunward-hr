@@ -3,7 +3,11 @@
 
 /* ══════════════════════════════════════════════════════════════════════════
    SUNWARD.HR — DESIGN TOKENS
-   Quelle der Wahrheit: ANALYSIS.md §6 (von sunward.eu abgelesen).
+   Quelle der Wahrheit: ANALYSIS.md §7 (live per CSS von sunward.eu gemessen).
+
+   sunward.eu ist WEISS-dominant mit Türkis #008D84 und Orange #F39A2E als
+   Akzenten. Es gibt dort keine grosse dunkle Navy-Fläche — eine frühere
+   Screenshot-Schätzung hatte das behauptet und ist widerlegt.
 
    Abgeleitete Töne sind mit ← ABGELEITET markiert und stehen mit Kontrastwert
    und Begründung in ASSUMPTIONS.md. Ausserhalb dieser Datei und
@@ -21,38 +25,45 @@
   --color-white: #ffffff;
   --color-black: #000000;
 
-  /* ── Marke: Sunward-Türkis, ein Kern, drei Rollen ───────────────────────
+  /* ── Marke: Sunward-Türkis, ein Kern, vier Rollen ───────────────────────
      Die Aufteilung löst den Konflikt zwischen „Palette 1:1 übernehmen"
-     (CLAUDE.md §6) und „Accessibility besser als sunward.eu" (TASK.md).
+     (CLAUDE.md) und „Accessibility besser als sunward.eu" (DESIGN.md).
      Kontrastwerte nachgerechnet nach WCAG 2.1.                            */
 
-  /* Flächen, Buttons, Icons auf Weiss, Akzente auf dunklem Chrome.
-     3.20:1 auf Weiss → reicht für UI/grosse Schrift, NICHT für Fliesstext. */
-  --color-brand: #00a19a;
+  /* Der gemessene sunward.eu-Türkis. Flächen, Rahmen, Icons.
+     4.09:1 auf Weiss → reicht für UI und grosse Schrift (ab 18,66 px fett),
+     NICHT für Fliesstext. Dafür ist --color-brand-text da. */
+  --color-brand: #008d84;
 
   /* Text & Links auf hellem Grund. 5.79:1 auf Weiss, 5.35:1 auf #F5F6F7. */
   --color-brand-text: #00726d; /* ← ABGELEITET */
 
-  /* Der dunklere, kontrastsichere Marken-Ton. Zwei zugelassene Rollen:
-
-     1. FÜLLUNG interaktiver Flächen mit weisser Schrift (Buttons).
-        Weiss darauf = 4.80:1 → AA bei jeder Schriftgrösse.
-        Auf --color-brand direkt wären es nur 3.20:1; das reicht erst ab
-        18,66 px fett, und unsere Buttons sind 14 px.
-     2. Icons und Rahmen auf #F5F6F7 (dort fällt --color-brand auf 2.96:1
-        und verfehlt sogar die UI-Schwelle). Dort 4.44:1.
-
-     NICHT als türkise Textfarbe auf hellem Grund verwenden — dafür ist
-     --color-brand-text da.                                                */
+  /* FÜLLUNG interaktiver Flächen mit weisser Schrift (Buttons).
+     Weiss darauf = 4.80:1 → AA bei jeder Schriftgrösse. Auf --color-brand
+     direkt wären es nur 4.09:1 und damit zu wenig für 14-px-Buttons.
+     Ausserdem: Icons/Rahmen auf #F5F6F7, wo --color-brand abfällt. */
   --color-brand-strong: #00807b; /* ← ABGELEITET */
 
-  --color-brand-soft: color-mix(in oklab, #00a19a 10%, white); /* ← ABGELEITET */
+  /* Grosse Markenfläche (Footer). Muss tiefer sitzen als --color-brand:
+     auf #008D84 erreicht nicht einmal reines Weiss die 4,5:1 (nur 4.09:1),
+     ein gedämpfter Ton wäre dort gar nicht mehr möglich.
+     Hier: Weiss 6.94:1, --color-on-brand-muted 4.90:1. */
+  --color-brand-deep: #00655f; /* ← ABGELEITET */
+
+  --color-brand-soft: color-mix(in oklab, #008d84 10%, white); /* ← ABGELEITET */
   --color-on-brand: #ffffff;
 
-  /* ── Chrome: Header / Footer ──────────────────────────────────────────── */
-  --color-shell: #14212b;
-  --color-on-shell: #ffffff;
-  --color-on-shell-muted: color-mix(in oklab, #ffffff 72%, #14212b); /* ← ABGELEITET */
+  /* Gedämpfter Text auf --color-brand-deep. 4.90:1 → AA.
+     Nur dort gültig, nicht auf --color-brand oder --color-brand-strong. */
+  --color-on-brand-muted: #cddcda; /* ← ABGELEITET */
+
+  /* ── Akzent: Sunward-Orange ───────────────────────────────────────────────
+     Auf sunward.eu für „NEW"-Badges, Pfeile und sekundäre CTAs.
+     NUR als Fläche mit dunkler Schrift verwenden: auf Weiss kommt der Ton
+     auf 2.22:1 und ist damit weder als Text noch als UI-Rahmen zulässig.
+     Als Fläche mit --color-on-accent darauf: 7.41:1. */
+  --color-accent: #f39a2e;
+  --color-on-accent: #14212b;
 
   /* ── Flächen ──────────────────────────────────────────────────────────── */
   --color-surface: #ffffff;
@@ -62,6 +73,13 @@
   --color-ink: #14212b;
   --color-ink-body: #2c2c2c;
   --color-ink-muted: #5c6670; /* ← ABGELEITET — 5.85:1 Weiss / 5.41:1 auf #F5F6F7 */
+
+  /* Der auf sunward.eu gemessene Fliesstext-Ton. Bei uns AUSDRÜCKLICH NICHT
+     für Fliesstext: 2.88:1 auf Weiss verfehlt AA (4,5:1) und sogar die
+     Grossschrift-Schwelle (3:1). Zulässig nur für rein dekorative Elemente
+     ohne Informationsgehalt (Trennzeichen, Zierlinien).
+     Begründung der Abweichung: ASSUMPTIONS.md. */
+  --color-ink-faint: #879c9f;
 
   /* ── Linien ───────────────────────────────────────────────────────────── */
   --color-line: #e5e5e5;
@@ -78,12 +96,19 @@
 }
 
 @theme inline {
-  /* next/font setzt --font-sans-src auf <html>. `inline` sorgt dafür, dass
-     Tailwind die Variable referenziert statt den Wert einzufrieren.
-     Der Name ist bewusst familienneutral: ein späterer Schriftwechsel
-     berührt nur src/app/fonts.ts. */
+  /* next/font setzt --font-sans-src und --font-heading-src auf <html>.
+     `inline` sorgt dafür, dass Tailwind die Variablen referenziert statt
+     den Wert einzufrieren. Die Namen sind bewusst familienneutral: ein
+     späterer Schriftwechsel berührt nur src/app/fonts.ts.
+
+     --font-heading erzeugt zugleich die Utility `font-heading`. Die wird
+     dort gebraucht, wo Anzeigetypografie NICHT in einem h1–h6 steht
+     (Wortmarke, Preis) und sonst auf Oxygens Maximum 700 zurückfiele. */
   --font-sans:
     var(--font-sans-src), ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading:
+    var(--font-heading-src), var(--font-sans-src), ui-sans-serif, system-ui, "Segoe UI", Roboto,
+    Arial, sans-serif;
 }
 
 @layer base {
@@ -107,16 +132,9 @@
   h5,
   h6 {
     color: var(--color-ink);
+    font-family: var(--font-heading);
     font-weight: 700;
     text-wrap: balance;
-  }
-
-  /* --color-ink ist identisch mit --color-shell. Ohne diese Regel wäre
-     JEDE Überschrift auf dunklem Chrome (Header, Hero, Footer) dunkelnavy
-     auf dunkelnavy — also unsichtbar. Einmal zentral abfangen, statt sich
-     in jeder Komponente daran zu erinnern. */
-  .bg-shell :is(h1, h2, h3, h4, h5, h6) {
-    color: var(--color-on-shell);
   }
 
   :focus-visible {
@@ -142,13 +160,34 @@
 }
 
 @layer components {
-  /* Dezente Fläche für Hero-Platzhalter, solange kein Foto vorliegt.
-     Diagonale Schraffur in der Markenfarbe auf dem dunklen Chrome —
-     wirkt als gestaltete Fläche, nicht als fehlendes Bild. */
+  /* Grosse Markenfläche — aktuell der Footer.
+     Ersetzt das frühere dunkle Chrome (`bg-shell`), das auf einer falschen
+     Farbannahme beruhte. Setzt neben Fläche und Textfarbe auch
+     --dsp-on-surface, damit das Drvošped-Badge (partner-brand.css) hier
+     einen hellen statt eines dunklen Tons nimmt. */
+  .surface-brand {
+    background-color: var(--color-brand-deep);
+    color: var(--color-on-brand);
+    --dsp-on-surface: var(--color-on-brand-muted);
+  }
+
+  /* Überschriften stehen per Default auf --color-ink (dunkel) und wären
+     auf der Markenfläche unlesbar. Einmal zentral abfangen, statt sich in
+     jeder Komponente daran zu erinnern. */
+  .surface-brand :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-on-brand);
+  }
+
+  /* Dezente Fläche für den Hero-Platzhalter, solange kein Foto vorliegt.
+     Diagonale Schraffur in der Markenfarbe auf hellem Grund — wirkt als
+     gestaltete Fläche, nicht als fehlendes Bild.
+     (Der Klassenname stammt noch aus der Zeit des dunklen Chrome; er bleibt,
+     weil SiteImage.tsx zum unangetasteten Platzhalter-System gehört.) */
   .bg-shell-pattern {
+    background-color: var(--color-surface-alt);
     background-image: repeating-linear-gradient(
       135deg,
-      color-mix(in oklab, var(--color-brand) 22%, transparent) 0 2px,
+      color-mix(in oklab, var(--color-brand) 20%, transparent) 0 2px,
       transparent 2px 14px
     );
   }

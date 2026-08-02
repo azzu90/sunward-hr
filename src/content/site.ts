@@ -128,18 +128,4 @@ export const site: SiteData = {
     footerNote: "sunward.hr je dio Hidraulika Drvošped d.o.o.",
     crossLink: "Trebate šumarske usluge ili servis hidraulike?",
   },
-
-  /**
-   * Sprachumschalter aus ANALYSIS.md §1. In Phase 1 ist nur `hr` aktiv
-   * (CLAUDE.md §9). Die inaktiven Einträge werden bewusst NICHT als Links
-   * gerendert, damit Google keine toten Sprach-URLs entdeckt — siehe
-   * components/layout/LanguageSwitcher.tsx.
-   */
-  languages: [
-    { code: "hr", label: "HR", available: true, href: "/" },
-    { code: "de", label: "DE", available: false },
-    { code: "en", label: "EN", available: false },
-    { code: "fr", label: "FR", available: false },
-    { code: "it", label: "IT", available: false },
-  ],
 };

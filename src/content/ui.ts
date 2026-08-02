@@ -14,8 +14,6 @@ export const ui = {
     mobileClose: "Zatvori izbornik",
     breadcrumb: "Navigacijski put",
     skipToContent: "Prijeđi na sadržaj",
-    languages: "Odabir jezika",
-    languageUnavailable: "Uskoro dostupno",
   },
 
   /**

@@ -5,7 +5,6 @@ import { routes } from "@/content/routes";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
 
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Logo } from "../media/Logo";
 import { MobileNav } from "./MobileNav";
 import { PartnerBadge } from "./PartnerBadge";
@@ -15,16 +14,17 @@ const salesPhone = site.phones.find((p) => p.id === "zoran");
 
 export function Header() {
   return (
-    <header className="bg-shell text-on-shell">
-      {/* Utility-Bar (ANALYSIS.md §1): Sprachumschalter + Direktkontakt */}
-      <div className="border-b border-white/10">
+    <header className="border-b border-line bg-surface">
+      {/* Utility-Bar (ANALYSIS.md §1): Direktkontakt.
+          Kein Sprachumschalter — sunward.hr ist ausschliesslich kroatisch. */}
+      <div className="border-b border-line bg-surface-alt">
         <div className="mx-auto flex max-w-site items-center justify-between gap-4 px-4 py-1.5 sm:px-6">
           <PartnerBadge />
           <div className="flex items-center gap-4">
             {salesPhone ? (
               <a
                 href={salesPhone.href}
-                className="hidden text-xs text-on-shell-muted hover:text-on-shell sm:inline"
+                className="hidden text-xs text-ink-muted hover:text-brand-text sm:inline"
               >
                 {salesPhone.display}
               </a>
@@ -32,12 +32,11 @@ export function Header() {
             {primaryEmail ? (
               <a
                 href={`mailto:${primaryEmail.address}`}
-                className="hidden text-xs text-on-shell-muted hover:text-on-shell md:inline"
+                className="hidden text-xs text-ink-muted hover:text-brand-text md:inline"
               >
                 {primaryEmail.address}
               </a>
             ) : null}
-            <LanguageSwitcher />
           </div>
         </div>
       </div>
@@ -52,13 +51,10 @@ export function Header() {
           <ul className="flex items-center gap-5">
             {mainNav.map((item) => (
               <li key={item.id}>
-                <Link
-                  href={item.href ?? "#"}
-                  className="text-sm font-medium text-on-shell hover:text-brand"
-                >
+                <Link href={item.href ?? "#"} className="text-sm text-ink hover:text-brand-text">
                   {item.label}
                   {item.badge ? (
-                    <span className="ml-1.5 bg-brand-strong px-1 py-0.5 align-middle text-[10px] font-bold text-on-brand">
+                    <span className="ml-1.5 bg-accent px-1 py-0.5 align-middle text-[10px] font-bold text-on-accent">
                       {item.badge}
                     </span>
                   ) : null}

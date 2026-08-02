@@ -25,7 +25,7 @@ export function SiteVideo({ id, title }: { id?: Spec<YouTubeId>; title: string }
   }
 
   return (
-    <div className="aspect-video w-full overflow-hidden bg-shell">
+    <div className="aspect-video w-full overflow-hidden bg-ink">
       <iframe
         className="h-full w-full"
         src={`https://www.youtube-nocookie.com/embed/${val(id)}`}

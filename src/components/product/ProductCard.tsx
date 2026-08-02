@@ -34,7 +34,7 @@ export function ProductCard({ product }: { product: ProductModel }) {
           {product.badges?.map((badge) => (
             <span
               key={badge}
-              className="border border-brand-strong px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-brand-text uppercase"
+              className="border border-brand-strong px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-brand-text uppercase"
             >
               {badge}
             </span>
@@ -45,7 +45,7 @@ export function ProductCard({ product }: { product: ProductModel }) {
           {product.shortSpecs.map((row) => (
             <div key={row.key} className="flex justify-between gap-3 py-1.5">
               <dt className="text-ink-muted">{specLabels[row.key]}</dt>
-              <dd className="text-right font-medium text-ink-body">
+              <dd className="text-right text-ink">
                 <SpecValue value={row.value} />
               </dd>
             </div>
