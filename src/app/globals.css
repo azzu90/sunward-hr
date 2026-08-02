@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "./partner-brand.css";
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SUNWARD.HR — DESIGN TOKENS
+   Quelle der Wahrheit: ANALYSIS.md §6 (von sunward.eu abgelesen).
+
+   Abgeleitete Töne sind mit ← ABGELEITET markiert und stehen mit Kontrastwert
+   und Begründung in ASSUMPTIONS.md. Ausserhalb dieser Datei und
+   partner-brand.css darf im gesamten Projekt kein roher Hex-Wert vorkommen.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Tailwind-Standardpalette abräumen. Kontrolle: `bg-red-500` darf danach
+     NICHT mehr kompilieren — das ist ein Prüfpunkt in der Verifikation. */
+  --color-*: initial;
+
+  --color-transparent: transparent;
+  --color-current: currentcolor;
+  --color-inherit: inherit;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ── Marke: Sunward-Türkis, ein Kern, drei Rollen ───────────────────────
+     Die Aufteilung löst den Konflikt zwischen „Palette 1:1 übernehmen"
+     (CLAUDE.md §6) und „Accessibility besser als sunward.eu" (TASK.md).
+     Kontrastwerte nachgerechnet nach WCAG 2.1.                            */
+
+  /* Flächen, Buttons, Icons auf Weiss, Akzente auf dunklem Chrome.
+     3.20:1 auf Weiss → reicht für UI/grosse Schrift, NICHT für Fliesstext. */
+  --color-brand: #00a19a;
+
+  /* Text & Links auf hellem Grund. 5.79:1 auf Weiss, 5.35:1 auf #F5F6F7. */
+  --color-brand-text: #00726d; /* ← ABGELEITET */
+
+  /* Der dunklere, kontrastsichere Marken-Ton. Zwei zugelassene Rollen:
+
+     1. FÜLLUNG interaktiver Flächen mit weisser Schrift (Buttons).
+        Weiss darauf = 4.80:1 → AA bei jeder Schriftgrösse.
+        Auf --color-brand direkt wären es nur 3.20:1; das reicht erst ab
+        18,66 px fett, und unsere Buttons sind 14 px.
+     2. Icons und Rahmen auf #F5F6F7 (dort fällt --color-brand auf 2.96:1
+        und verfehlt sogar die UI-Schwelle). Dort 4.44:1.
+
+     NICHT als türkise Textfarbe auf hellem Grund verwenden — dafür ist
+     --color-brand-text da.                                                */
+  --color-brand-strong: #00807b; /* ← ABGELEITET */
+
+  --color-brand-soft: color-mix(in oklab, #00a19a 10%, white); /* ← ABGELEITET */
+  --color-on-brand: #ffffff;
+
+  /* ── Chrome: Header / Footer ──────────────────────────────────────────── */
+  --color-shell: #14212b;
+  --color-on-shell: #ffffff;
+  --color-on-shell-muted: color-mix(in oklab, #ffffff 72%, #14212b); /* ← ABGELEITET */
+
+  /* ── Flächen ──────────────────────────────────────────────────────────── */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f6f7;
+
+  /* ── Text ─────────────────────────────────────────────────────────────── */
+  --color-ink: #14212b;
+  --color-ink-body: #2c2c2c;
+  --color-ink-muted: #5c6670; /* ← ABGELEITET — 5.85:1 Weiss / 5.41:1 auf #F5F6F7 */
+
+  /* ── Linien ───────────────────────────────────────────────────────────── */
+  --color-line: #e5e5e5;
+  --color-line-strong: color-mix(in oklab, #e5e5e5 70%, #14212b); /* ← ABGELEITET */
+
+  /* ── Hinweisfarben (Platzhalter-Markierung, Formulare) ────────────────── */
+  --color-notice: #8a6100; /* ← ABGELEITET — 5.54:1 Weiss / 5.23:1 auf --color-notice-soft */
+  --color-notice-soft: #fff8e6; /* ← ABGELEITET */
+  --color-danger: #b42318; /* ← ABGELEITET */
+
+  /* ── Layout ───────────────────────────────────────────────────────────── */
+  --radius-card: 2px;
+  --container-site: 80rem;
+}
+
+@theme inline {
+  /* next/font setzt --font-sans-src auf <html>. `inline` sorgt dafür, dass
+     Tailwind die Variable referenziert statt den Wert einzufrieren.
+     Der Name ist bewusst familienneutral: ein späterer Schriftwechsel
+     berührt nur src/app/fonts.ts. */
+  --font-sans:
+    var(--font-sans-src), ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light; /* sunward.eu ist reine Hell-Variante, kein Dark Mode */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-ink);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  /* --color-ink ist identisch mit --color-shell. Ohne diese Regel wäre
+     JEDE Überschrift auf dunklem Chrome (Header, Hero, Footer) dunkelnavy
+     auf dunkelnavy — also unsichtbar. Einmal zentral abfangen, statt sich
+     in jeder Komponente daran zu erinnern. */
+  .bg-shell :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-on-shell);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-text);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Dezente Fläche für Hero-Platzhalter, solange kein Foto vorliegt.
+     Diagonale Schraffur in der Markenfarbe auf dem dunklen Chrome —
+     wirkt als gestaltete Fläche, nicht als fehlendes Bild. */
+  .bg-shell-pattern {
+    background-image: repeating-linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--color-brand) 22%, transparent) 0 2px,
+      transparent 2px 14px
+    );
+  }
+
+  /* Kennzeichnung unbestätigter technischer Werte.
+     Öffentlich dezent (kursiv + Sternchen), in der Entwicklung laut. */
+  .spec-tbd {
+    font-style: italic;
+    color: var(--color-ink-muted);
+  }
+
+  [data-dev="true"] .spec-tbd {
+    font-style: normal;
+    background: var(--color-notice-soft);
+    outline: 1px dashed var(--color-notice);
+    outline-offset: 1px;
+  }
+}

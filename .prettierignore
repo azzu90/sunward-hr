@@ -1,0 +1,15 @@
+.next/
+out/
+build/
+node_modules/
+public/
+next-env.d.ts
+package-lock.json
+
+# Vom Auftraggeber verfasste Spezifikationsdokumente — nicht automatisch
+# umformatieren. Prettier zerlegt sonst die Markdown-Tabellen und erzeugt
+# riesige Diffs in Dateien, die niemand aus Code-Sicht liest.
+CLAUDE.md
+TASK.md
+ANALYSIS.md
+ASSUMPTIONS.md
