@@ -14,33 +14,33 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
  */
-export const swe08f = {
-  slug: "swe08f",
-  name: "SWE 08F",
-  fullName: "Sunward SWE 08F",
+export const swe90uf2pb = {
+  slug: "swe90uf-2pb",
+  name: "SWE 90UF-2PB",
+  fullName: "Sunward SWE 90UF-2PB",
   category: "bageri",
-  group: "mini-bageri",
-  order: 10,
+  group: "kompaktni-bageri",
+  order: 130,
 
   price: { kind: "onRequest" },
 
   intro:
-    "Najmanji bager u ponudi — s radnom masom od 1.010 kg prolazi kroz vrtna vrata i standardni prolaz između kuća. Namijenjen je komunalnim radovima, uređenju okućnica i iskopima na mjestima gdje veći stroj jednostavno ne stane.",
+    "SWE 90UF s dvodijelnom strelom. Zglob na streli daje bitno veću slobodu pozicioniranja žlice — stroj radi blizu sebe i ispod prepreka bez premještanja.",
 
   description: {
-    heading: "Sunward SWE 08F mini bager",
+    heading: "Sunward SWE 90UF-2PB s dvodijelnom strelom",
     paragraphs: [
-      "SWE 08F je ulazni model Sunward programa i najčešći izbor za obrtnike koji prvi put kupuju vlastiti stroj. Gusjenice se hidraulički sužavaju s 1.000 na 750 mm, pa stroj prolazi kroz uske prolaze, a na radilištu se raširi za stabilniji rad.",
-      "Unatoč maloj masi stroj ima punu hidrauliku za dodatne priključke — hidraulički čekić, svrdlo ili hvataljku montirate bez naknadnih preinaka. Kompletnu ponudu priključaka isporučujemo i servisiramo sami.",
+      "Dvodijelna strela (2PB) mijenja geometriju rada: žlica se može spustiti okomito uz samo gusjenicu, doseći ispod cijevi i instalacija te raditi u prostoru koji jednodijelna strela ne pokriva. Za radove uz postojeću infrastrukturu to je odlučujuća prednost.",
+      "Dodatna masa od 850 kg u odnosu na osnovni model daje i veću stabilnost pri podizanju. Dubina kopanja raste na 4.735 mm uz nepromijenjenih 46,2 kW.",
     ],
   },
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "1.010 kg", n: 1010, unitCode: "KGM" },
-    { key: "power", value: "7,2 kW" },
-    { key: "diggingDepth", value: "1.450 mm" },
-    { key: "width", value: "750–1.000 mm" },
+    { key: "operatingWeight", value: "9.600 kg", n: 9600, unitCode: "KGM" },
+    { key: "power", value: "46,2 kW" },
+    { key: "diggingDepth", value: "4.735 mm" },
+    { key: "width", value: "2.270 mm" },
   ],
 
   datasheet: [
@@ -48,8 +48,8 @@ export const swe08f = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "1.010 kg",
-          width: "750–1.000 mm",
+          operatingWeight: "9.600 kg",
+          width: "2.270 mm",
         }),
       ],
     },
@@ -58,7 +58,7 @@ export const swe08f = {
       rows: [
         ...rows({
           emission: "EU Stage V",
-          power: "7,2 kW",
+          power: "46,2 kW",
         }),
       ],
     },
@@ -77,7 +77,7 @@ export const swe08f = {
       id: "workingRange",
       rows: [
         ...rows({
-          diggingDepth: "1.450 mm",
+          diggingDepth: "4.735 mm",
         }),
       ],
     },
@@ -93,9 +93,9 @@ export const swe08f = {
     "localSupport",
   ],
 
-  gallery: { main: "proizvodi/swe08f/glavna" },
-  video: tbd("", "Dostaviti YouTube poveznicu za SWE 08F"),
-  brochure: tbd("", "Dostaviti PDF brošuru za SWE 08F"),
+  gallery: { main: "proizvodi/swe90uf-2pb/glavna" },
+  video: tbd("", "Dostaviti YouTube poveznicu za SWE 90UF-2PB"),
+  brochure: tbd("", "Dostaviti PDF brošuru za SWE 90UF-2PB"),
 
-  related: ["swe10fe", "swe17f"],
+  related: ["swe90uf", "swe155f"],
 } as const satisfies ProductModel;

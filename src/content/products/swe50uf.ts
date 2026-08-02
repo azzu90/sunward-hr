@@ -14,33 +14,33 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
  */
-export const swe08f = {
-  slug: "swe08f",
-  name: "SWE 08F",
-  fullName: "Sunward SWE 08F",
+export const swe50uf = {
+  slug: "swe50uf",
+  name: "SWE 50UF",
+  fullName: "Sunward SWE 50UF",
   category: "bageri",
   group: "mini-bageri",
-  order: 10,
+  order: 100,
 
   price: { kind: "onRequest" },
 
   intro:
-    "Najmanji bager u ponudi — s radnom masom od 1.010 kg prolazi kroz vrtna vrata i standardni prolaz između kuća. Namijenjen je komunalnim radovima, uređenju okućnica i iskopima na mjestima gdje veći stroj jednostavno ne stane.",
+    "Najveći stroj koji sunward.eu još vodi u mini razredu: 5.480 kg i 29,7 kW. Snaga srednjeg bagera u gabaritu koji se prevozi bez posebne dozvole.",
 
   description: {
-    heading: "Sunward SWE 08F mini bager",
+    heading: "Sunward SWE 50UF bager",
     paragraphs: [
-      "SWE 08F je ulazni model Sunward programa i najčešći izbor za obrtnike koji prvi put kupuju vlastiti stroj. Gusjenice se hidraulički sužavaju s 1.000 na 750 mm, pa stroj prolazi kroz uske prolaze, a na radilištu se raširi za stabilniji rad.",
-      "Unatoč maloj masi stroj ima punu hidrauliku za dodatne priključke — hidraulički čekić, svrdlo ili hvataljku montirate bez naknadnih preinaka. Kompletnu ponudu priključaka isporučujemo i servisiramo sami.",
+      "Skok s 18,2 na 29,7 kW mijenja karakter stroja. SWE 50UF kontinuirano radi s hidrauličkim čekićem, probija tvrdu podlogu i utovaruje kamion bez čekanja između ciklusa. Dubina kopanja od 3.375 mm pokriva i dublje infrastrukturne rovove.",
+      "Za tvrtke koje rade više radilišta u nizu ovo je najisplativija točka u programu — dovoljno stroja za ozbiljan posao, još uvijek jednostavan za premještanje. Za sve Sunward strojeve dolazimo na teren; garancija je do 3 godine ili 5.000 radnih sati.",
     ],
   },
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "1.010 kg", n: 1010, unitCode: "KGM" },
-    { key: "power", value: "7,2 kW" },
-    { key: "diggingDepth", value: "1.450 mm" },
-    { key: "width", value: "750–1.000 mm" },
+    { key: "operatingWeight", value: "5.480 kg", n: 5480, unitCode: "KGM" },
+    { key: "power", value: "29,7 kW" },
+    { key: "diggingDepth", value: "3.375 mm" },
+    { key: "width", value: "2.000 mm" },
   ],
 
   datasheet: [
@@ -48,8 +48,8 @@ export const swe08f = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "1.010 kg",
-          width: "750–1.000 mm",
+          operatingWeight: "5.480 kg",
+          width: "2.000 mm",
         }),
       ],
     },
@@ -58,7 +58,7 @@ export const swe08f = {
       rows: [
         ...rows({
           emission: "EU Stage V",
-          power: "7,2 kW",
+          power: "29,7 kW",
         }),
       ],
     },
@@ -77,7 +77,7 @@ export const swe08f = {
       id: "workingRange",
       rows: [
         ...rows({
-          diggingDepth: "1.450 mm",
+          diggingDepth: "3.375 mm",
         }),
       ],
     },
@@ -93,9 +93,9 @@ export const swe08f = {
     "localSupport",
   ],
 
-  gallery: { main: "proizvodi/swe08f/glavna" },
-  video: tbd("", "Dostaviti YouTube poveznicu za SWE 08F"),
-  brochure: tbd("", "Dostaviti PDF brošuru za SWE 08F"),
+  gallery: { main: "proizvodi/swe50uf/glavna" },
+  video: tbd("", "Dostaviti YouTube poveznicu za SWE 50UF"),
+  brochure: tbd("", "Dostaviti PDF brošuru za SWE 50UF"),
 
-  related: ["swe10fe", "swe17f"],
+  related: ["swe35uf", "swe60uf"],
 } as const satisfies ProductModel;

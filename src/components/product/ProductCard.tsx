@@ -31,6 +31,11 @@ export function ProductCard({ product }: { product: ProductModel }) {
               {product.name}
             </Link>
           </h3>
+          {product.electric ? (
+            <span className="bg-accent px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-on-accent uppercase">
+              {ui.product.electric}
+            </span>
+          ) : null}
           {product.badges?.map((badge) => (
             <span
               key={badge}

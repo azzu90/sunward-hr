@@ -78,6 +78,13 @@ export default async function ProductPage({ params }: Params) {
               {category.nameSingular}
             </p>
             <h1 className="mt-1 text-3xl font-black text-ink sm:text-4xl">{product.name}</h1>
+            {product.electric ? (
+              <p className="mt-2">
+                <span className="bg-accent px-2 py-0.5 text-xs font-bold tracking-wide text-on-accent uppercase">
+                  {ui.product.electric}
+                </span>
+              </p>
+            ) : null}
           </div>
 
           <p className="text-base leading-relaxed text-ink-body">{product.intro}</p>

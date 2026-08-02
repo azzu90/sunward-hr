@@ -42,7 +42,7 @@ export const featurePool = {
   bestValue: {
     id: "bestValue",
     title: "Odnos cijene i vrijednosti",
-    body: "Cijene su javno objavljene i uključuju opremu koja se kod drugih proizvođača doplaćuje. Ono što vidite je ono što plaćate.",
+    body: "Ponuda uključuje opremu koja se kod drugih proizvođača doplaćuje. Za svaki stroj dajemo pisanu ponudu s konačnom cijenom — bez naknadnih stavki.",
   },
   easyMaintenance: {
     id: "easyMaintenance",

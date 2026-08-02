@@ -65,6 +65,8 @@ export const ui = {
     descriptionHeading: "Opis stroja",
     galleryHeading: "Fotografije",
     relatedHeading: "Slični strojevi",
+    /** Badge für batterieelektrische Modelle (ProductModel.electric). */
+    electric: "Električni",
   },
 
   media: {

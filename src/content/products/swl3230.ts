@@ -14,33 +14,33 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
  */
-export const swl2830 = {
-  slug: "swl2830",
-  name: "SWL 2830",
-  fullName: "Sunward SWL 2830",
+export const swl3230 = {
+  slug: "swl3230",
+  name: "SWL 3230",
+  fullName: "Sunward SWL 3230",
   category: "utovarivaci",
   group: "kotacni-mini-utovarivaci",
-  order: 30,
+  order: 40,
 
   price: { kind: "onRequest" },
 
   intro:
-    "Ulazni kotačni mini utovarivač nosivosti 750 kg. Okreće se u mjestu, radi na tvrdoj podlozi i prolazi kroz otvore kroz koje veći stroj ne stane.",
+    "Kotačni mini utovarivač nosivosti 1.100 kg — srednja veličina programa, s dovoljno snage za kontinuirani rad i još uvijek kompaktnim gabaritom.",
 
   description: {
-    heading: "Sunward SWL 2830 kotačni mini utovarivač",
+    heading: "Sunward SWL 3230 kotačni mini utovarivač",
     paragraphs: [
-      "Na betonu, asfaltu i uređenom dvorištu kotačna izvedba je brža i jeftinija za održavanje od gusjenične. SWL 2830 je namijenjen radu oko objekta, u halama, na farmama i na komunalnim poslovima gdje se stalno mijenja pozicija.",
-      "Sa 48,6 kW stroj pogoni standardne priključke — hvataljku, vilice, četku i mješalicu. Kompletnu ponudu dodatne opreme isporučujemo iz vlastitog programa.",
+      "U odnosu na SWL 2830 nosivost raste za gotovo 50%, a snaga na 55,4 kW. To je razlika između stroja koji pomaže i stroja koji sam nosi posao — utovar, premještanje materijala i rad s priključcima kroz cijelu smjenu.",
+      "Prevrtna nosivost od 2.200 kg omogućuje siguran rad s punom žlicom na visini istovara. Stroj ostaje dovoljno malen za rad u halama i između objekata.",
     ],
   },
 
   shortSpecs: [
-    { key: "ratedCapacity", value: "750 kg" },
-    { key: "tippingLoad", value: "1.500 kg" },
-    { key: "power", value: "48,6 kW" },
-    { key: "operatingWeight", value: "2.830 kg", n: 2830, unitCode: "KGM" },
-    { key: "liftHeight", value: "2.320 mm" },
+    { key: "ratedCapacity", value: "1.100 kg" },
+    { key: "tippingLoad", value: "2.200 kg" },
+    { key: "power", value: "55,4 kW" },
+    { key: "operatingWeight", value: "3.500 kg", n: 3500, unitCode: "KGM" },
+    { key: "liftHeight", value: "2.395 mm" },
   ],
 
   datasheet: [
@@ -48,7 +48,7 @@ export const swl2830 = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "2.830 kg",
+          operatingWeight: "3.500 kg",
         }),
       ],
     },
@@ -56,7 +56,7 @@ export const swl2830 = {
       id: "engine",
       rows: [
         ...rows({
-          power: "48,6 kW",
+          power: "55,4 kW",
         }),
       ],
     },
@@ -75,10 +75,10 @@ export const swl2830 = {
       id: "performance",
       rows: [
         ...rows({
-          ratedCapacity: "750 kg",
-          tippingLoad: "1.500 kg",
-          liftHeight: "2.320 mm",
-          breakoutForce: "2.000 kg",
+          ratedCapacity: "1.100 kg",
+          tippingLoad: "2.200 kg",
+          liftHeight: "2.395 mm",
+          breakoutForce: "2.480 kg",
         }),
       ],
     },
@@ -94,9 +94,9 @@ export const swl2830 = {
     "localSupport",
   ],
 
-  gallery: { main: "proizvodi/swl2830/glavna" },
-  video: tbd("", "Dostaviti YouTube poveznicu za SWL 2830"),
-  brochure: tbd("", "Dostaviti PDF brošuru za SWL 2830"),
+  gallery: { main: "proizvodi/swl3230/glavna" },
+  video: tbd("", "Dostaviti YouTube poveznicu za SWL 3230"),
+  brochure: tbd("", "Dostaviti PDF brošuru za SWL 3230"),
 
-  related: ["swl3230", "swtl4538"],
+  related: ["swl2830", "swl4038"],
 } as const satisfies ProductModel;

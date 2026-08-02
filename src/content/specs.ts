@@ -43,6 +43,15 @@ export const specLabels: Record<SpecKey, string> = {
   platformCapacity: "Nosivost košare",
   travelSpeed: "Brzina kretanja",
   gradeability: "Savladavanje uspona",
+
+  // Utovarivači / Bušače garniture / Platforme / Dizalice (ANALYSIS.md §9)
+  ratedCapacity: "Nazivna nosivost",
+  breakoutForce: "Sila otkidanja",
+  drillDiameter: "Maks. promjer bušenja",
+  workRadius: "Radni radijus",
+  driveType: "Pogon",
+  maxLoad: "Maks. nosivost",
+  maxOutreach: "Maks. doseg",
 };
 
 /** Überschriften der vier Datenblatt-Blöcke aus ANALYSIS.md §4 Punkt 9. */

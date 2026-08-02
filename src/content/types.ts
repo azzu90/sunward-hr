@@ -184,7 +184,15 @@ export type SpecKey =
   | "workingHeight"
   | "platformCapacity"
   | "travelSpeed"
-  | "gradeability";
+  | "gradeability"
+  // Utovarivači / Bušače garniture / Platforme / Dizalice (ANALYSIS.md §9)
+  | "ratedCapacity"
+  | "breakoutForce"
+  | "drillDiameter"
+  | "workRadius"
+  | "driveType"
+  | "maxLoad"
+  | "maxOutreach";
 
 export interface SpecRow {
   readonly key: SpecKey;
@@ -205,10 +213,21 @@ export interface DatasheetBlock {
 }
 
 /**
- * ANALYSIS.md §3: Produktkarten zeigen exakt fünf Kurzspecs.
- * Das Tupel erzwingt die Anzahl schon im Typ.
+ * ANALYSIS.md §3: Produktkarten zeigen die Kurzspecs ihrer Kategorie.
+ *
+ * Vier oder fünf, nicht beliebig viele. sunward.eu zeigt bei Baggern,
+ * Škarasti-Bühnen und Teleskopladern fünf Felder, bei Zglobni utovarivači,
+ * Bušače garniture, Zglobne radne platforme und Teleskopske dizalice nur
+ * vier. Das ist dort so und wird hier so übernommen — die vierte Variante
+ * ist kein fehlender Wert, der noch nachzutragen wäre.
+ *
+ * Welche Felder es je Kategorie sind und in welcher Reihenfolge, steht in
+ * `CategoryDef.shortSpecKeys` und wird beim Build von `assertContract()`
+ * (content/products/index.ts) gegen jedes Modell geprüft — inklusive Anzahl.
  */
-export type ShortSpecs = readonly [SpecRow, SpecRow, SpecRow, SpecRow, SpecRow];
+export type ShortSpecs =
+  | readonly [SpecRow, SpecRow, SpecRow, SpecRow]
+  | readonly [SpecRow, SpecRow, SpecRow, SpecRow, SpecRow];
 
 /* ════════════════════════════════════════════════════════════════════════
    5. Taxonomie
@@ -216,18 +235,38 @@ export type ShortSpecs = readonly [SpecRow, SpecRow, SpecRow, SpecRow, SpecRow];
 
 /** Oberklasse — steht in der URL und ist damit dauerhaft stabil. */
 export type CategorySlug =
-  "bageri" | "utovarivaci" | "teleskopski-utovarivaci" | "podizne-platforme";
+  | "bageri"
+  | "utovarivaci"
+  | "zglobni-utovarivaci"
+  | "busace-garniture"
+  | "zglobne-radne-platforme"
+  | "skarasti-podizni-strojevi"
+  | "teleskopske-dizalice"
+  | "teleskopski-utovarivaci";
 
-/** Gewichts-/Bauartklasse — nur Gruppierung in Sidebar und Breadcrumb. */
+/**
+ * Unterkategorie — nur Gruppierung in Sidebar und Breadcrumb, nie in der URL.
+ *
+ * Die Bagger-Gruppen folgen der Aufteilung von sunward.eu, nicht einer
+ * eigenen Gewichtslogik: dort zählen SWE 25F bis SWE 50UF noch zu „Mini",
+ * „Kompaktni" beginnt erst bei SWE 60UF. Eine Zuordnung nach Tonnage
+ * würde hier falsch liegen (ANALYSIS.md §8).
+ */
 export type GroupSlug =
+  | "kotacni-bageri"
   | "mini-bageri"
   | "kompaktni-bageri"
   | "srednji-bageri"
   | "veliki-bageri"
-  | "elektricni-bageri"
-  | "utovarivaci-svi"
-  | "teleskopski-svi"
-  | "platforme-sve";
+  | "gusjenicni-utovarivaci"
+  | "kotacni-mini-utovarivaci"
+  | "zglobni-utovarivaci-svi"
+  | "busace-garniture-sve"
+  | "zglobne-radne-platforme-sve"
+  | "skarasti-elektricni"
+  | "skarasti-terenski"
+  | "teleskopske-dizalice-sve"
+  | "teleskopski-utovarivaci-svi";
 
 export interface GroupDef {
   readonly slug: GroupSlug;
@@ -244,8 +283,10 @@ export interface CategoryDef {
   readonly heroImage: ImageId;
   readonly keywords: readonly string[];
   readonly groups: readonly GroupDef[];
-  /** Vertrag: welche fünf Kurzspecs die Karten dieser Kategorie zeigen. */
-  readonly shortSpecKeys: readonly [SpecKey, SpecKey, SpecKey, SpecKey, SpecKey];
+  /** Vertrag: welche Kurzspecs die Karten dieser Kategorie zeigen (4 oder 5). */
+  readonly shortSpecKeys:
+    | readonly [SpecKey, SpecKey, SpecKey, SpecKey]
+    | readonly [SpecKey, SpecKey, SpecKey, SpecKey, SpecKey];
   /** Vertrag: welche Datenblatt-Blöcke jedes Modell hier liefern muss. */
   readonly datasheetBlocks: readonly DatasheetBlockId[];
   readonly order: number;
@@ -284,6 +325,15 @@ export interface ProductModel {
 
   readonly price: Price;
   readonly badges?: readonly string[];
+
+  /**
+   * Batterieelektrische Variante. Bewusst ein eigenes Feld und kein
+   * Eintrag in `badges`: Electric ist bei sunward.eu ein Marketing-Highlight
+   * quer durch die Gewichtsklassen, keine eigene Unterkategorie. Als
+   * typisiertes Attribut lässt sich später danach filtern, ohne über
+   * Freitext zu gehen — und das Label bleibt in ui.ts.
+   */
+  readonly electric?: boolean;
 
   /** ANALYSIS.md §4 Punkt 4 — ein Absatz Einstiegstext. */
   readonly intro: string;

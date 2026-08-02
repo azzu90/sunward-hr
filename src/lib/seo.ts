@@ -24,7 +24,7 @@ export const rootMetadata = {
     default: `${site.brandName} — ${site.role}`,
     template: `%s | ${SUFFIX}`,
   },
-  description: `${site.role}. Bageri, utovarivači i dodatna oprema uz javno objavljene cijene, ${site.warranty.headline.toLowerCase()} i servis na terenu u cijeloj Hrvatskoj.`,
+  description: `${site.role}. Bageri, utovarivači, platforme i dodatna oprema — ${site.warranty.headline.toLowerCase()}, financiranje uz ${site.financing.downPaymentPercent}% učešća i servis na terenu u cijeloj Hrvatskoj.`,
 } satisfies Pick<Metadata, "title" | "description">;
 
 function trim(text: string, max = 158): string {
@@ -61,7 +61,7 @@ export function productMetadata(p: ProductModel): Metadata {
 
 export function categoryMetadata(c: CategoryDef, productCount: number): Metadata {
   const primary = c.keywords[0] ?? c.nameSingular;
-  const title = `${c.name} — ${primary} uz javne cijene`;
+  const title = `${c.name} — ${primary} | ponuda za Hrvatsku`;
   const description = trim(`${productCount} modela u ponudi. ${c.lede}`);
   const url = routes.category(c);
 

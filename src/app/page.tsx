@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
   // Der Marken-Suffix aus dem Root-Layout greift hier nicht, weil die
   // Startseite im selben Segment wie das Layout liegt.
   title: `${site.brandName} — bageri, utovarivači i dodatna oprema`,
-  description: `Sunward bageri i utovarivači u Hrvatskoj uz javno objavljene cijene. ${site.warranty.headline}, financiranje uz ${site.financing.downPaymentPercent}% učešća i servis na terenu u roku od ${site.service.responseHours} sata.`,
+  description: `Sunward bageri, utovarivači i platforme u Hrvatskoj — 51 model iz cijelog programa. ${site.warranty.headline}, financiranje uz ${site.financing.downPaymentPercent}% učešća i servis na terenu u roku od ${site.service.responseHours} sata.`,
   path: routes.home(),
 });
 
@@ -37,7 +37,7 @@ export default function HomePage() {
             {site.tagline}
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">
-            {`Bageri od 1 do 40 tona, utovarivači i kompletna dodatna oprema — s cijenama koje su javno objavljene. ${site.warranty.headline}.`}
+            {`Bageri od 1 do 34 tone, utovarivači, radne platforme i kompletna dodatna oprema — cijeli Sunward program iz jedne ruke. ${site.warranty.headline}.`}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link

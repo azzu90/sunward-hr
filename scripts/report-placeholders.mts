@@ -13,12 +13,35 @@
 
 import { readdirSync } from "node:fs";
 import { extname, join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { images } from "../src/content/images.ts";
-import { swe08f } from "../src/content/products/swe08f.ts";
-import { swe335f } from "../src/content/products/swe335f.ts";
-import { swl2830 } from "../src/content/products/swl2830.ts";
 import { hidraulickiCekic } from "../src/content/attachments/hidraulicki-cekic.ts";
+
+/**
+ * Die Modelle werden aus dem Verzeichnis gelesen, nicht einzeln importiert.
+ * Bei 51 Dateien wäre eine Importliste eine sichere Quelle für Drift — so
+ * erfasst der Report automatisch jedes neue Modell.
+ *
+ * products/index.ts wird bewusst übersprungen: die Registry trägt
+ * `import "server-only"` und liesse sich hier gar nicht laden.
+ */
+const PRODUCTS_DIR = join(process.cwd(), "src", "content", "products");
+
+async function loadProducts(): Promise<unknown[]> {
+  const files = readdirSync(PRODUCTS_DIR)
+    .filter((f) => f.endsWith(".ts") && f !== "index.ts")
+    .sort();
+  const loaded: unknown[] = [];
+  for (const file of files) {
+    const mod = (await import(pathToFileURL(join(PRODUCTS_DIR, file)).href)) as Record<
+      string,
+      unknown
+    >;
+    loaded.push(...Object.values(mod));
+  }
+  return loaded;
+}
 
 const ROOT = join(process.cwd(), "public", "slike");
 const EXTENSIONS = [".avif", ".webp", ".jpg", ".jpeg", ".png", ".svg"];
@@ -85,7 +108,7 @@ function walkValue(node: unknown, path: string, bucket: Item[], who: string): vo
   }
 }
 
-const registries = [swe08f, swe335f, swl2830, hidraulickiCekic];
+const registries = [...(await loadProducts()), hidraulickiCekic];
 
 for (const item of registries) {
   const record = item as unknown as Record<string, unknown>;
