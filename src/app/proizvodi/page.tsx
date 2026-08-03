@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
 import { productsInCategory } from "@/content/products";
 import { routes } from "@/content/routes";
+import { categoryTiles } from "@/content/category-tiles";
 import { categoryList } from "@/content/taxonomy";
 import { ui } from "@/content/ui";
 import { pageMetadata } from "@/lib/seo";
@@ -34,11 +35,14 @@ export default function ProductsPage() {
                 href={routes.category(category)}
                 className="flex h-full flex-col border border-line bg-surface hover:shadow-md"
               >
-                <SiteImage
-                  id={category.heroImage}
-                  sizes="(max-width: 640px) 100vw, 320px"
-                  className="aspect-[16/9]"
-                />
+                <div className="relative aspect-[16/9] p-3">
+                  <SiteImage
+                    id={categoryTiles[category.slug]}
+                    overlay
+                    imgClassName="object-contain"
+                    sizes="(max-width: 640px) 100vw, 320px"
+                  />
+                </div>
                 <span className="flex flex-1 flex-col gap-1 p-4">
                   <span className="text-base font-bold text-ink">{category.name}</span>
                   <span className="text-xs text-ink-muted">

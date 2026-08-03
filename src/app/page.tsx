@@ -8,6 +8,7 @@ import { home } from "@/content/home";
 import { products } from "@/content/products";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
+import { categoryTiles } from "@/content/category-tiles";
 import { categoryList } from "@/content/taxonomy";
 import { ui } from "@/content/ui";
 import { pageMetadata } from "@/lib/seo";
@@ -114,11 +115,14 @@ export default function HomePage() {
                 href={routes.category(category)}
                 className="flex h-full flex-col border border-line bg-surface hover:shadow-md"
               >
-                <SiteImage
-                  id={category.heroImage}
-                  sizes="(max-width: 640px) 100vw, 320px"
-                  className="aspect-[16/9]"
-                />
+                <div className="relative aspect-[16/9] p-3">
+                  <SiteImage
+                    id={categoryTiles[category.slug]}
+                    overlay
+                    imgClassName="object-contain"
+                    sizes="(max-width: 640px) 100vw, 320px"
+                  />
+                </div>
                 <span className="flex flex-1 flex-col gap-1 p-4">
                   <span className="text-base font-bold text-ink">{category.name}</span>
                   <span className="line-clamp-3 text-xs leading-relaxed text-ink-muted">
