@@ -27,6 +27,8 @@ Home
 
 Utility-Bar über der Hauptnavigation: "Find your dealer"-Link + Sprachumschalter (EN/DE/FR/IT).
 
+⚠️ **Kuriosum, verifiziert:** Die URLs für "Warranty" und "Training" lauten `/service-parts/spare-parts-2/` bzw. `/service-parts/spare-parts-2-2/` — ein WordPress-Slug-Artefakt (vermutlich aus einer Spare-Parts-Vorlage dupliziert, Slugs nie angepasst). Nur zur Einordnung — für sunward.hr natürlich eigene, saubere Slugs.
+
 **Für sunward.hr:** Nur Kroatisch — kein Sprachumschalter. "Find your dealer" entfällt (es gibt nur einen Händler: Drvošped). Struktur sonst 1:1 übernehmen.
 
 ---
@@ -37,7 +39,7 @@ Utility-Bar über der Hauptnavigation: "Find your dealer"-Link + Sprachumschalte
 2. "Sunward's DNA" — Markenstatement + 4 Kennzahlen (100 Länder / Top 20 Baggerhersteller / Top 50 Baumaschinenhersteller / 180 Mrd. Yuan)
 3. "Our products" — Kategorie-Grid
 4. "Why choosing a Sunward product?" — 4 USP-Kacheln (European HQ 24h-Lieferung / Premium Components / Best Value for Money / 5-Jahres-Garantie)
-5. "The Sunward community" — Testimonials (auffällig viele kroatische Stimmen: Mata/Josip/Antun/Franko, alle "Director/Croatia")
+5. "The Sunward community" — Testimonials (auffällig viele kroatische Stimmen: Mata/Josip/Antun/Franko, alle "Director/Croatia"). Eines der Zitate erwähnt explizit: *"...we finally decided to trust Sunward's dealer in Croatia, offering us the best value for money..."* — vermutlich ein Zoran-Kunde, nicht verifiziert wer genau. Für sunward.hr interessant als potenzielles echtes Testimonial, falls Zoran das bestätigen kann — nicht ungefragt übernehmen.
 6. "Sunward news" — 4 News-Kacheln
 7. Social-Media-Icon-Reihe
 8. Händlersuche-CTA
@@ -55,8 +57,28 @@ Utility-Bar über der Hauptnavigation: "Find your dealer"-Link + Sprachumschalte
 - Produktgrid, **jede Karte exakt 5 Kurzspecs** (variieren leicht je Produkttyp, typisch: Emission rating, Operating weight, Power output, Max. digging depth, Width)
 - Jede Karte: Produktbild, Modellname, 5 Specs, "View product"-Button
 - **Kein Preis** bei sunward.eu (globale Herstellerseite)
+- **Orange "NEW"-Badge** auf Karten kürzlich hinzugefügter Modelle (z.B. SWE 20F, SWE 225FN) — unabhängig vom Elektro-Blitz-Icon auf den E-Baggern (beide Badges können auch einzeln auftreten)
 
-**Für sunward.hr:** Preis zusätzlich anzeigen (Zorans Wunsch). Sonst 1:1.
+🔴 **Wichtige Korrektur (per DOM-Inspektion via Claude in Chrome geprüft, nicht nur Screenshot):** Die Sidebar-Kategorien (Wheeled/Mini/Compact/Medium/Large excavators) **sehen aus wie Filter-Checkboxen, sind aber keine.** Es sind reine `<a>`-Navigationslinks in einer verschachtelten `<li class="cat-item">`-Liste — die quadratischen Symbole davor sind rein dekoratives CSS, keine echten `<input type="checkbox">`-Elemente. Klick navigiert zu einer eigenen Unterseite, es wird nichts per JS gefiltert. **Eine Sortierfunktion (nach Gewicht, Preis o.ä.) existiert auf sunward.eu nicht** — explizit per DOM-Abfrage geprüft: keine `<select>`, keine Sort-Buttons, keine Sort-Formulare.
+
+**Für sunward.hr:** Preis zusätzlich anzeigen (Zorans Wunsch). Hier liegt eine echte Chance, sunward.eu **zu übertreffen** statt nur zu kopieren (PRD §13, "keine 1:1-Kopie"): eine **tatsächlich funktionierende** Filter- und Sortierfunktion (nach Gewicht, Preis, Kategorie) einbauen — genau das, was auf sunward.eu nur optisch suggeriert, aber nicht eingelöst wird.
+
+---
+
+## 3a. Products-Übersichtsseite (`/products/`) — bislang nicht dokumentiert, jetzt nachgetragen
+
+Eigenständige Seite (nicht zu verwechseln mit der Kategorieseite oder der Homepage-Kachel-Sektion "Our products"). Struktur je Kategorie, der Reihe nach wiederholt für alle 8 Kategorien:
+
+1. Großes Kategorie-Bild
+2. Kategorie-Name als Überschrift
+3. Fließtext-Intro (1 Absatz, identisch mit dem Text auf der jeweiligen Kategorieseite)
+4. CTA-Button ("Find your Sunward [Kategorie]")
+5. Reihe von Unterkategorie-/Modell-Bildkacheln (Bild + Name, verlinkt) — bei Kategorien ohne Untergruppen (z.B. Boom Lifts, Telescopic cranes) sind es direkt die einzelnen Modelle statt Untergruppen
+6. "View all products"-Link zur vollständigen Kategorieseite
+
+⚠️ Auf sunward.eu selbst fehlerhaft: mehrere "View all products"-Links zeigen fälschlich auf `/product-category/excavators/` statt auf die jeweils richtige Kategorie (offenbar ein Copy-Paste-Fehler beim Seitenaufbau), und der Drilling-Rigs-Link führt sogar auf eine völlig andere, alte Sunward-Global-Domain. **Für sunward.hr natürlich korrekt verlinken, das ist ein Fehler, kein Vorbild.**
+
+**Für sunward.hr:** Diese Seite ist im PRD bislang **nicht** als eigener Seitentyp vorgesehen — offene Entscheidung, ob wir sie brauchen (die 8 Kategorieseiten + Homepage-Produktgrid decken inhaltlich vielleicht schon ab, was diese Seite leistet) oder ob sie als zusätzliche "Alle Produkte auf einen Blick"-Übersicht Mehrwert bringt.
 
 ---
 
@@ -80,17 +102,25 @@ Utility-Bar über der Hauptnavigation: "Find your dealer"-Link + Sprachumschalte
 
 ---
 
-## 5. Finance-Seite — Muster
+## 5. Finance-Seite — Muster (jetzt vollständig verifiziert, vorher nur Screenshot-basiert)
 
-Hero im Frage/Antwort-Format, 2 Vorteils-Blöcke, CTA, Partner-Logo (BNP Paribas).
+Hero "WHY SUNWARD Finance?" — Frage/Antwort-Format ("Need for new Sunward equipment?" / "SUNWARD Finance has been created to accompany financially both our dealers and their customers..."). Logo + Bild. 2 Vorteils-Blöcke mit echtem Fließtext: **"PROTECT YOUR CASH FLOW"** (Working Capital für andere Geschäftszwecke freihalten) und **"GROW YOUR BUSINESS"** (neue Ausrüstung oder Ersatz, maßgeschneiderte Finanzierung). CTA **"CONTACT YOUR SUNWARD DEALER"**. Disclaimer: *"In cooperation with our Partner BNP Paribas"* + Partner-Logo.
 
-**Für sunward.hr:** Struktur übernehmen, Zorans konkretes 30%-Angebot statt Bank-Partner.
+**Für sunward.hr:** Struktur/Aufbau übernehmen, Zorans konkretes 30%-Angebot statt Bank-Partner-Verweis (kein BNP-Paribas-Äquivalent nötig, da Zoran direkt finanziert).
 
 ---
 
-## 6. Footer-Struktur
+## 6. Footer-Struktur (vollständig verifiziert, exakte Links)
 
-4 Spalten: Logo+Adresse+Social-Icons | Products-Kurzliste | About us | Contact. Bottom-Bar: Privacy/Cookies/Legal Notice.
+4 Spalten + Bottom-Bar, identisch auf jeder geprüften Unterseite:
+
+- **Spalte 1:** Logo + Adresse (SUNWARD EUROPE HEAVY INDUSTRY N.V., Havenlaan 1, Tessenderlo) + "Follow us"-Social-Icons: Facebook (facebook.com/eu.sunward), LinkedIn, YouTube, Instagram — **kein Twitter/X, kein TikTok**
+- **Spalte 2 "Products":** Excavators, Articulated wheel loaders, Compact loaders, Telescopic cranes, Scissor lifts, Articulated Boom Lifts, Rigs, Telehandlers (Reihenfolge weicht leicht von der Hauptnav ab)
+- **Spalte 3 "About us":** About Sunward, Sunward Europe, Career — **"Our team" und "Sunward mania" tauchen im Footer NICHT auf**, nur im Hauptmenü
+- **Spalte 4 "Contact":** E-Mail + Telefon
+- **Bottom-Bar:** Privacy policy / Cookies / Legal Notice (je eigene Seite) + Agentur-Credit ("PAGEART")
+
+**Für sunward.hr:** Struktur übernehmen, "Products"-Spalte auf die 8 eigenen Kategorien, "About us" durch Drvošped-Bezug ersetzen (siehe PRD §6 Branding), Social-Icons auf Facebook + TikTok (PRD §3 — sunward.eu hat kein TikTok, das ist eine bewusste Abweichung, da Zoran dort aktiv ist), kein Agentur-Credit nötig (oder eigener, falls gewünscht).
 
 ---
 
@@ -133,25 +163,25 @@ Mobile-Check (390×844) unauffällig — Navigation kollabiert sauber in ein Mob
 
 🔴 **Bindend:** Alle 51 Modelle/8 Kategorien werden 1:1 übernommen — kein reduzierter Katalog. Das war der zentrale Fehler im vorherigen Build.
 
-### Bageri — Zuordnung zu den fünf Unterkategorien (einzeln auf sunward.eu geprüft)
-
-⚠️ **Nicht nach Tonnage ableiten.** sunward.eu zieht die Grenze zwischen Mini und Kompaktni nicht nach Gewicht: SWE 25F, SWE 25UF, SWE 35UF und SWE 50UF zählen dort noch zu **Mini**, „Kompaktni" beginnt erst bei SWE 60UF. Eine Einordnung nach Gewicht liegt falsch — dieser Fehler ist beim ersten Anlauf genau so passiert.
-
-| Unterkategorie | Modelle | Anzahl |
-|---|---|---|
-| Kotačni | SWE 155FW | 1 |
-| Mini | SWE 08F, SWE 10FE, SWE 17F, SWE 18UF, SWE 20F-1, SWE 20FE, SWE 25F, SWE 25UF, SWE 35UF, SWE 50UF | 10 |
-| Kompaktni | SWE 60UF, SWE 90UF, SWE 90UF-2PB | 3 |
-| Srednji | SWE 155F, SWE 155UF, SWE 155UF-2PB, SWE 215F-5A, SWE 225FN, SWE 240FE | 6 |
-| Veliki | SWE 335F-5 | 1 |
-
-⚡ Korrektur/Nachtrag: SWE 10FE, SWE 20FE und SWE 240FE (in der Bageri-Liste oben enthalten) sind echte, vollelektrische Modelle (Lithium-Eisenphosphat-Akku, Drehstrom-Asynchronmotor, Null-Emission) — verifiziert über die sunward.eu-Produktseite selbst plus unabhängige Fachquellen, nicht nur aus dem Namensmuster geraten. Die Kategorieseite zeigt bei ihnen trotzdem 'Emission rating: EU Stage V' (vermutlich ein Vorlagen-Standardfeld auf sunward.eu selbst, kein Widerspruch). Sunward.eu hat dafür keine eigene Sidebar-Kategorie — Electric wird nur als Homepage-Highlight beworben. Ein möglicher vierter Elektro-Bagger, 'SWE 60UFE', taucht in Presseartikeln auf, aber nicht in der aktuell verifizierten Kategorieseite — nicht bestätigt, vorerst nicht aufnehmen.
+⚡ **Korrektur/Nachtrag:** SWE 10FE, SWE 20FE und SWE 240FE (in der Bageri-Liste oben enthalten) sind **echte, vollelektrische Modelle** (Lithium-Eisenphosphat-Akku, Drehstrom-Asynchronmotor, Null-Emission) — verifiziert über die sunward.eu-Produktseite selbst plus unabhängige Fachquellen, nicht nur aus dem Namensmuster geraten. Die Kategorieseite zeigt bei ihnen trotzdem "Emission rating: EU Stage V" (vermutlich ein Vorlagen-Standardfeld auf sunward.eu selbst, kein Widerspruch). Sunward.eu hat dafür **keine eigene Sidebar-Kategorie** — Electric wird nur als Homepage-Highlight beworben (siehe Abschnitt 2, Hero-Slider "ELECTRIC EXCAVATORS"). Empfehlung für sunward.hr: Gewichtsklassen-Struktur wie verifiziert beibehalten, diese drei Modelle zusätzlich mit einem "Električni"-Badge markieren. Ein möglicher vierter Elektro-Bagger, "SWE 60UFE", taucht in Presseartikeln auf, aber nicht in der aktuell verifizierten Kategorieseite — nicht bestätigt, vorerst nicht aufnehmen.
 
 ---
 
 ## 9. Vollständige technische Spezifikationen je Modell (verifiziert, für Phase 2)
 
 > Alle Werte per Web-Fetch direkt von den jeweiligen sunward.eu-Kategorieseiten übernommen (dieselbe Recherche wie Abschnitt 8). Einheiten wie im Original (kg/kW/mm/m).
+
+### Bageri — verifizierte Untergruppen-Zuordnung (je einzeln von sunward.eu geprüft, nicht nach Gewicht geschätzt)
+
+| Untergruppe | Modelle |
+|---|---|
+| Kotačni (Wheeled) | SWE 155FW |
+| Mini | SWE 08F, SWE 10FE, SWE 17F, SWE 18UF, SWE 20F-1, SWE 20FE, SWE 25F, SWE 25UF, SWE 35UF, SWE 50UF |
+| Kompaktni (Compact) | SWE 60UF, SWE 90UF, SWE 90UF-2PB |
+| Srednji (Medium) | SWE 155F, SWE 155UF, SWE 155UF-2PB, SWE 215F-5A, SWE 225FN, SWE 240FE |
+| Veliki (Large) | SWE 335F-5 |
+
+⚠️ Die Grenze zwischen Mini und Kompakt verläuft bei sunward.eu **nicht** rein nach Gewicht — 25F/25UF/35UF/50UF zählen dort zu Mini, nicht zu Kompakt. Eine gewichtsbasierte Schätzung würde das falsch aufteilen.
 
 ### Bageri — Excavators (Emission / Operating weight / Power output / Max. digging depth / Width)
 
@@ -259,3 +289,45 @@ Mobile-Check (390×844) unauffällig — Navigation kollabiert sauber in ein Mob
 | Kein Dodatna-Oprema-Bereich | Neue Kategorie (10 Anbaugeräte) |
 | CTA → Händlersuche | CTA → Zoran/Kontaktformular |
 | Kein Rücklink zu Mutterfirma | Subtiler "u suradnji s Hidraulika Drvošped"-Hinweis + Rücklink |
+
+---
+
+## 11. Warranty-Seite (verifiziert)
+
+"Peace of mind" — bis zu 5 Jahre Garantie auf Standardausrüstung. Premium Components. "Top Quality Control" — Product Delivery Inspection (PDI) im Hauptsitz Tessenderlo.
+
+⚠️ **Wichtiger Unterschied, nicht verwechseln:** sunward.eu wirbt mit "bis zu 5 Jahren" Garantie (globales Herstellerversprechen). **Zorans tatsächliches, bestätigtes Angebot ist 3 Jahre ODER 5.000 Betriebsstunden** (PRD §4) — das ist ein anderer, konkreterer Wert und bleibt maßgeblich für sunward.hr. Nicht die "5 Jahre" von sunward.eu übernehmen.
+
+**Für sunward.hr:** PDI-Konzept (Qualitätskontrolle vor Auslieferung) als Trust-Baustein prüfenswert, falls Zoran das auch so macht — sonst weglassen, nichts erfinden.
+
+---
+
+## 12. Applications-Seite (verifiziert)
+
+Einfache 11-Kachel-Galerie (Bild + Label, kein Fließtext): Mine & Quarry, Agriculture, Forestry, Demolition, Infrastructure, Earthmoving, Landscaping & Gardening, Building construction, Material Handling, Waste, Rental.
+
+**Für sunward.hr:** Optional als kleine Sektion — zeigt Einsatzgebiete der Maschinen. Kein Muss, geringer Aufwand falls gewünscht. Hinweis: "Forestry" hier meint nur "Maschinen sind forsttauglich", das hat nichts mit Drvošpeds eigenem Forstgeschäft auf drvosped.hr zu tun (PRD §12, Abgrenzung bleibt bestehen).
+
+---
+
+## 13. Contact-Seite (verifiziert)
+
+"LET'S KEEP IN TOUCH" Hero, Telefonnummer, Formular mit Länder-Dropdown (alle Länder der Welt) + Pflichtfeld-Markierung.
+
+**Für sunward.hr:** Länder-Dropdown **nicht übernehmen** — ergibt für einen Kroatien-only-Händler keinen Sinn. Einfaches Formular: Name, Kontakt (Tel/E-Mail), Nachricht, ggf. Produktinteresse-Dropdown (Kategorie). CTA-Ziel: sunward.hrvatska@gmail.com (PRD §3).
+
+---
+
+## 14. Legal Notice — Struktur (verifiziert, nur als Gliederungs-Vorlage, NICHT Inhalt übernehmen)
+
+sunward.eu gliedert seine Impressum-Seite so: Website-Betreiber (Firma, Adresse, USt-ID, Handelsregister, Kontakt, Geschäftsführer) → Hosting-Provider → Geistiges Eigentum → Haftungsausschluss → Externe Links → Datenschutz-Verweis → Anwendbares Recht/Gerichtsstand.
+
+**Für sunward.hr:** Dieselbe Gliederung, aber vollständig eigenständiger Inhalt mit Drvošped-Daten (PRD §3: OIB, MB, Adresse, Zoran als Geschäftsführer), kroatischem Recht/Gerichtsstand statt belgischem, und dem tatsächlichen Hosting-Provider (Vercel). Privacy Policy und Cookies-Seite sind eigene Unterseiten (nicht inhaltlich geprüft, da GDPR-Inhalt ohnehin komplett eigenständig für Drvošped verfasst werden muss, PRD §11).
+
+---
+
+## 15. Nicht vertieft geprüft (bewusst, geringe Relevanz für sunward.hr)
+
+- **Company-Unterseiten** "Our team", "Career", "Sunward mania" — globale Sunward-Europe-Konzernseiten (Team, Stellenausschreibungen, Markengeschichte). Für einen regionalen Händler ohne direkte Entsprechung, nicht Teil des Scopes.
+- **Service & Parts:** "Smart Fleet" ist **jetzt per Chrome-Scan bestätigt** ein Telematik-/Ferndiagnose-System (Sensornetzwerk + OBD-Anschluss, in Kooperation mit Jaltest/COJALI, Spanien) — eine ab Werk in die Maschinen eingebaute Funktion, kein separater Service, den Zoran lokal anbieten würde. "Training" (Schulungsangebot) weiterhin nicht vertieft geprüft, vermutlich ebenfalls Konzern-Ebene. Vor Umsetzung kurz mit Zoran klären, ob eines von beiden für ihn relevant ist, sonst weglassen.
+- **About Sunward / Sunward Europe** (Konzern-Ebene) — Inhalt bereits in PRD/ANALYSIS für die "Sunward's DNA"-Kennzahlen auf der Startseite verwendet (100 Länder, Top 20/50, 180 Mrd. Yuan), keine eigene Unterseite für sunward.hr nötig darüber hinaus.

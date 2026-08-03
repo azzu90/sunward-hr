@@ -28,19 +28,23 @@ Direkt, faktenbasiert, kroatisch (ausschließlich). Konkrete Zahlen vorne: Garan
 
 ## Farben (live verifiziert von sunward.eu, siehe ANALYSIS.md Abschnitt 7)
 
-| Rolle | Wert |
-|---|---|
-| Primär (Marke) | `#008D84` |
-| Akzent | `#F39A2E` |
-| Hauptfläche | `#FFFFFF` |
-| Footer | `#008D84` + dezente Verlaufstextur |
-| Fließtext | `#879C9F` |
-| Drvošped-Cross-Branding (nur Badge/Rücklink) | Navy `#1B3A6B` / Amber `#E8A020` |
+| Rolle                                        | Wert                               |
+| -------------------------------------------- | ---------------------------------- |
+| Primär (Marke)                               | `#008D84`                          |
+| Akzent                                       | `#F39A2E`                          |
+| Hauptfläche                                  | `#FFFFFF`                          |
+| Footer                                       | `#008D84` + dezente Verlaufstextur |
+| Fließtext (Referenzwert von sunward.eu)      | `#879C9F`                          |
+| Drvošped-Cross-Branding (nur Badge/Rücklink) | Navy `#1B3A6B` / Amber `#E8A020`   |
+
+⚠️ **Accessibility geht vor 1:1-Treue:** `#879C9F` selbst erreicht auf Weiß nur 2,88:1 Kontrast — verfehlt WCAG AA (4,5:1) und sogar die Großtext-Schwelle (3:1). Das ist ein echter Fehler auf sunward.eu selbst, kein Messfehler unsererseits. Da "Accessibility soll sunward.eu übertreffen" ein explizites Ziel ist (siehe unten): `#879C9F` nur für dekorative/Nicht-Text-Elemente verwenden; für tatsächlichen Fließtext einen dunkleren, WCAG-AA-konformen Ton derselben Farbfamilie ableiten (analog zum bereits bestehenden Muster einer abgeleiteten textsicheren Markenfarbe).
 
 ## Typografie
 
 - Body: **Oxygen** (Google Font) — falls nicht verfügbar, vergleichbare humanistische Sans-Serif
 - Headings: **Mulish** (Google Font), Weight 900 für H2, 700 für H3
+- ⚠️ Vor dem Umstieg prüfen: beide Fonts müssen kroatische Diakritika (č, ć, š, ž, đ) über das `latin-ext`-Subset abdecken, so wie das aktuell genutzte Inter das tut. Falls eine der beiden Schriften das nicht sauber abdeckt, Alternative mit vollem `latin-ext`-Support wählen statt fehlerhafter Glyphen zu riskieren.
+- ⚠️ **Oxygen-Gewichtslimit:** Oxygen existiert nur in 300/400/700, keine Variable-Achse, kein 500/600. Emphase-Stufen, die 500/600 bräuchten (z.B. Spec-Label vs. Spec-Wert), über **Farbe statt Gewicht** differenzieren. Stellen, die tatsächlich Weight 900 brauchen (Wortmarke, Preis-Anzeige), explizit auf die Heading-Font (Mulish) umleiten statt auf Oxygens Maximalgewicht (700) zurückzufallen.
 
 ## Komponenten/Patterns (aus ANALYSIS.md übernehmen)
 
