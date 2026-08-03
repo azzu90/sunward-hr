@@ -98,8 +98,9 @@ Pre-Launch-Checkliste aus PRD Abschnitt 18 komplett durchgehen, insbesondere:
 ## Phase 6 — Deploy & Review
 
 - Push nach GitHub, Vercel-Preview-Link prüfen
+- 🔴 **Vor dem Domain-Cutover:** `WEB3FORMS_ACCESS_KEY` in den Vercel-Environment-Variablen setzen und Zoran die Empfängeradresse `sunward.hrvatska@gmail.com` bei Web3Forms bestätigen lassen. Solange der Key fehlt, antwortet `/api/kontakt` mit 503 und Kontaktanfragen erreichen Zoran nur über den mailto-Fallback, nicht automatisch. Nach dem Setzen einen echten Testversand machen.
 - Preview an Zoran, Feedback einholen
-- Parallel: Zoran um Preisliste (PRD Abschnitt 7), Zertifikat-Scans, YouTube-Links bitten
+- Parallel: Zoran um Preisliste (PRD Abschnitt 7), Zertifikat-Scans, YouTube-Links bitten sowie um Öffnungszeiten und den konkreten Financiranje-Ablauf (Laufzeiten, Leasingpartner) — beides bewusst nicht erfunden, siehe ASSUMPTIONS.md
 
 ---
 
