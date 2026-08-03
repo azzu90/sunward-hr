@@ -165,6 +165,7 @@ export const ui = {
     contactHeading: "Kontakt",
     legalHeading: "Pravno",
     certificatesHeading: "Certifikati i nagrade",
+    socialHeading: "Pratite nas",
     rightsReserved: "Sva prava pridržana.",
   },
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { footerColumns } from "@/content/nav";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
+import { SocialIcon } from "../media/SocialIcon";
 
 import { PartnerBadge } from "./PartnerBadge";
 
@@ -108,6 +109,29 @@ export function Footer() {
                 </a>
               </li>
             ) : null}
+          </ul>
+        </div>
+
+        {/* Social-Icons — bislang nur auf /kontakt als Text-Links (ANALYSIS.md
+            §1). site.social hat aktuell Facebook + TikTok. */}
+        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm">
+          <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
+            {ui.footer.socialHeading}
+          </h2>
+          <ul className="flex items-center gap-4">
+            {site.social.map((profile) => (
+              <li key={profile.id}>
+                <a
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-on-brand-muted hover:text-on-brand"
+                >
+                  <SocialIcon id={profile.id} />
+                  <span className="sr-only">{profile.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
