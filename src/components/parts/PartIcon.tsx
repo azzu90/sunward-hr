@@ -25,9 +25,14 @@ const paths: Record<PartIconId, ReactNode> = {
   ),
   "motorni-dijelovi": (
     <>
-      <rect x="7.5" y="2.5" width="9" height="5.5" rx="1" />
-      <path d="M12 8v6" />
-      <circle cx="12" cy="17.5" r="4" />
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="12" cy="12" r="6.5" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" transform="rotate(60 12 12)" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" transform="rotate(120 12 12)" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" transform="rotate(180 12 12)" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" transform="rotate(240 12 12)" />
+      <rect x="10.6" y="1.8" width="2.8" height="3.6" rx="0.9" transform="rotate(300 12 12)" />
     </>
   ),
   filteri: (
@@ -65,9 +70,11 @@ const paths: Record<PartIconId, ReactNode> = {
   gusjenice: (
     <>
       <rect x="2" y="7.5" width="20" height="9" rx="4.5" />
-      <circle cx="7" cy="12" r="1.5" />
-      <circle cx="12" cy="12" r="1.5" />
-      <circle cx="17" cy="12" r="1.5" />
+      <ellipse cx="5.5" cy="12" rx="2" ry="1.6" />
+      <ellipse cx="9" cy="12" rx="2" ry="1.6" />
+      <ellipse cx="12.5" cy="12" rx="2" ry="1.6" />
+      <ellipse cx="16" cy="12" rx="2" ry="1.6" />
+      <ellipse cx="19.5" cy="12" rx="2" ry="1.6" />
     </>
   ),
   "zubi-zlice": (
@@ -78,8 +85,7 @@ const paths: Record<PartIconId, ReactNode> = {
   ),
   zlice: (
     <>
-      <path d="M5 3.5v8.5a7 7 0 0 0 7 7h7" />
-      <path d="M19 15.5v7M15.5 17.5v3.5M12 16.5v3" />
+      <path d="M5 6h11l2.5 3.5-3.5 9a2 2 0 0 1-2 1.5h-2a2 2 0 0 1-2-1.5z" />
     </>
   ),
   cekici: (
