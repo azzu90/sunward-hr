@@ -93,6 +93,10 @@ Preissortierung ist im Typsystem vorhanden (`SortKey` kennt `cijena-asc`/`cijena
 
 📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium**.
 
+✅ **Status: umgesetzt, committet, gepusht.** Die SEO-Grundlage steht seit dem Aufsetzen des Projekts (Commit 6dfe517): Title-Tags und Meta-Descriptions werden in `lib/seo.ts` aus den Content-Objekten abgeleitet statt je Route von Hand geschrieben, Schema.org (Organization + Product je Modell + BreadcrumbList + FAQPage) in `lib/schema.ts`, dazu `app/sitemap.ts` und `app/robots.ts`. Die drei Pflichtseiten Impresum, Politika privatnosti und Kolačići kamen mit Commit a61bdb1 dazu — Inhalt eigenständig verfasst, nur die Gliederung folgt ANALYSIS.md §14. Cookie-Consent ist eine eigene Instanz mit dem localStorage-Schlüssel `sunward-hr-cookie-consent`, damit von drvosped.hr getrennt (PRD §11).
+
+⚠️ Offen vor dem Domain-Cutover: die drei Rechtsseiten einmal von einem kroatischen Anwalt gegenlesen lassen, sowie Aufbewahrungsdauer der Kontaktanfragen und DPO-Frage mit Zoran klären — alle drei als offene Punkte in ASSUMPTIONS.md.
+
 ---
 
 ## Phase 4b — Design-Korrekturen: Button-Rollen & Hero-Foto
