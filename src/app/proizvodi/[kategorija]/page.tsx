@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { CategoryBrowser } from "@/components/product/CategoryBrowser";
 import { CategorySidebar } from "@/components/product/CategorySidebar";
 import { ProductCard } from "@/components/product/ProductCard";
@@ -54,8 +55,7 @@ export default async function CategoryPage({ params }: Params) {
         </aside>
 
         <div>
-          <h1 className="text-3xl font-black text-ink">{category.name}</h1>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-body">{category.lede}</p>
+          <PageHeader title={category.name} lede={category.lede} />
 
           {/* Die Karten entstehen hier, serverseitig — CategoryBrowser ordnet
               sie nur. ProductCard kann keine Client-Komponente sein, weil

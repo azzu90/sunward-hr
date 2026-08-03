@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
 import { productsInCategory } from "@/content/products";
 import { routes } from "@/content/routes";
@@ -24,7 +25,7 @@ export default function ProductsPage() {
       />
 
       <div className="pb-14">
-        <h1 className="text-3xl font-black text-ink">{ui.pages.productsTitle}</h1>
+        <PageHeader title={ui.pages.productsTitle} />
 
         <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {categoryList.map((category) => (

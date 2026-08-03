@@ -2,6 +2,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { PARTS_ENQUIRY_SLUG } from "@/content/parts";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
@@ -49,8 +50,7 @@ export default function KontaktPage() {
       <Breadcrumbs trail={trail} />
 
       <div className="pb-14">
-        <h1 className="text-3xl font-black text-ink">{ui.contact.title}</h1>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-body">{ui.contact.lede}</p>
+        <PageHeader title={ui.contact.title} lede={ui.contact.lede} />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>

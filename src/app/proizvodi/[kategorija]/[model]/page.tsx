@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteGallery } from "@/components/media/SiteGallery";
 import { SiteVideo } from "@/components/media/SiteVideo";
 import { FeatureTiles } from "@/components/product/FeatureTiles";
@@ -73,11 +74,7 @@ export default async function ProductPage({ params }: Params) {
         <SiteGallery gallery={product.gallery} priority />
 
         <div className="flex flex-col gap-5">
-          <div>
-            <p className="text-xs font-bold tracking-widest text-brand-text uppercase">
-              {category.nameSingular}
-            </p>
-            <h1 className="mt-1 text-3xl font-black text-ink sm:text-4xl">{product.name}</h1>
+          <PageHeader eyebrow={category.nameSingular} title={product.name}>
             {product.electric ? (
               <p className="mt-2">
                 <span className="bg-accent px-2 py-0.5 text-xs font-bold tracking-wide text-on-accent uppercase">
@@ -85,7 +82,7 @@ export default async function ProductPage({ params }: Params) {
                 </span>
               </p>
             ) : null}
-          </div>
+          </PageHeader>
 
           <p className="text-base leading-relaxed text-ink-body">{product.intro}</p>
 

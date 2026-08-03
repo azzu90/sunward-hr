@@ -18,9 +18,25 @@ export function ProductCard({ product }: { product: ProductModel }) {
   const href = routes.product(product);
 
   return (
-    <article className="flex flex-col border border-line bg-surface transition-shadow hover:shadow-md">
+    /* `h-full` ist nicht kosmetisch: das <li> darüber ist Grid-Item und wird
+       auf die Zeilenhöhe gestreckt, dieses <article> aber nicht — ohne h-full
+       bleibt es auf Inhaltshöhe stehen, und dann hat das `mt-auto` am
+       Preisblock keinen freien Raum zu verteilen. Sichtbar wurde das in einer
+       Zeile, die Kategorien mit vier und fünf Kurzspecs mischt (Startseite):
+       die 4-Spec-Karten hatten Preis und Button rund 30 px höher als ihre
+       Nachbarn. Alle anderen Karten im Projekt tragen h-full bereits. */
+    <article className="flex h-full flex-col border border-line bg-surface transition-shadow hover:shadow-md">
+      {/* object-contain statt des Standards object-cover: die Manifest-Ratio
+          der Modellbilder ist 4/3, die Dateien selbst sind 1:1 — mit cover
+          schneidet jede Karte oben und unten je ~12,5 % ab, was bei hohen,
+          schmalen Maschinen (Škarasti podizni strojevi, Teleskopske dizalice)
+          Plattform und Fahrwerk gekappt hat. `p-4` spiegelt den Innenabstand,
+          den die Platzhalter-Variante derselben Box schon hat, damit echtes
+          Bild und Platzhalter denselben Abstand zum Rand halten. */}
       <SiteImage
         id={product.gallery.main}
+        className="p-4"
+        imgClassName="object-contain"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
       />
 

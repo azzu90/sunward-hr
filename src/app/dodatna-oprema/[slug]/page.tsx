@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
 import { SiteVideo } from "@/components/media/SiteVideo";
 import { attachments, getAttachment } from "@/content/attachments";
@@ -59,12 +60,7 @@ export default async function AttachmentPage({ params }: Params) {
         />
 
         <div className="flex flex-col gap-5">
-          <div>
-            <p className="text-xs font-bold tracking-widest text-brand-text uppercase">
-              {attachment.useCase}
-            </p>
-            <h1 className="mt-1 text-3xl font-black text-ink sm:text-4xl">{attachment.name}</h1>
-          </div>
+          <PageHeader eyebrow={attachment.useCase} title={attachment.name} />
 
           <p className="text-base leading-relaxed text-ink-body">{attachment.intro}</p>
 

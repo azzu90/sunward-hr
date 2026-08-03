@@ -3,6 +3,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container, Section } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { legal } from "@/content/legal";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
@@ -29,12 +30,7 @@ export default function ImpresumPage() {
     <>
       <Container>
         <Breadcrumbs trail={trail} />
-        <div className="pb-2">
-          <h1 className="max-w-3xl text-3xl leading-tight font-black text-ink sm:text-4xl">
-            {content.h1}
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">{content.intro}</p>
-        </div>
+        <PageHeader className="pb-2" title={content.h1} lede={content.intro} />
       </Container>
 
       <Section alt labelledBy="podaci-o-drustvu">

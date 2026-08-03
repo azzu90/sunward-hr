@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
 import { attachments } from "@/content/attachments";
 import { routes } from "@/content/routes";
@@ -23,12 +24,10 @@ export default function AttachmentsPage() {
       <Breadcrumbs trail={[{ name: ui.crumbs.home, href: routes.home() }, { name: TITLE }]} />
 
       <div className="pb-14">
-        <h1 className="text-3xl font-black text-ink">{TITLE}</h1>
-        <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-body">
-          {
-            "Priključke montiramo, podešavamo i servisiramo sami. Svaki stroj iz naše ponude može dobiti odgovarajuću opremu — od mini bagera do 40-tonca."
-          }
-        </p>
+        <PageHeader
+          title={TITLE}
+          lede="Priključke montiramo, podešavamo i servisiramo sami. Svaki stroj iz naše ponude može dobiti odgovarajuću opremu — od mini bagera do 40-tonca."
+        />
 
         <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {attachments.map((attachment) => (

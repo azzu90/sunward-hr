@@ -3,6 +3,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container, Section } from "@/components/layout/Container";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { PartIcon } from "@/components/parts/PartIcon";
 import { parts, PARTS_ENQUIRY_SLUG } from "@/content/parts";
 import { routes } from "@/content/routes";
@@ -38,12 +39,7 @@ export default function ServisPage() {
     <>
       <Container>
         <Breadcrumbs trail={trail} />
-        <div className="pb-2">
-          <h1 className="max-w-3xl text-3xl leading-tight font-black text-ink sm:text-4xl">
-            {parts.h1}
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">{parts.intro}</p>
-        </div>
+        <PageHeader className="pb-2" title={parts.h1} lede={parts.intro} />
       </Container>
 
       {/* Netzwerkvorteil, nicht eigenes Lieferversprechen — die Einordnung
