@@ -4,6 +4,7 @@ import { Container, Section } from "@/components/layout/Container";
 import { SiteImage } from "@/components/media/SiteImage";
 import { ProductCard } from "@/components/product/ProductCard";
 import { TrustBar } from "@/components/marketing/TrustBar";
+import { home } from "@/content/home";
 import { products } from "@/content/products";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
@@ -56,12 +57,26 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <TrustBar />
+      {/* Zašto Sunward? — 4 USP-Kacheln (ANALYSIS.md §2, eigenständig
+          formuliert statt von sunward.eu übersetzt, siehe content/home.ts). */}
+      <Section alt labelledBy="zasto-sunward">
+        <h2 id="zasto-sunward" className="mb-6 text-2xl font-bold">
+          {home.whySunwardHeading}
+        </h2>
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {home.whySunwardTiles.map((tile) => (
+            <li key={tile.id} className="border-t-4 border-brand bg-surface p-6">
+              <h3 className="mb-2 text-lg font-bold text-ink">{tile.headline}</h3>
+              <p className="text-sm leading-relaxed text-ink-body">{tile.body}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-      {/* Kategorien */}
+      {/* Naši proizvodi — alle 8 Kategorien. */}
       <Section labelledBy="kategorije">
         <h2 id="kategorije" className="mb-6 text-2xl font-bold">
-          {ui.cta.allProducts}
+          {home.categoriesHeading}
         </h2>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categoryList.map((category) => (
@@ -87,10 +102,12 @@ export default function HomePage() {
         </ul>
       </Section>
 
+      <TrustBar />
+
       {/* Finanzierung + Eintausch — exakte Texte aus CLAUDE.md §3.
           Bleibt als Teaser bestehen und verlinkt auf /financiranje, wo
           derselbe Wortlaut plus FAQ und Prozess steht (PRD §6). */}
-      <Section alt labelledBy="financiranje">
+      <Section labelledBy="financiranje">
         <h2 id="financiranje" className="mb-6 text-2xl font-bold">
           {ui.pages.homeFinancingHeading}
         </h2>
@@ -113,7 +130,7 @@ export default function HomePage() {
       </Section>
 
       {/* Ausgewählte Modelle */}
-      <Section labelledBy="istaknuto">
+      <Section alt labelledBy="istaknuto">
         <h2 id="istaknuto" className="mb-6 text-2xl font-bold">
           {ui.product.relatedHeading}
         </h2>
@@ -127,7 +144,7 @@ export default function HomePage() {
       </Section>
 
       {/* Rücklink zu drvosped.hr (CLAUDE.md §11) */}
-      <Section alt labelledBy="drvosped">
+      <Section labelledBy="drvosped">
         <div className="flex flex-col items-start gap-3">
           <h2 id="drvosped" className="text-lg font-bold">
             {site.parent.crossLink}
