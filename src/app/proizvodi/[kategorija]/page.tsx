@@ -3,11 +3,13 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { CategoryBrowser } from "@/components/product/CategoryBrowser";
 import { CategorySidebar } from "@/components/product/CategorySidebar";
 import { ProductCard } from "@/components/product/ProductCard";
 import { groupCounts, productsInCategory } from "@/content/products";
 import { routes } from "@/content/routes";
 import { categoryList, getCategory } from "@/content/taxonomy";
+import { isQuotable } from "@/content/types";
 import { ui } from "@/content/ui";
 import { breadcrumbSchema } from "@/lib/schema";
 import { categoryMetadata } from "@/lib/seo";
@@ -55,24 +57,25 @@ export default async function CategoryPage({ params }: Params) {
           <h1 className="text-3xl font-black text-ink">{category.name}</h1>
           <p className="mt-3 max-w-3xl text-base leading-relaxed text-ink-body">{category.lede}</p>
 
-          {category.groups
-            .filter((group) => (counts.get(group.slug) ?? 0) > 0)
-            .map((group) => (
-              <section key={group.slug} id={group.slug} className="mt-10 scroll-mt-24">
-                <h2 className="mb-4 border-b border-line pb-2 text-lg font-bold text-ink">
-                  {group.name}
-                </h2>
-                <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                  {items
-                    .filter((p) => p.group === group.slug)
-                    .map((product) => (
-                      <li key={product.slug}>
-                        <ProductCard product={product} />
-                      </li>
-                    ))}
-                </ul>
-              </section>
-            ))}
+          {/* Die Karten entstehen hier, serverseitig — CategoryBrowser ordnet
+              sie nur. ProductCard kann keine Client-Komponente sein, weil
+              SiteImage über lib/assets.ts `node:fs` liest. */}
+          <CategoryBrowser
+            groups={category.groups
+              .filter((group) => (counts.get(group.slug) ?? 0) > 0)
+              .map((group) => ({
+                slug: group.slug,
+                name: group.name,
+                count: counts.get(group.slug) ?? 0,
+              }))}
+            items={items.map((product) => ({
+              slug: product.slug,
+              group: product.group,
+              weight: product.shortSpecs.find((s) => s.key === "operatingWeight")?.n ?? null,
+              price: isQuotable(product.price) ? product.price.amount : null,
+              card: <ProductCard product={product} />,
+            }))}
+          />
         </div>
       </div>
 

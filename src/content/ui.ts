@@ -47,6 +47,25 @@ export const ui = {
     moreAboutFinancing: "Više o financiranju i kupnji na rate",
   },
 
+  /**
+   * Filter- und Sortierleiste der Kategorieseiten (TASK.md Phase 2b).
+   *
+   * Die Sortierbezeichnung selbst kommt nicht von hier, sondern aus
+   * `specLabels.operatingWeight` — der Kennwert heisst überall auf der Seite
+   * gleich, und zwei Quellen dafür würden auseinanderlaufen.
+   */
+  filter: {
+    toolbar: "Filtriranje i sortiranje",
+    groupLegend: "Podgrupa",
+    sortLabel: "Sortiraj",
+    sortRecommended: "Preporučeno",
+    ascending: "uzlazno",
+    descending: "silazno",
+    reset: "Poništi filtere",
+    /** Für „1 model" — ab zwei greift ui.pages.modelsSuffix. */
+    modelSingular: "model",
+  },
+
   price: {
     onRequest: "Cijena na upit",
     net: "bez PDV-a",

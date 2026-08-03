@@ -56,6 +56,17 @@
 
 📌 **Modell-Empfehlung:** Opus, Effort **high** (neue Interaktionslogik, State-Management für Filter+Sort-Kombination).
 
+✅ **Status: umgesetzt.** `CategoryBrowser.tsx` (Client) + `lib/product-sort.ts`, eingebunden auf allen acht Kategorieseiten. Filter und Sortierung erscheinen **anzahlgesteuert**, nicht pro Kategorie hartkodiert: Sortierung ab 3 Modellen, Untergruppen-Filter ab zwei nicht-leeren Gruppen. Liefert Zoran Modelle nach, erscheinen die Bedienelemente ohne Codeänderung.
+
+**Korrektur zum Kontext oben:** Untergruppen sind **keine eigenen Seiten**. Die Sidebar-Links sind `#anchor`-Sprungmarken auf `<section id>` derselben Seite — so dokumentiert in `taxonomy.ts`, `types.ts` (`GroupSlug`) und CLAUDE.md. Deshalb bleibt bei Default-Sortierung die gruppierte Darstellung samt `id` erhalten; nur beim Sortieren nach Radna masa wird daraus ein flaches Raster. Ist eine Gruppe weggefiltert, führt ihr Sidebar-Anker ins Leere — bekannte Grenze, die Sidebar blieb auftragsgemäß unangetastet.
+
+**Zwei Entscheidungen, die für spätere Sessions festgehalten gehören:**
+
+1. **`replaceState`, nicht `pushState`.** Der Zustand steht in der URL (`?grupa=…&sort=…`) und ist damit teilbar, aber der Zurück-Button nimmt Filter **nicht** einzeln zurück, sondern verlässt die Seite. Mit `pushState` wären fünf Checkbox-Klicks fünf Zurück-Schritte — die schlechtere Bedienung. Bewusst so, nicht vergessen.
+2. **`useSyncExternalStore` statt `useState` + Effect.** Ein Effect, der beim Mount den Zustand aus der URL setzt, läuft in `react-hooks/set-state-in-effect` — dieselbe Regel, die schon beim Kontaktformular griff. `useSyncExternalStore` ist für „Server und Client haben verschiedene Snapshots" gebaut und löst das ohne Hydration-Mismatch. Ebenfalls bewusst **kein** `useSearchParams()`: das erzwingt eine Suspense-Grenze, und dann stünde im statischen HTML der Kategorieseiten nur die Fallback-Hülle statt der Produktkarten — verifiziert stehen dort weiterhin alle 21 Bageri-Karten.
+
+Preissortierung ist im Typsystem vorhanden (`SortKey` kennt `cijena-asc`/`cijena-desc` samt Komparator), wird aber nicht angeboten: alle 51 Modelle stehen auf „Cijena na upit". Aktivierung sind zwei Zeilen in `sortOptions`, siehe Kommentar dort.
+
 ---
 
 ## Phase 3 — Content-Bausteine
