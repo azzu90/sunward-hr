@@ -182,6 +182,50 @@ auch auf der Seite sichtbar ist.
 
 ---
 
+## Produktbilder von sunward.eu
+
+`scripts/fetch-sunward-images.mts` (`npm run fetch-images`) hat die 51
+Produktfotos (`public/slike/proizvodi/<slug>/glavna.png`) und die 9
+Unterkategorie-Kachelbilder (`public/slike/kategorije/<kategorija>/grupe/
+<grupa>/tile.png`) heruntergeladen. Slug-Mapping ist live verifiziert, nicht
+mechanisch abgeleitet — sunward.eu fügt bei den meisten Modellen einen
+Bindestrich vor der ersten Ziffer ein, aber fünf Modelle weichen ab: SWTH
+3507 (kein Bindestrich), SWE 215F-5A (sunward.eu-Slug `swe-215f-2`, anderer
+Suffix), SWE 335F-5 (`swe-335f`, Suffix entfällt), SWDM 165S und SWDM 215S
+(`swdm-165`/`swdm-215`, trailing „s" entfällt). Alle fünf per direktem Fetch
+bestätigt (richtiger Modellname in der Überschrift, gültiges `og:image`).
+
+### Abweichung — die 8 Kategorie-Heroes bleiben Platzhalter
+
+`TASK.md`/`images.ts` sehen für jede der 8 Kategorien ein 21:9-Breitformat-
+Foto vor (Hint-Text z.B. „Mehrere Sunward-Bagger zusammen … Halbprofil").
+Verifiziert: die echten sunward.eu-Kategorieseiten
+(`/product-category/excavators/` etc.) haben **kein** Hero-Bild, nur ein
+reines Produktraster (kein `og:image`, kein Banner-`<img>` im HTML). Die
+einzigen kategoriebezogenen Bilder sind die freigestellten 569×564-Icons von
+`/products/` — dieselbe Bildsorte wie die 9 Unterkategorie-Kacheln oben,
+aber falsches Seitenverhältnis für den 21:9-Slot und ein anderes Motiv als
+der Hint-Text verlangt.
+
+**Entscheidung (mit Auftraggeber bestätigt):** kein Download für die 8
+Heroes in dieser Phase, Platzhalter bleibt.
+
+**Vormerkung für einen späteren Durchgang:** als Interimslösung könnte je
+Kategorie eines der bereits vorhandenen 51 Produktfotos als Hero dienen
+(ein repräsentatives Modell im Halbprofil, wie der Hint-Text selbst
+vorschlägt). Das ist eine redaktionelle Auswahl — welches Modell je
+Kategorie, und ob der 21:9-Ausschnitt des jeweiligen Fotos funktioniert —
+und deshalb bewusst nicht Teil des automatisierten Massen-Downloads.
+
+### Noch ohne UI — die 9 Unterkategorie-Kacheln
+
+`GroupDef` (`src/content/types.ts`) hat aktuell kein Bildfeld, und
+`CategoryBrowser.tsx` zeigt Gruppen nur als Text-Überschrift. Die neuen
+Manifest-Einträge in `images.ts` liefern nur das Asset vor; die
+Kachel-Darstellung selbst ist ein späterer Phasenschritt.
+
+---
+
 ## Sonstiges
 
 - GPS-Koordinaten in `src/content/site.ts` sind die ungefähre Lage von

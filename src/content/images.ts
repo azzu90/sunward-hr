@@ -119,6 +119,75 @@ export const images = {
     sizes: "100vw",
   },
 
+  /* ── Unterkategorie-Kacheln (9) ───────────────────────────────────────
+     Freigestellte Icon-Illustrationen von sunward.eu/products/, quadratisch
+     — bewusst ein anderes Seitenverhältnis als die 21/9-Kategorie-Heroes
+     oben. Noch ohne UI-Konsument (CategoryBrowser.tsx zeigt Gruppen bisher
+     nur als Text-Überschrift); dieser Eintrag liefert nur das Asset vor. */
+  "kategorije/bageri/grupe/kotacni-bageri/tile": {
+    id: "kategorije/bageri/grupe/kotacni-bageri/tile",
+    alt: "Sunward kotačni bager — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für kotačne bagere (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/bageri/grupe/mini-bageri/tile": {
+    id: "kategorije/bageri/grupe/mini-bageri/tile",
+    alt: "Sunward mini bager — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für mini bagere (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/bageri/grupe/kompaktni-bageri/tile": {
+    id: "kategorije/bageri/grupe/kompaktni-bageri/tile",
+    alt: "Sunward kompaktni bager — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für kompaktne bagere (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/bageri/grupe/srednji-bageri/tile": {
+    id: "kategorije/bageri/grupe/srednji-bageri/tile",
+    alt: "Sunward srednji bager — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für srednje bagere (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/bageri/grupe/veliki-bageri/tile": {
+    id: "kategorije/bageri/grupe/veliki-bageri/tile",
+    alt: "Sunward veliki bager — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für velike bagere (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/utovarivaci/grupe/gusjenicni-utovarivaci/tile": {
+    id: "kategorije/utovarivaci/grupe/gusjenicni-utovarivaci/tile",
+    alt: "Sunward gusjenični utovarivač — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für gusjenične utovarivače (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/utovarivaci/grupe/kotacni-mini-utovarivaci/tile": {
+    id: "kategorije/utovarivaci/grupe/kotacni-mini-utovarivaci/tile",
+    alt: "Sunward kotačni mini utovarivač — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für kotačne mini utovarivače (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/skarasti-podizni-strojevi/grupe/skarasti-elektricni/tile": {
+    id: "kategorije/skarasti-podizni-strojevi/grupe/skarasti-elektricni/tile",
+    alt: "Sunward električno škarasto dizalo — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für električne škarasti podizne strojeve (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+  "kategorije/skarasti-podizni-strojevi/grupe/skarasti-terenski/tile": {
+    id: "kategorije/skarasti-podizni-strojevi/grupe/skarasti-terenski/tile",
+    alt: "Sunward terensko škarasto dizalo — ilustracija",
+    hint: "Freigestellte Sunward-Icon-Illustration für terenske škarasti podizne strojeve (sunward.eu/products/)",
+    aspect: "1/1",
+    source: "sunward.eu",
+  },
+
   /* ── Modelle (51) ───────────────────────────────────────────────────── */
   "proizvodi/swe08f/glavna": {
     id: "proizvodi/swe08f/glavna",
