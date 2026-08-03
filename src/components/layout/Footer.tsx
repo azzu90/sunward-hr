@@ -61,11 +61,16 @@ export function Footer() {
                 {column.links.map((link) => (
                   <li key={link.id}>
                     {link.external ? (
+                      // Bewusst NICHT die Klasse "dsp-link": die ist laut
+                      // partner-brand.css ausschliesslich für die
+                      // Drvošped-Badge/-Link-Verwendung reserviert. Hier
+                      // stehen inzwischen auch unbeteiligte externe Links
+                      // (sunward.eu) in derselben Spalte.
                       <a
                         href={link.href}
                         target="_blank"
                         rel="noopener"
-                        className="dsp-link text-sm underline-offset-2 hover:underline"
+                        className="text-sm text-on-brand-muted underline-offset-2 hover:text-on-brand hover:underline"
                       >
                         {link.label}
                       </a>

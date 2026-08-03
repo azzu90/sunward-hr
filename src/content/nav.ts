@@ -72,6 +72,12 @@ export const footerColumns: readonly FooterColumn[] = [
         href: site.parent.url,
         external: true,
       },
+      {
+        id: "sunward-eu",
+        label: "Otkrijte našu globalnu stranicu",
+        href: "https://sunward.eu",
+        external: true,
+      },
     ]),
   },
   {
