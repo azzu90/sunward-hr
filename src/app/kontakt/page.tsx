@@ -2,6 +2,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
+import { PARTS_ENQUIRY_SLUG } from "@/content/parts";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
 import { categoryList } from "@/content/taxonomy";
@@ -28,10 +29,15 @@ export const metadata = pageMetadata({
   path: routes.kontakt(),
 });
 
-/** Kategorien plus Dodatna oprema — mehr Auswahl braucht das Feld nicht. */
+/**
+ * Kategorien plus Dodatna oprema und Ersatzteile — mehr Auswahl braucht das
+ * Feld nicht. Der Ersatzteil-Eintrag lässt sich über `?tema=<value>`
+ * vorauswählen; genau das tut der CTA auf /servis.
+ */
 const productOptions = [
   ...categoryList.map((c) => ({ value: c.slug, label: c.name })),
   { value: "dodatna-oprema", label: ui.contact.productAttachments },
+  { value: PARTS_ENQUIRY_SLUG, label: ui.contact.productParts },
 ];
 
 export default function KontaktPage() {

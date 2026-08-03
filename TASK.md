@@ -66,7 +66,8 @@
 - Drvošped-Branding: Badge + Logo-Kombination + subtiler Rücklink zu drvosped.hr
 - ✅ Kontaktformular (API-Route + E-Mail-Versand an sunward.hrvatska@gmail.com) — umgesetzt als `/kontakt` mit `POST /api/kontakt`; Transport Web3Forms statt Resend, Begründung in ASSUMPTIONS.md
 - ✅ Eigene Seite `/financiranje`, SEO-Fokus `bager na rate` (PRD Abschnitt 6/10) — Homepage-Sektion bleibt als Teaser bestehen
-- ✅ Hauptnavigation erweitert: Strojevi · Dodatna oprema · Financiranje · Kontakt. **Servis i dijelovi folgt in einer eigenen Session** (Route steht in `routes.ts` bereits mit `built: false` bereit)
+- ✅ Eigene Seite `/servis` (Servis i dijelovi, PRD Abschnitt 8): Verfügbarkeitszusage als weitergegebener Vertragshändler-Vorteil formuliert (nicht als eigenes Lieferversprechen nach Karlovac), 11 Ersatzteil-Kategorien als Icon-Grid, Nebensatz zu Maintenance Kits, CTA mit vorausgewähltem Ersatzteil-Betreff im Kontaktformular
+- ✅ Hauptnavigation vollständig: Strojevi · Dodatna oprema · Servis i dijelovi · Financiranje · Kontakt (Servis vor Financiranje, analog zu sunward.eu)
 
 📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium** (Standard-Umsetzung nach klarer Vorlage).
 

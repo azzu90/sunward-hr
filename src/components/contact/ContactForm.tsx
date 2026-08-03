@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { ui } from "@/content/ui";
 
@@ -35,6 +35,20 @@ const labelClass = "mb-1 block text-sm font-bold text-ink";
 
 export function ContactForm({ options, fallback }: ContactFormProps) {
   const [status, setStatus] = useState<Status>("idle");
+  const selectRef = useRef<HTMLSelectElement>(null);
+
+  // Vorauswahl über ?tema=<slug>, z.B. aus dem CTA auf /servis.
+  //
+  // Bewusst nicht über useSearchParams(): das erzwingt eine Suspense-Grenze
+  // und nähme /kontakt aus der statischen Generierung. Und bewusst kein
+  // useState: das Feld bleibt uncontrolled und wird hier nur einmal im DOM
+  // gesetzt — kein Hydration-Mismatch, keine Kaskadenrenders.
+  useEffect(() => {
+    const tema = new URLSearchParams(window.location.search).get("tema");
+    if (!tema || !selectRef.current) return;
+    const match = options.find((o) => o.value === tema);
+    if (match) selectRef.current.value = match.label;
+  }, [options]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -117,7 +131,13 @@ export function ContactForm({ options, fallback }: ContactFormProps) {
         <label htmlFor="proizvod" className={labelClass}>
           {ui.contact.productLabel}
         </label>
-        <select id="proizvod" name="proizvod" defaultValue="" className={fieldClass}>
+        <select
+          id="proizvod"
+          name="proizvod"
+          ref={selectRef}
+          defaultValue=""
+          className={fieldClass}
+        >
           <option value="">{ui.contact.productAny}</option>
           {options.map((option) => (
             <option key={option.value} value={option.label}>

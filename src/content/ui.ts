@@ -26,6 +26,7 @@ export const ui = {
     products: "Strojevi",
     financing: "Financiranje",
     contact: "Kontakt",
+    service: "Servis i dijelovi",
   },
 
   pages: {
@@ -110,6 +111,7 @@ export const ui = {
     productLabel: "Stroj koji vas zanima",
     productAny: "Nije važno / ostalo",
     productAttachments: "Dodatna oprema",
+    productParts: "Rezervni dijelovi i servis",
     messageLabel: "Poruka",
     messagePlaceholder: "Opišite ukratko što vas zanima.",
 

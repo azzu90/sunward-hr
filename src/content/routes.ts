@@ -40,7 +40,7 @@ export const staticRoutes: readonly { href: string; priority: number; built: boo
   { href: routes.proizvodi(), priority: 0.9, built: true },
   { href: routes.dodatnaOprema(), priority: 0.8, built: true },
   { href: routes.financiranje(), priority: 0.8, built: true },
-  { href: routes.servis(), priority: 0.8, built: false },
+  { href: routes.servis(), priority: 0.8, built: true },
   { href: routes.jamstvo(), priority: 0.7, built: false },
   { href: routes.oNama(), priority: 0.6, built: false },
   { href: routes.primjene(), priority: 0.6, built: false },

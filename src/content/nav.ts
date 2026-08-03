@@ -35,8 +35,10 @@ export const mainNav: readonly NavNode[] = visible([
     href: routes.dodatnaOprema(),
     badge: "NOVO",
   },
-  { id: "financiranje", label: "Financiranje", href: routes.financiranje() },
+  // Servis vor Financiranje — dieselbe Position wie „Service & Parts" vor
+  // „Finance" bei sunward.eu (ANALYSIS.md §1).
   { id: "servis", label: "Servis i dijelovi", href: routes.servis() },
+  { id: "financiranje", label: "Financiranje", href: routes.financiranje() },
   { id: "jamstvo", label: "Jamstvo", href: routes.jamstvo() },
   { id: "o-nama", label: "O nama", href: routes.oNama() },
   { id: "kontakt", label: "Kontakt", href: routes.kontakt() },
@@ -60,8 +62,8 @@ export const footerColumns: readonly FooterColumn[] = [
     heading: ui.footer.companyHeading,
     links: visible([
       { id: "o-nama", label: "O nama", href: routes.oNama() },
-      { id: "financiranje", label: "Financiranje", href: routes.financiranje() },
       { id: "servis", label: "Servis i dijelovi", href: routes.servis() },
+      { id: "financiranje", label: "Financiranje", href: routes.financiranje() },
       { id: "jamstvo", label: "Jamstvo", href: routes.jamstvo() },
       { id: "primjene", label: "Primjene", href: routes.primjene() },
       {
