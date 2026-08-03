@@ -27,6 +27,9 @@ export const ui = {
     financing: "Financiranje",
     contact: "Kontakt",
     service: "Servis i dijelovi",
+    impresum: "Impresum",
+    privacy: "Politika privatnosti",
+    cookies: "Kolačići",
   },
 
   pages: {

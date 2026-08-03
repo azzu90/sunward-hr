@@ -45,9 +45,9 @@ export const staticRoutes: readonly { href: string; priority: number; built: boo
   { href: routes.oNama(), priority: 0.6, built: false },
   { href: routes.primjene(), priority: 0.6, built: false },
   { href: routes.kontakt(), priority: 0.7, built: true },
-  { href: routes.impresum(), priority: 0.2, built: false },
-  { href: routes.privatnost(), priority: 0.2, built: false },
-  { href: routes.kolacici(), priority: 0.2, built: false },
+  { href: routes.impresum(), priority: 0.2, built: true },
+  { href: routes.privatnost(), priority: 0.2, built: true },
+  { href: routes.kolacici(), priority: 0.2, built: true },
 ];
 
 const builtHrefs = new Set(staticRoutes.filter((r) => r.built).map((r) => r.href));

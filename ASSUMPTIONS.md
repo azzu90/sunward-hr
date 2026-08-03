@@ -226,6 +226,40 @@ Kachel-Darstellung selbst ist ein späterer Phasenschritt.
 
 ---
 
+## Rechtliches (Phase 4) — Impresum, Politika privatnosti, Kolačići
+
+`src/content/legal.ts` + drei neue Routen. Gliederung nach ANALYSIS.md §14
+(nur Struktur-Vorlage von sunward.eu), Inhalt vollständig eigenständig für
+Hidraulika Drvošped d.o.o. verfasst. Firmendaten kommen ausschließlich aus
+`site.ts` (PRD §3), keine zweite Quelle.
+
+Tatsächlich verarbeitete Daten wurden im Code verifiziert, nicht geraten:
+Kontaktformular → Web3Forms → `sunward.hrvatska@gmail.com`; Vercel Analytics
+und Speed Insights (laut eigenem Code-Kommentar cookielos); Schriften
+selbst gehostet (kein Kontakt zu `fonts.gstatic.com`); Hosting bei Vercel
+Inc. Keine weiteren Cookies, kein Google Analytics, kein Captcha (Honeypot
+statt Captcha) — per Grep im Code bestätigt.
+
+Zwei Angaben sind bewusst generisch statt erfunden gehalten (gleiches
+Prinzip wie der Zinssatz in `financing.ts`):
+
+- **Aufbewahrungsdauer** der Kontaktanfragen — keine konkrete Anzahl Tage
+  bekannt, deshalb nur „so lange wie für die Bearbeitung nötig".
+- **Datenschutzbeauftragter (DPO)** — bei 27 Mitarbeitenden keine gesetzliche
+  Bestellpflicht; kein erfundener Name, Anfragen laufen über die
+  Kontakt-E-Mail.
+
+### Offene Punkte
+
+1. Genaue Aufbewahrungsdauer der Kontaktanfragen mit Zoran klären, falls er
+   eine konkrete Praxis hat (sonst bleibt die generische Formulierung).
+2. Bestätigen, dass kein DPO bestellt ist bzw. bestellt werden muss.
+3. **Alle drei Rechtsseiten vor dem echten Domain-Cutover einmal von einem
+   kroatischen Anwalt gegenlesen lassen** — bewusst offener Schritt, keine
+   Anforderung an diese Phase selbst, aber vor Live-Gang nachzuholen.
+
+---
+
 ## Sonstiges
 
 - GPS-Koordinaten in `src/content/site.ts` sind die ungefähre Lage von
