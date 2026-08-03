@@ -55,6 +55,13 @@ export interface EmailContact {
   readonly primary: boolean;
 }
 
+export interface SocialProfile {
+  readonly id: string;
+  /** Plattformname, erscheint als Linktext und aria-label. */
+  readonly label: string;
+  readonly url: string;
+}
+
 export interface BankAccount {
   readonly bank: string;
   readonly iban: string;
@@ -93,6 +100,7 @@ export interface SiteData {
   readonly phones: readonly PhoneContact[];
   readonly emails: readonly EmailContact[];
   readonly fax: string;
+  readonly social: readonly SocialProfile[];
   readonly banks: readonly BankAccount[];
   readonly certificates: readonly Certificate[];
   readonly warranty: {

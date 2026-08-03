@@ -109,6 +109,79 @@ Aufgelöst:
 
 ---
 
+## Financiranje- und Kontakt-Seite (Phase 3, Teilumfang)
+
+### Abweichung — Web3Forms statt Resend
+
+`PRD-sunward.hr.md` §14 und `TASK.md` Phase 3 nennen „API-Route +
+E-Mail-Versand (z.B. Resend)". Umgesetzt ist die API-Route
+(`src/app/api/kontakt/route.ts`), als Transport aber **Web3Forms**:
+
+Resend verlangt eine verifizierte Absenderdomain. `sunward.hr` ist noch
+nicht live, es gibt also nichts zu verifizieren — bis zum Domain-Cutover
+käme keine einzige Mail bei Zoran an, und das Formular wäre eine Attrappe.
+Web3Forms braucht nur einen Access Key plus eine einmalig per Klick
+bestätigte Empfängeradresse und funktioniert auf der `*.vercel.app`-URL
+sofort.
+
+Der Transport liegt gekapselt in `src/lib/contact-mail.ts`. Ein späterer
+Wechsel auf Resend — sinnvoll, sobald `sunward.hr` auf Vercel verifiziert
+ist — betrifft ausschliesslich diese eine Datei; Route und Formular kennen
+nur `sendContactMessage()`.
+
+Der Key heisst `WEB3FORMS_ACCESS_KEY` und **nicht** mehr
+`NEXT_PUBLIC_WEB3FORMS_KEY` wie in der ursprünglichen `.env.example`
+vorgesehen: der Aufruf geht serverseitig raus, damit steht der Key nicht im
+ausgelieferten HTML und lässt sich nicht von fremden Seiten missbrauchen.
+
+Fehlt der Key, antwortet die Route mit `503 { reason: "unconfigured" }` und
+das Formular zeigt E-Mail-Adresse und Zorans Telefonnummer als Fallback.
+Die Seite ist damit auch ohne Konfiguration nie eine Sackgasse.
+
+### Financiranje-Texte — was bewusst NICHT dort steht
+
+Die Seite ist auf das Fokus-Keyword `bager na rate` (PRD §10) ausgerichtet
+und brauchte dafür mehr Text als die beiden vorhandenen Boxen. Neu
+geschrieben wurden Intro, ein Prozess-Absatz und sechs FAQ-Einträge
+(`src/content/financing.ts`) — ausschliesslich aus bestätigten Angaben aus
+PRD §4/§5.
+
+Nicht erfunden und deshalb nirgends genannt: **Zinssatz, Laufzeit,
+Monatsrate, Bearbeitungsdauer und der Name des Leasingpartners.** Wo eine
+solche Zahl inhaltlich hingehört (FAQ „Kolika je mjesečna rata?"), verweist
+der Text auf den persönlichen Kontakt statt zu schätzen. Eine geschätzte
+Rate in einem Finanzierungsangebot ist kein Platzhalter, sondern eine
+Falschaussage — dafür reicht `tbd()` nicht als Absicherung.
+
+Die FAQ-Antworten erscheinen zusätzlich als `FAQPage`-JSON-LD
+(`faqSchema()` in `src/lib/schema.ts`). Im Snippet steht damit nur, was
+auch auf der Seite sichtbar ist.
+
+### Kontaktseite — Auslassungen
+
+- **Kein Länder-Dropdown**, anders als bei sunward.eu (ANALYSIS.md §13) —
+  für einen Händler, der nur Kroatien beliefert, eine Hürde ohne Nutzen.
+- **Keine Öffnungszeiten.** Nirgends bestätigt; geratene Zeiten schicken
+  Leute vor eine verschlossene Tür. Offene Frage an Zoran.
+- **Kein Karten-Embed**, solange `site.address.geo` ein `tbd()` ist. Ein
+  Pin auf ungeprüfter Position ist schlechter als gar keiner.
+- **Keine Consent-Checkbox**, nur eine Hinweiszeile: `/politika-privatnosti`
+  existiert noch nicht (Phase 4), und eine Pflicht-Checkbox mit Link auf
+  einen 404 wäre schlechter als keine.
+- Spam-Schutz ist ein Honeypot-Feld (`tvrtka`). Kein CAPTCHA — bei diesem
+  Aufkommen unverhältnismässig.
+
+### Offene Fragen an Zoran
+
+1. Öffnungszeiten der Poslovnica Jelaši 37C.
+2. Konkreter Financiranje-Ablauf: Laufzeiten, übliche Raten, Leasingpartner
+   — damit „Kako funkcionira" von einem allgemeinen Absatz zu echten
+   Schritten werden kann.
+3. Web3Forms-Key anlegen und die Empfängeradresse
+   `sunward.hrvatska@gmail.com` bestätigen.
+
+---
+
 ## Sonstiges
 
 - GPS-Koordinaten in `src/content/site.ts` sind die ungefähre Lage von

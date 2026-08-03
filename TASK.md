@@ -13,7 +13,9 @@
 - Prüfen: wo genau der Sprachumschalter und die 4-Kategorien-Reduktion herkommen (welche Datei/Komponente)
 - **Output:** kurze Liste "behalten" vs. "ersetzen" — kein Code ändern in dieser Phase
 
-📌 **Modell-Empfehlung:** Sonnet, mittlere Reasoning-Stufe. Plan Mode ja — aber zeitlich kurz halten (Ergebnis nach einem Durchgang, nicht iterativ stundenlang verfeinern).
+📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium** (per `/model` einstellen, dann mit Pfeiltasten die Effort-Stufe wählen). Reine Lese-/Auditaufgabe, keine Architekturentscheidung — braucht noch keine hohe Stufe. Plan Mode ja — aber zeitlich kurz halten (Ergebnis nach einem Durchgang, nicht iterativ stundenlang verfeinern).
+
+✅ **Status: abgeschlossen.**
 
 ---
 
@@ -24,7 +26,9 @@
 - Fonts auf Oxygen (Body) / Mulish (Headings) umstellen
 - Sprachumschalter komplett entfernen (nur `lang="hr"`)
 
-📌 **Modell-Empfehlung:** Opus, hohe Reasoning-Stufe (strukturelle Änderung an Design-System-Basis, wirkt sich auf alles Weitere aus).
+📌 **Modell-Empfehlung:** Opus (4.8 oder 5, je nach Verfügbarkeit), Effort **high** (Default — strukturelle Änderung an der Design-System-Basis, wirkt sich auf alles Weitere aus).
+
+✅ **Status: umgesetzt, committet, gepusht** (Commit 3d0bd90 auf `redesign`).
 
 ---
 
@@ -35,7 +39,22 @@
 - Produktdetailseiten-Template nach 13-Punkte-Muster (ANALYSIS.md Abschnitt 4) für alle 51 Modelle
 - Dodatna Oprema als eigene Kategorie (10 Positionen, PRD Abschnitt 8)
 
-📌 **Modell-Empfehlung:** Opus, hohe Reasoning-Stufe (großer struktureller Umfang, Datenmodellierung für 51 Einträge).
+📌 **Modell-Empfehlung:** Opus, Effort **high**, ggf. **xhigh** wenn die Datenmodellierung für 51 Einträge komplex wird (großer struktureller Umfang).
+
+✅ **Status: umgesetzt, committet, gepusht** (Commits 6104074, 8843fb9 auf `redesign`).
+
+---
+
+## Phase 2b — Filter & Sortierung auf Kategorieseiten (neuer, bestätigter Scope)
+
+**Kontext:** sunward.eu suggeriert optisch eine Filterfunktion (Kategorienbaum mit dekorativen, nicht-funktionalen Checkbox-Icons), liefert aber keine echte Filter- oder Sortierlogik (per DOM-Prüfung bestätigt, ANALYSIS.md §3). Bestätigter Auftrag: sunward.hr bekommt eine **echte** Filterung (nach Untergruppe) und eine **echte** Sortierung (mind. nach Gewicht; nach Preis sobald echte Preise vorliegen) — eine bewusste Verbesserung, kein 1:1-Nachbau.
+
+- Filterung nach Untergruppe (z.B. bei Bagerima: Kotačni/Mini/Kompaktni/Srednji/Veliki) — Mehrfachauswahl möglich
+- Sortierung nach Operating Weight (aufsteigend/absteigend) als erste Stufe; Sortierung nach Preis vorbereiten, aber erst aktivieren, sobald echte Preise vorliegen (PRD Abschnitt 7)
+- Client-seitige Lösung naheliegend, da alle 51 Modelldaten ohnehin statisch im Repo vorliegen — technische Entscheidung liegt bei der Umsetzungs-Session
+- Bestehende Sidebar-Navigationslinks (Untergruppen als eigene Seiten) bleiben zusätzlich bestehen — Filter/Sort ergänzt, ersetzt nicht
+
+📌 **Modell-Empfehlung:** Opus, Effort **high** (neue Interaktionslogik, State-Management für Filter+Sort-Kombination).
 
 ---
 
@@ -45,9 +64,11 @@
 - Finanzierungs- und Eintausch-Box (Texte 1:1 aus PRD Abschnitt 5)
 - Zertifikate-Box als Text (ohne Logo-Grafiken, Upgrade später — PRD Abschnitt 3)
 - Drvošped-Branding: Badge + Logo-Kombination + subtiler Rücklink zu drvosped.hr
-- Kontaktformular (API-Route + E-Mail-Versand an sunward.hrvatska@gmail.com)
+- ✅ Kontaktformular (API-Route + E-Mail-Versand an sunward.hrvatska@gmail.com) — umgesetzt als `/kontakt` mit `POST /api/kontakt`; Transport Web3Forms statt Resend, Begründung in ASSUMPTIONS.md
+- ✅ Eigene Seite `/financiranje`, SEO-Fokus `bager na rate` (PRD Abschnitt 6/10) — Homepage-Sektion bleibt als Teaser bestehen
+- ✅ Hauptnavigation erweitert: Strojevi · Dodatna oprema · Financiranje · Kontakt. **Servis i dijelovi folgt in einer eigenen Session** (Route steht in `routes.ts` bereits mit `built: false` bereit)
 
-📌 **Modell-Empfehlung:** Sonnet, mittlere Reasoning-Stufe (Standard-Umsetzung nach klarer Vorlage).
+📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium** (Standard-Umsetzung nach klarer Vorlage).
 
 ---
 
@@ -58,7 +79,7 @@
 - sitemap.xml + robots.txt
 - Impressum (Firmendaten PRD Abschnitt 3), Datenschutz, eigene Cookie-Consent-Instanz (getrennt von drvosped.hr)
 
-📌 **Modell-Empfehlung:** Sonnet, mittlere Reasoning-Stufe.
+📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium**.
 
 ---
 
@@ -70,7 +91,7 @@ Pre-Launch-Checkliste aus PRD Abschnitt 18 komplett durchgehen, insbesondere:
 - Mobile-Ansicht aller Seitentypen
 - Lighthouse-Check gegen sunward.eu-Niveau
 
-📌 **Modell-Empfehlung:** Sonnet, niedrige bis mittlere Reasoning-Stufe (Checkliste abarbeiten).
+📌 **Modell-Empfehlung:** Sonnet 5, Effort **low** bis **medium** (Checkliste abarbeiten).
 
 ---
 

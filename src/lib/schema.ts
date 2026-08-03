@@ -1,4 +1,4 @@
-import type { BreadcrumbList, Organization, Product, WithContext } from "schema-dts";
+import type { BreadcrumbList, FAQPage, Organization, Product, WithContext } from "schema-dts";
 
 import { isTbd, val } from "@/content/placeholder";
 import { routes } from "@/content/routes";
@@ -99,6 +99,26 @@ export function productSchema(p: ProductModel): WithContext<Product> {
   }
 
   return schema;
+}
+
+/**
+ * FAQ-Rich-Result für /financiranje.
+ *
+ * Die Fragen stammen aus content/financing.ts und damit ausschliesslich aus
+ * bestätigten Angaben — im Snippet erscheint nichts, was auf der Seite selbst
+ * nicht steht. Genau das verlangt Google, und alles andere wäre bei einem
+ * Finanzierungsangebot ohnehin nicht vertretbar.
+ */
+export function faqSchema(entries: readonly { q: string; a: string }[]): WithContext<FAQPage> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: entries.map((entry) => ({
+      "@type": "Question" as const,
+      name: entry.q,
+      acceptedAnswer: { "@type": "Answer" as const, text: entry.a },
+    })),
+  };
 }
 
 export function breadcrumbSchema(

@@ -80,6 +80,21 @@ export const site: SiteData = {
 
   fax: "047 641 299",
 
+  // PRD §3. Beide Profile gehören Drvošped, nicht Sunward global —
+  // deshalb stehen sie hier und nicht bei parent.
+  social: [
+    {
+      id: "facebook",
+      label: "Facebook",
+      url: "https://www.facebook.com/p/Hidraulika-Drvo%C5%A1ped-doo-Sunward-Hrvatska-PSC-100063506295594/",
+    },
+    {
+      id: "tiktok",
+      label: "TikTok",
+      url: "https://www.tiktok.com/@zox932",
+    },
+  ],
+
   banks: [
     { bank: "Privredna banka Zagreb", iban: "HR1323400091110158496", bic: "PBZGHR2X" },
     { bank: "Raiffeisenbank Austria", iban: "HR4924840081105405647", bic: "RZBHHR2X" },

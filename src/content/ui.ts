@@ -24,11 +24,16 @@ export const ui = {
   crumbs: {
     home: "Početna",
     products: "Strojevi",
+    financing: "Financiranje",
+    contact: "Kontakt",
   },
 
   pages: {
     productsTitle: "Sunward strojevi",
     modelsSuffix: "modela",
+    /** H2 der Financiranje-Sektion auf der Startseite. Bewusst nicht
+        site.financing.headline — der Text steht direkt darunter schon als H3. */
+    homeFinancingHeading: "Financiranje i staro za novo",
   },
 
   cta: {
@@ -38,6 +43,7 @@ export const ui = {
     callUs: "Nazovite nas",
     allProducts: "Svi strojevi",
     backToCategory: "Natrag na kategoriju",
+    moreAboutFinancing: "Više o financiranju i kupnji na rate",
   },
 
   price: {
@@ -79,6 +85,46 @@ export const ui = {
 
   trust: {
     heading: "Zašto Sunward preko Drvošpeda",
+  },
+
+  /**
+   * Kontaktseite und Formular.
+   *
+   * Auch die Fehlertexte stehen hier — es sind sichtbare Strings, und beim
+   * späteren Extrahieren werden genau die vergessen (CLAUDE.md §9).
+   */
+  contact: {
+    title: "Kontakt",
+    lede: "Nazovite nas ili pošaljite upit — javljamo se u najkraćem roku.",
+    formHeading: "Pošaljite upit",
+    detailsHeading: "Kontakt podaci",
+    addressHeading: "Adresa",
+    socialHeading: "Pratite nas",
+    requiredMarker: "*",
+    requiredNote: "Polja označena zvjezdicom su obavezna.",
+
+    nameLabel: "Ime i prezime",
+    namePlaceholder: "Vaše ime",
+    contactLabel: "Telefon ili e-mail",
+    contactPlaceholder: "091 234 5678 ili ime@primjer.hr",
+    productLabel: "Stroj koji vas zanima",
+    productAny: "Nije važno / ostalo",
+    productAttachments: "Dodatna oprema",
+    messageLabel: "Poruka",
+    messagePlaceholder: "Opišite ukratko što vas zanima.",
+
+    /** Honeypot. Für Menschen unsichtbar, Screenreader werden per
+        aria-hidden ausgeschlossen — der Text ist reine Absicherung. */
+    honeypotLabel: "Ovo polje ostavite prazno",
+
+    submit: "Pošalji upit",
+    sending: "Šaljemo…",
+    successHeading: "Hvala na upitu!",
+    successBody: "Poruka je poslana. Javljamo vam se u najkraćem roku.",
+    errorHeading: "Slanje nije uspjelo",
+    errorBody: "Molimo pokušajte ponovno ili nas kontaktirajte izravno:",
+    privacyNote:
+      "Vaše podatke koristimo isključivo za odgovor na ovaj upit i ne prosljeđujemo ih trećim stranama.",
   },
 
   cookies: {

@@ -5,7 +5,7 @@ import { SiteImage } from "@/components/media/SiteImage";
 import { ProductCard } from "@/components/product/ProductCard";
 import { TrustBar } from "@/components/marketing/TrustBar";
 import { products } from "@/content/products";
-import { isBuilt, routes } from "@/content/routes";
+import { routes } from "@/content/routes";
 import { site } from "@/content/site";
 import { categoryList } from "@/content/taxonomy";
 import { ui } from "@/content/ui";
@@ -46,19 +46,12 @@ export default function HomePage() {
             >
               {ui.cta.allProducts}
             </Link>
-            {/* Die Kontaktseite entsteht erst in Phase 2. Bis dahin führt
-                der CTA direkt zur Sunward-Mailadresse — funktionierender
-                Weg statt Link auf einen 404. */}
-            <a
-              href={
-                isBuilt(routes.kontakt())
-                  ? routes.kontakt()
-                  : `mailto:${site.emails.find((e) => e.primary)?.address}`
-              }
+            <Link
+              href={routes.kontakt()}
               className="border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
             >
               {ui.cta.requestQuote}
-            </a>
+            </Link>
           </div>
         </Container>
       </section>
@@ -94,10 +87,12 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* Finanzierung + Eintausch — exakte Texte aus CLAUDE.md §3 */}
+      {/* Finanzierung + Eintausch — exakte Texte aus CLAUDE.md §3.
+          Bleibt als Teaser bestehen und verlinkt auf /financiranje, wo
+          derselbe Wortlaut plus FAQ und Prozess steht (PRD §6). */}
       <Section alt labelledBy="financiranje">
         <h2 id="financiranje" className="mb-6 text-2xl font-bold">
-          {site.financing.headline}
+          {ui.pages.homeFinancingHeading}
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
           <div className="border-t-4 border-brand bg-surface p-6">
@@ -109,6 +104,12 @@ export default function HomePage() {
             <p className="text-sm leading-relaxed text-ink-body">{site.tradeIn.detail}</p>
           </div>
         </div>
+        <Link
+          href={routes.financiranje()}
+          className="mt-6 inline-block text-sm font-bold text-brand-text underline underline-offset-4"
+        >
+          {ui.cta.moreAboutFinancing}
+        </Link>
       </Section>
 
       {/* Ausgewählte Modelle */}
