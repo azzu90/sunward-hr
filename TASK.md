@@ -95,6 +95,23 @@ Preissortierung ist im Typsystem vorhanden (`SortKey` kennt `cijena-asc`/`cijena
 
 ---
 
+## Phase 4b — Design-Korrekturen: Button-Rollen & Hero-Foto
+
+Zwei Befunde aus einem zweiten Live-Check von sunward.eu, beide unabhängig voneinander.
+
+- Button-Rollen nach dem tatsächlich gemessenen Muster (ANALYSIS.md §7 Nachtrag): primäre Handlungs-CTA Orange, wiederkehrende/navigatorische Buttons Türkis. Vorher war ausnahmslos alles Türkis.
+- Homepage-Hero hatte gar kein Bild — jetzt zweispaltig mit einem Modellfoto aus den 51 übernommenen Aufnahmen.
+
+✅ **Status: umgesetzt.** Orange (`--color-accent` + dunkle Schrift `--color-on-accent`, neu dazu `--color-accent-strong` als Hover) auf fünf primären CTAs: Hero „Zatraži ponudu", „Cijena na upit"-CTA der Produktdetailseiten sowie die Abschluss-CTAs von `/financiranje`, `/servis` und `/dodatna-oprema/<slug>`. Türkis bleibt bei „Svi strojevi", „Pogledaj stroj", Formular-Submit und Broschüren-Download.
+
+⚠️ Die weisse Schrift des Originals erreicht auf Orange nur 2,22:1 — bei uns deshalb dunkle Schrift mit 7,39:1 (ASSUMPTIONS.md, Abweichung 4).
+
+Hero zeigt den **SWE 155F**, Text links / freigestelltes Modellfoto rechts. Interimslösung: der 21:9-Slot `pocetna/hero` bleibt offen für eine echte breite Gradilište-Aufnahme von Zoran.
+
+📌 **Modell-Empfehlung:** Opus 5, Effort **medium** (Kontrastrechnung + redaktionelle Bildauswahl).
+
+---
+
 ## Phase 5 — QA vor Push
 
 Pre-Launch-Checkliste aus PRD Abschnitt 18 komplett durchgehen, insbesondere:

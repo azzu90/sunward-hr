@@ -63,7 +63,33 @@ Informationsgehalt; der lesbare Teil der Wortmarke steht in Weiss bei
 mit 3,13:1 eingehalten ist. Dieselbe Zierde im Header steht auf Weiss und
 ist dort unkritisch.
 
-### Abweichung 4 — kein dunkles Navy mehr
+### Abweichung 4 — dunkle statt weisser Schrift auf den Orange-CTAs
+
+Der zweite Live-Check der Button-Rollen (ANALYSIS.md §7 Nachtrag) hat ergeben:
+die primäre Handlungs-CTA ist auf sunward.eu Orange `#F39A2E` **mit weisser
+Schrift**. Nachgerechnet sind das **2,22:1** — verfehlt AA für Fliesstext
+(4,5:1) und sogar die Grossschrift-Schwelle (3:1). Derselbe Fehlertyp wie
+beim Fliesstext-Ton `#879C9F` in Abweichung 1, nur an einer Stelle, die
+jeder Besucher anklicken soll.
+
+**Entscheidung:** Orange-Fläche bleibt exakt `#F39A2E` (Markentreue), die
+Schrift darauf ist aber `--color-on-accent` (`#14212b`, **7,39:1**). Der
+Tokensatz hatte diesen Ton bereits für die Badges — die CTAs nutzen jetzt
+dasselbe Paar. Neu dazu kam nur `--color-accent-strong` (`#e08a1e`) als
+Hover-Fläche; dort sind es noch **6,10:1**, weil ein dunkleres Orange den
+Kontrast zur dunklen Schrift *senkt* und nicht hebt — deshalb nachgerechnet
+statt geschätzt.
+
+**Bewusst offen gelassen:** die Orange-Fläche selbst erreicht gegen Weiss nur
+2,22:1 und gegen `#F5F6F7` 2,05:1. Für WCAG 1.4.11 (Nicht-Text-Kontrast,
+3:1) wäre das zu wenig, *wenn* der Rand die einzige Kennzeichnung des
+Bedienelements wäre. Ist er hier nicht: jeder dieser Buttons trägt ein
+fettes Versal-Label mit 7,39:1, das den Klickbereich eindeutig markiert. Ein
+zusätzlicher dunkler Rahmen würde 3:1 erreichen, wäre aber eine
+Design-Erfindung ohne Vorbild im Original — deshalb nicht gemacht, sondern
+hier dokumentiert.
+
+### Abweichung 5 — kein dunkles Navy mehr
 
 Der vorherige Build nutzte `#14212B` als grossflächigen Header-/Footer-/
 Hero-Hintergrund. Das beruhte auf einer Screenshot-Schätzung, die per

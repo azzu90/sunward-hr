@@ -58,12 +58,24 @@
   --color-on-brand-muted: #cddcda; /* ← ABGELEITET */
 
   /* ── Akzent: Sunward-Orange ───────────────────────────────────────────────
-     Auf sunward.eu für „NEW"-Badges, Pfeile und sekundäre CTAs.
+     Rolle laut zweitem Live-Check (ANALYSIS.md §7 Nachtrag): die PRIMÄRE
+     Handlungs-CTA, genau 1× pro Seite/Sektion — plus „NEW"-Badges und
+     Pfeile. Die frühere Zuordnung „sekundäre CTAs" war unvollständig.
+
      NUR als Fläche mit dunkler Schrift verwenden: auf Weiss kommt der Ton
      auf 2.22:1 und ist damit weder als Text noch als UI-Rahmen zulässig.
-     Als Fläche mit --color-on-accent darauf: 7.41:1. */
+     Als Fläche mit --color-on-accent darauf: 7.39:1.
+
+     ⚠️ sunward.eu selbst setzt WEISSE Schrift auf diese Fläche — das sind
+     2.22:1 und damit ein klarer AA-Verstoss, derselbe Fehlertyp wie beim
+     Fliesstext-Ton. Bei uns deshalb bewusst dunkle Schrift (ASSUMPTIONS.md). */
   --color-accent: #f39a2e;
   --color-on-accent: #14212b;
+
+  /* Hover-Fläche der Orange-CTA. Achtung: dunkler heisst hier WENIGER
+     Kontrast zur dunklen Schrift, nicht mehr — deshalb nachgerechnet.
+     --color-on-accent darauf: 6.10:1, bleibt komfortabel über AA. */
+  --color-accent-strong: #e08a1e; /* ← ABGELEITET */
 
   /* ── Flächen ──────────────────────────────────────────────────────────── */
   --color-surface: #ffffff;

@@ -138,6 +138,19 @@ Hero "WHY SUNWARD Finance?" — Frage/Antwort-Format ("Need for new Sunward equi
 | Body-Font | **Oxygen** (Google Font), 15px | Live-CSS |
 | Heading-Font | **Mulish** (Google Font), H2 Weight 900 / H3 Weight 700 | Live-CSS |
 
+🔴 **Nachtrag/Korrektur (zweiter Live-Check, Button-Rollen genau gemessen):** Die ursprüngliche Zuordnung "Orange = Badges/sekundäre CTAs" war unvollständig. Tatsächliches Muster auf sunward.eu:
+
+| Button-Typ | Farbe | Beispiele (live gemessen) |
+|---|---|---|
+| **Primäre Handlungs-CTA** (1× pro Seite/Sektion) | **Orange** `#F39A2E`, gefüllt, weiße Schrift | "Discover the range" (Hero), "Find your Sunward [Kategorie]" (jede der 8 Kategorien auf `/products/`), "View all products" |
+| **Wiederkehrender/navigatorischer Button** (mehrfach pro Seite) | **Türkis** `#008D84`, gefüllt, weiße Schrift | "View product" (21× auf einer Kategorieseite), "Find your dealer" (Utility-Leiste), "More about Sunward" |
+
+Begründung fürs Muster: 21× ein lautes Orange auf einer Kategorieseite wäre Reizüberflutung — Orange bleibt für die eine, prominente Handlung reserviert.
+
+✅ Für sunward.hr umgesetzt: "Zatraži ponudu" und die "Cijena na upit"-CTA sind jetzt Orange (primäre Handlung), "Pogledaj stroj"/"Svi strojevi" bleiben Türkis (wiederkehrend/navigatorisch).
+
+Nachtrag zum Umsetzungsumfang: die Regel gilt rollenbasiert, nicht labelbasiert — deshalb sind auch die je eine Abschluss-CTA von `/financiranje`, `/servis` und `/dodatna-oprema/<slug>` Orange. **Eine bewusste Abweichung vom Original:** die weiße Schrift auf Orange erreicht nur 2,22:1 und verfehlt WCAG AA klar (derselbe Fehlertyp wie der Fließtext-Ton oben). sunward.hr setzt dort dunkle Schrift `#14212B` (7,39:1) — Begründung in `ASSUMPTIONS.md`.
+
 Cross-Branding Drvošped (Navy `#1B3A6B` / Amber `#E8A020`) **nur** fürs kleine "powered by"-Badge — Sunward-Hauptfarben nicht verwässern.
 
 Mobile-Check (390×844) unauffällig — Navigation kollabiert sauber in ein Mobile-Menü.

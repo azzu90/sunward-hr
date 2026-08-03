@@ -91,7 +91,7 @@ export default async function AttachmentPage({ params }: Params) {
             {primaryEmail ? (
               <a
                 href={`mailto:${primaryEmail.address}?subject=${encodeURIComponent(`Upit: ${attachment.name}`)}`}
-                className="self-start bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+                className="self-start bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
               >
                 {ui.cta.requestQuote}
               </a>

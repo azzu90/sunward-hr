@@ -102,7 +102,7 @@ export default async function ProductPage({ params }: Params) {
               {primaryEmail ? (
                 <a
                   href={`mailto:${primaryEmail.address}?subject=${encodeURIComponent(`Upit: ${product.fullName}`)}`}
-                  className="bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+                  className="bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
                 >
                   {ui.cta.requestQuote}
                 </a>

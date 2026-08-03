@@ -39,6 +39,18 @@ Direkt, faktenbasiert, kroatisch (ausschließlich). Konkrete Zahlen vorne: Garan
 
 ⚠️ **Accessibility geht vor 1:1-Treue:** `#879C9F` selbst erreicht auf Weiß nur 2,88:1 Kontrast — verfehlt WCAG AA (4,5:1) und sogar die Großtext-Schwelle (3:1). Das ist ein echter Fehler auf sunward.eu selbst, kein Messfehler unsererseits. Da "Accessibility soll sunward.eu übertreffen" ein explizites Ziel ist (siehe unten): `#879C9F` nur für dekorative/Nicht-Text-Elemente verwenden; für tatsächlichen Fließtext einen dunkleren, WCAG-AA-konformen Ton derselben Farbfamilie ableiten (analog zum bereits bestehenden Muster einer abgeleiteten textsicheren Markenfarbe).
 
+### Button-Rollen
+
+- **Primäre Handlungs-CTA** (genau 1× pro Seite/Sektion): Orange `#F39A2E` gefüllt — „Zatraži ponudu", die „Cijena na upit"-CTA, die Abschluss-CTAs von `/financiranje`, `/servis`, `/dodatna-oprema/<slug>`
+- **Wiederkehrender/navigatorischer Button:** Türkis gefüllt — „Svi strojevi", „Pogledaj stroj", Formular-Submit
+- ⚠️ Auf Orange **dunkle** Schrift (`#14212B`, 7,39:1), nicht weiße wie sunward.eu — weiß erreicht dort nur 2,22:1. Details: ANALYSIS.md §7 Nachtrag, ASSUMPTIONS.md
+
+### Hero-Fotografie
+
+✅ **Umgesetzt** — der Hero zeigt den **SWE 155F** (srednji bager, 15,5 t): Text links, freigestelltes Modellfoto rechts bei voller Deckkraft. Bewusst ein Modell aus der Mitte des Programms, damit der Hero glaubwürdig „1 bis 34 Tonnen" transportiert statt die Marke auf Kleingeräte zu verengen.
+
+Das ist die **Interimslösung** aus dem vorhandenen Material: die 51 übernommenen Fotos sind freigestellte Produktrenders, keine breiten Gradilište-Aufnahmen. Der 21:9-Hintergrundslot (`pocetna/hero`, gedämpft hinter dem Text) bleibt deshalb weiterhin offen und wird zum echten Motiv, sobald Zoran eine breite Aufnahme einer Maschine im Einsatz liefert.
+
 ## Typografie
 
 - Body: **Oxygen** (Google Font) — falls nicht verfügbar, vergleichbare humanistische Sans-Serif

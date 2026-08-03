@@ -103,7 +103,7 @@ export default function ServisPage() {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href={`${routes.kontakt()}?tema=${PARTS_ENQUIRY_SLUG}`}
-              className="bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+              className="bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
             >
               {parts.ctaLabel}
             </Link>
