@@ -164,6 +164,7 @@ export const ui = {
     companyHeading: "Tvrtka",
     contactHeading: "Kontakt",
     legalHeading: "Pravno",
+    certificatesHeading: "Certifikati i nagrade",
     rightsReserved: "Sva prava pridržana.",
   },
 

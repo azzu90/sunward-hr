@@ -32,6 +32,23 @@ export function Footer() {
               {site.address.country}
             </address>
             <PartnerBadge />
+
+            {/* Text-Box statt Logo-Grafiken (PRD §3, §13 — "ISO 9001
+                certificirano" ist dort explizit dem Footer zugewiesen).
+                Upgrade auf echte Zertifikat-Logos, sobald Zoran Scans liefert. */}
+            <div>
+              <h2 className="mb-2 text-xs font-bold tracking-wider text-on-brand uppercase">
+                {ui.footer.certificatesHeading}
+              </h2>
+              <ul className="flex flex-col gap-1 text-xs text-on-brand-muted">
+                {site.certificates.map((cert) => (
+                  <li key={cert.id}>
+                    {cert.name}
+                    {cert.note ? ` — ${cert.note}` : null}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {footerColumns.map((column) => (
