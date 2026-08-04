@@ -162,17 +162,24 @@ export default function HomePage() {
         </Link>
       </Section>
 
-      {/* Ausgewählte Modelle */}
+      {/* Istaknuti strojevi — kuratierte Sechserauswahl aus content/home.ts.
+          Lief vorher über products.map() und zeigte alle 51 Modelle; das ist
+          keine Hervorhebung, sondern ein zweiter Katalog direkt unter dem
+          ersten. Die Reihenfolge kommt aus featuredSlugs, nicht aus der
+          Registry — deshalb map über die Slugs und nicht filter über products. */}
       <Section alt labelledBy="istaknuto">
         <h2 id="istaknuto" className="mb-6 text-2xl font-bold">
-          {ui.product.relatedHeading}
+          {ui.pages.homeFeaturedHeading}
         </h2>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
-            <li key={product.slug}>
-              <ProductCard product={product} />
-            </li>
-          ))}
+          {home.featuredSlugs.map((slug) => {
+            const product = products.find((p) => p.slug === slug);
+            return product ? (
+              <li key={slug}>
+                <ProductCard product={product} />
+              </li>
+            ) : null;
+          })}
         </ul>
       </Section>
 

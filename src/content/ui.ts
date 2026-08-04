@@ -38,6 +38,12 @@ export const ui = {
     /** H2 der Financiranje-Sektion auf der Startseite. Bewusst nicht
         site.financing.headline — der Text steht direkt darunter schon als H3. */
     homeFinancingHeading: "Financiranje i staro za novo",
+    /** Eigene Überschrift für die Startseiten-Auswahl. Bewusst NICHT
+        ui.product.relatedHeading („Slični strojevi") — das ist das Label der
+        Produktdetailseiten und heisst „ähnlich zu diesem Modell hier". Auf der
+        Startseite gibt es kein Bezugsmodell, dieselbe Zeichenfolge stünde dort
+        für etwas anderes. */
+    homeFeaturedHeading: "Istaknuti strojevi",
   },
 
   cta: {
