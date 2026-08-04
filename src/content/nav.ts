@@ -80,13 +80,16 @@ export const footerColumns: readonly FooterColumn[] = [
       },
     ]),
   },
-  {
-    id: "legal",
-    heading: ui.footer.legalHeading,
-    links: visible([
-      { id: "impresum", label: "Impresum", href: routes.impresum() },
-      { id: "privatnost", label: "Politika privatnosti", href: routes.privatnost() },
-      { id: "kolacici", label: "Kolačići", href: routes.kolacici() },
-    ]),
-  },
 ].filter((column) => column.links.length > 0);
+
+/**
+ * Nicht mehr Teil von footerColumns — die drei Rechtslinks stehen jetzt in
+ * der schmalen Bottom-Bar (Footer.tsx), nicht mehr in einer eigenen
+ * Hauptspalte. Eigener Export statt Inline-Array in Footer.tsx, damit die
+ * isBuilt()-Sichtbarkeitsprüfung (visible()) an einer Stelle bleibt.
+ */
+export const footerLegalLinks: readonly NavNode[] = visible([
+  { id: "impresum", label: "Impresum", href: routes.impresum() },
+  { id: "privatnost", label: "Politika privatnosti", href: routes.privatnost() },
+  { id: "kolacici", label: "Kolačići", href: routes.kolacici() },
+]);

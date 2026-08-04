@@ -169,8 +169,11 @@ export const ui = {
     productsHeading: "Strojevi",
     companyHeading: "Tvrtka",
     contactHeading: "Kontakt",
-    legalHeading: "Pravno",
     certificatesHeading: "Certifikati i nagrade",
+    /* Kein h2 mehr wie die anderen Headings — steht jetzt als kleines
+       Inline-Label direkt vor den Social-Icons in Spalte 1 (wie
+       "Follow us:" bei sunward.eu), keine eigene Überschrift mit
+       Trennlinie mehr. */
     socialHeading: "Pratite nas",
     rightsReserved: "Sva prava pridržana.",
   },

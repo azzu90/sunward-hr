@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { footerColumns } from "@/content/nav";
+import { footerColumns, footerLegalLinks } from "@/content/nav";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
 import { SiteImage } from "../media/SiteImage";
@@ -10,12 +10,24 @@ import { PartnerLogo } from "./PartnerLogo";
 
 const primaryEmail = site.emails.find((e) => e.primary);
 
+/**
+ * Struktur näher an sunward.eu: vier gleichrangige Hauptspalten (Marke,
+ * Strojevi, Tvrtka, Kontakt), darunter eine einzige schmale Bottom-Bar mit
+ * Rücklink-Hinweis, Rechtslinks und Copyright — statt vorher Pravno als
+ * eigene Hauptspalte, Kontakt als eigener Block darunter und Pratite nas
+ * als dritter Block mit eigener Überschrift.
+ *
+ * Bewusst NICHT 1:1 sunward.eu: mehr Nav-Punkte, drei Telefonnummern statt
+ * einer, vier Zertifikate statt drei — unser tatsächlicher Umfang, nicht
+ * deren Struktur um jeden Preis kopiert.
+ */
 export function Footer() {
   return (
     <footer className="surface-brand">
       <div className="mx-auto max-w-site px-4 py-10 sm:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Spalte 1: Firma + Adresse (ANALYSIS.md §1 Footer-Struktur) */}
+          {/* Spalte 1: Marke — Logo, Adresse, Partner-Badge, Social, Zertifikate
+              (ANALYSIS.md §1 Footer-Struktur). */}
           <div className="flex flex-col gap-3">
             {/* Freigestellte Weiss-Fassung statt der typografischen Wortmarke.
                 208px breit bei 4,39:1 ≈ 47px hoch — bewusst dominant, das
@@ -39,11 +51,38 @@ export function Footer() {
             </address>
             <PartnerLogo />
 
+            {/* Social-Icons direkt unter Adresse/HD-Badge, wie bei sunward.eu
+                ("Follow us:" ist dort nur ein kleines Inline-Label vor den
+                Icons) — kein eigener Abschnitt mit Überschrift/Trennlinie
+                mehr. Icons deutlich größer als vorher (size-4 → size-7,
+                16px → 28px): bei size-4 fielen sie neben den anderen
+                Footer-Elementen kaum auf. */}
+            <div className="mt-1 flex items-center gap-3">
+              <span className="text-xs font-bold tracking-wider text-on-brand-muted uppercase">
+                {ui.footer.socialHeading}
+              </span>
+              <ul className="flex items-center gap-4">
+                {site.social.map((profile) => (
+                  <li key={profile.id}>
+                    <a
+                      href={profile.url}
+                      target="_blank"
+                      rel="noopener"
+                      className="text-on-brand-muted hover:text-on-brand"
+                    >
+                      <SocialIcon id={profile.id} className="size-7" />
+                      <span className="sr-only">{profile.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Text-Box statt Logo-Grafiken (PRD §3, §13 — "ISO 9001
                 certificirano" ist dort explizit dem Footer zugewiesen).
                 Upgrade auf echte Zertifikat-Logos, sobald Zoran Scans liefert. */}
             <div>
-              <h2 className="mb-2 text-xs font-bold tracking-wider text-on-brand uppercase">
+              <h2 className="mb-2 text-sm font-bold tracking-wider text-on-brand uppercase">
                 {ui.footer.certificatesHeading}
               </h2>
               <ul className="flex flex-col gap-1 text-xs text-on-brand-muted">
@@ -59,7 +98,7 @@ export function Footer() {
 
           {footerColumns.map((column) => (
             <div key={column.id} className="flex flex-col gap-3">
-              <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
+              <h2 className="text-sm font-bold tracking-wider text-on-brand uppercase">
                 {column.heading}
               </h2>
               <ul className="flex flex-col gap-1.5">
@@ -92,61 +131,56 @@ export function Footer() {
               </ul>
             </div>
           ))}
+
+          {/* Spalte 4: Kontakt — jetzt eine normale Hauptspalte statt eines
+              eigenen, abgetrennten Bereichs unter dem Raster. Inhalt
+              unverändert: die drei Nummern (Ured/Vlado/Zoran) + E-Mail,
+              nur als vertikale Spaltenliste statt einer umbrechenden Zeile. */}
+          <div className="flex flex-col gap-3">
+            <h2 className="text-sm font-bold tracking-wider text-on-brand uppercase">
+              {ui.footer.contactHeading}
+            </h2>
+            <ul className="flex flex-col gap-1.5 text-sm">
+              {site.phones.map((phone) => (
+                <li key={phone.id}>
+                  <a href={phone.href} className="text-on-brand-muted hover:text-on-brand">
+                    <span className="text-on-brand">{phone.label}</span>
+                    {": "}
+                    {phone.display}
+                  </a>
+                </li>
+              ))}
+              {primaryEmail ? (
+                <li>
+                  <a
+                    href={`mailto:${primaryEmail.address}`}
+                    className="text-on-brand-muted hover:text-on-brand"
+                  >
+                    {primaryEmail.address}
+                  </a>
+                </li>
+              ) : null}
+            </ul>
+          </div>
         </div>
 
-        {/* Kontaktzeile */}
-        <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm">
-          <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
-            {ui.footer.contactHeading}
-          </h2>
-          <ul className="flex flex-wrap gap-x-6 gap-y-1.5">
-            {site.phones.map((phone) => (
-              <li key={phone.id}>
-                <a href={phone.href} className="text-on-brand-muted hover:text-on-brand">
-                  <span className="text-on-brand">{phone.label}</span>
-                  {": "}
-                  {phone.display}
-                </a>
-              </li>
-            ))}
-            {primaryEmail ? (
-              <li>
-                <a
-                  href={`mailto:${primaryEmail.address}`}
-                  className="text-on-brand-muted hover:text-on-brand"
-                >
-                  {primaryEmail.address}
-                </a>
-              </li>
-            ) : null}
-          </ul>
-        </div>
-
-        {/* Social-Icons — bislang nur auf /kontakt als Text-Links (ANALYSIS.md
-            §1). site.social hat aktuell Facebook + TikTok. */}
-        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm">
-          <h2 className="text-xs font-bold tracking-wider text-on-brand uppercase">
-            {ui.footer.socialHeading}
-          </h2>
-          <ul className="flex items-center gap-4">
-            {site.social.map((profile) => (
-              <li key={profile.id}>
-                <a
-                  href={profile.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-on-brand-muted hover:text-on-brand"
-                >
-                  <SocialIcon id={profile.id} />
-                  <span className="sr-only">{profile.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-brand-muted sm:flex-row sm:items-center sm:justify-between">
+        {/* Bottom-Bar: Rücklink-Hinweis, Rechtslinks und Copyright in einer
+            einzigen schmalen Zeile — wie bei sunward.eu die Bottom-Bar mit
+            Privacy/Cookies/Legal Notice. Ersetzt die frühere Pravno-Hauptspalte
+            und die separate Copyright-Zeile. justify-between mit drei
+            Kindern verteilt sie an den beiden Enden plus mittig, ohne dass
+            es eine feste Reihenfolge wie bei zwei Elementen bräuchte. */}
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-on-brand-muted sm:flex-row sm:items-center sm:justify-between">
           <p>{site.parent.footerNote}</p>
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            {footerLegalLinks.map((link) => (
+              <li key={link.id}>
+                <Link href={link.href ?? "#"} className="hover:text-on-brand hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <p>
             {"© "}
             {new Date().getFullYear()} {site.legalName}
