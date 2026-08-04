@@ -15,11 +15,12 @@ export const hidraulickiCekic = {
   intro:
     "Hidraulički čekić pretvara bager u stroj za rušenje. Nudimo klase od 60 do 8.000 kg, pa svaki stroj iz naše ponude — od mini bagera do 40-tonca — može dobiti odgovarajući čekić.",
 
+  /* Montaža/servis stehen nicht mehr hier — die Aussage ist für alle zehn
+     Anbaugeräte identisch und steht deshalb einmal als gemeinsamer Absatz
+     im Template ([slug]/page.tsx), statt zehnfach im Content zu stehen. */
   bullets: [
     "Klase od 60 do 8.000 kg za sve veličine bagera",
-    "Montaža i podešavanje hidraulike u našoj radionici",
     "Rezervni dijelovi i šiljci na zalihi",
-    "Servis na terenu u cijeloj Hrvatskoj",
   ],
 
   sizeRange: "60–8.000 kg",

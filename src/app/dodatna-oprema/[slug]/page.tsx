@@ -87,6 +87,17 @@ export default async function AttachmentPage({ params }: Params) {
             ))}
           </ul>
 
+          {/* Identisch für alle Anbaugeräte, deshalb hier einmal statt in
+              jeder Content-Datei — sonst zehnfache Kopien, die auseinander-
+              laufen können. site.service.headline statt einem zweiten,
+              selbst formulierten "24 sata"-Versprechen (Zoran nennt nur
+              eine Servis-Zusage, nicht zehn). */}
+          <p className="text-sm text-ink-body">
+            {"Montažu i podešavanje hidraulike radimo u našoj radionici. "}
+            {site.service.headline}
+            {"."}
+          </p>
+
           <div className="flex flex-col gap-3 rounded-ui border border-line bg-surface-alt p-5">
             {/* Vorher stand hier ui.price.onRequest hart im Markup —
                 attachment.price wurde nie gelesen, ein bestätigter Preis
