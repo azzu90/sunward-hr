@@ -82,12 +82,12 @@ export default async function AttachmentPage({ params }: Params) {
             ))}
           </ul>
 
-          <div className="flex flex-col gap-3 border border-line bg-surface-alt p-5">
+          <div className="flex flex-col gap-3 rounded-ui border border-line bg-surface-alt p-5">
             <p className="text-2xl font-bold text-ink">{ui.price.onRequest}</p>
             {primaryEmail ? (
               <a
                 href={`mailto:${primaryEmail.address}?subject=${encodeURIComponent(`Upit: ${attachment.name}`)}`}
-                className="self-start bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+                className="self-start rounded-ui bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
               >
                 {ui.cta.requestQuote}
               </a>

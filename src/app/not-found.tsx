@@ -11,7 +11,7 @@ export default function NotFound() {
       <p className="mt-3 text-base text-ink-body">{ui.error.notFoundBody}</p>
       <Link
         href={routes.home()}
-        className="mt-6 inline-block bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+        className="mt-6 inline-block rounded-ui bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
       >
         {ui.error.notFoundCta}
       </Link>

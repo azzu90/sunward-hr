@@ -34,6 +34,7 @@ export default function GlobalError({ reset }: { error: Error; reset: () => void
             background: "#00807b",
             color: "#ffffff",
             border: 0,
+            borderRadius: "4px",
             padding: "0.75rem 1.25rem",
             fontWeight: 700,
             textTransform: "uppercase",

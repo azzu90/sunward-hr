@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-screen flex-col">
         <a
           href="#sadrzaj"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-brand-strong focus:px-4 focus:py-2 focus:font-bold focus:text-on-brand"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:rounded-ui focus:bg-brand-strong focus:px-4 focus:py-2 focus:font-bold focus:text-on-brand"
         >
           {ui.nav.skipToContent}
         </a>

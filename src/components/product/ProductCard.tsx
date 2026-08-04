@@ -25,7 +25,7 @@ export function ProductCard({ product }: { product: ProductModel }) {
        Zeile, die Kategorien mit vier und fünf Kurzspecs mischt (Startseite):
        die 4-Spec-Karten hatten Preis und Button rund 30 px höher als ihre
        Nachbarn. Alle anderen Karten im Projekt tragen h-full bereits. */
-    <article className="flex h-full flex-col border border-line bg-surface transition-shadow hover:shadow-md">
+    <article className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface transition-shadow hover:shadow-md">
       {/* object-contain statt des Standards object-cover: die Manifest-Ratio
           der Modellbilder ist 4/3, die Dateien selbst sind 1:1 — mit cover
           schneidet jede Karte oben und unten je ~12,5 % ab, was bei hohen,
@@ -48,14 +48,14 @@ export function ProductCard({ product }: { product: ProductModel }) {
             </Link>
           </h3>
           {product.electric ? (
-            <span className="bg-accent px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-on-accent uppercase">
+            <span className="rounded-ui bg-accent px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-on-accent uppercase">
               {ui.product.electric}
             </span>
           ) : null}
           {product.badges?.map((badge) => (
             <span
               key={badge}
-              className="border border-brand-strong px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-brand-text uppercase"
+              className="rounded-ui border border-brand-strong px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-brand-text uppercase"
             >
               {badge}
             </span>
@@ -77,7 +77,7 @@ export function ProductCard({ product }: { product: ProductModel }) {
           <PriceTag price={product.price} />
           <Link
             href={href}
-            className="inline-flex items-center justify-center bg-brand-strong px-4 py-2.5 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+            className="inline-flex items-center justify-center rounded-ui bg-brand-strong px-4 py-2.5 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
           >
             {ui.cta.viewProduct}
           </Link>

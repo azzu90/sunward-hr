@@ -34,7 +34,7 @@ export default function AttachmentsPage() {
             <li key={attachment.slug}>
               <Link
                 href={routes.attachment(attachment)}
-                className="flex h-full flex-col border border-line bg-surface hover:shadow-md"
+                className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface hover:shadow-md"
               >
                 <SiteImage
                   id={attachment.image}

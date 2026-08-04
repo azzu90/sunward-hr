@@ -45,11 +45,11 @@ export default function FinanciranjePage() {
           {ui.pages.homeFinancingHeading}
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="border-t-4 border-brand bg-surface p-6">
+          <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
             <h3 className="mb-2 text-lg font-bold text-ink">{site.financing.headline}</h3>
             <p className="text-sm leading-relaxed text-ink-body">{site.financing.detail}</p>
           </div>
-          <div className="border-t-4 border-brand bg-surface p-6">
+          <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
             <h3 className="mb-2 text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
             <p className="text-sm leading-relaxed text-ink-body">{site.tradeIn.detail}</p>
           </div>
@@ -80,7 +80,7 @@ export default function FinanciranjePage() {
       </Section>
 
       <Section labelledBy="garancija">
-        <div className="max-w-3xl border-l-4 border-accent bg-surface-alt p-6">
+        <div className="max-w-3xl rounded-ui border-l-4 border-accent bg-surface-alt p-6">
           <h2 id="garancija" className="mb-2 text-lg font-bold text-ink">
             {financing.warrantyHeading}
           </h2>
@@ -100,7 +100,7 @@ export default function FinanciranjePage() {
             <li key={category.slug}>
               <Link
                 href={routes.category(category)}
-                className="block border border-line bg-surface p-4 text-sm font-bold text-ink hover:border-brand hover:text-brand-text"
+                className="block rounded-ui border border-line bg-surface p-4 text-sm font-bold text-ink hover:border-brand hover:text-brand-text"
               >
                 {category.name}
               </Link>
@@ -118,14 +118,14 @@ export default function FinanciranjePage() {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href={routes.kontakt()}
-              className="bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+              className="rounded-ui bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
             >
               {ui.cta.requestQuote}
             </Link>
             {salesPhone ? (
               <a
                 href={salesPhone.href}
-                className="border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
+                className="rounded-ui border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
               >
                 {salesPhone.display}
               </a>

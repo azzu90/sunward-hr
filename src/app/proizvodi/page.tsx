@@ -33,7 +33,7 @@ export default function ProductsPage() {
             <li key={category.slug}>
               <Link
                 href={routes.category(category)}
-                className="flex h-full flex-col border border-line bg-surface hover:shadow-md"
+                className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface hover:shadow-md"
               >
                 <div className="relative aspect-[16/9] p-3">
                   <SiteImage

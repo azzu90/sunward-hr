@@ -79,14 +79,14 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => choose("necessary")}
-            className="border border-line-strong px-4 py-2 text-sm font-bold text-ink-body hover:bg-surface-alt"
+            className="rounded-ui border border-line-strong px-4 py-2 text-sm font-bold text-ink-body hover:bg-surface-alt"
           >
             {ui.cookies.necessaryOnly}
           </button>
           <button
             type="button"
             onClick={() => choose("all")}
-            className="bg-brand-strong px-4 py-2 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+            className="rounded-ui bg-brand-strong px-4 py-2 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
           >
             {ui.cookies.acceptAll}
           </button>

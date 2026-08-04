@@ -55,7 +55,7 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={routes.proizvodi()}
-                  className="bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+                  className="rounded-ui bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
                 >
                   {ui.cta.allProducts}
                 </Link>
@@ -64,7 +64,7 @@ export default function HomePage() {
                     site-weit wiederholt vor. */}
                 <Link
                   href={routes.kontakt()}
-                  className="bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+                  className="rounded-ui bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
                 >
                   {ui.cta.requestQuote}
                 </Link>
@@ -95,7 +95,7 @@ export default function HomePage() {
         </h2>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {home.whySunwardTiles.map((tile) => (
-            <li key={tile.id} className="border-t-4 border-brand bg-surface p-6">
+            <li key={tile.id} className="rounded-ui border-t-4 border-brand bg-surface p-6">
               <h3 className="mb-2 text-lg font-bold text-ink">{tile.headline}</h3>
               <p className="text-sm leading-relaxed text-ink-body">{tile.body}</p>
             </li>
@@ -113,7 +113,7 @@ export default function HomePage() {
             <li key={category.slug}>
               <Link
                 href={routes.category(category)}
-                className="flex h-full flex-col border border-line bg-surface hover:shadow-md"
+                className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface hover:shadow-md"
               >
                 <div className="relative aspect-[16/9] p-3">
                   <SiteImage
@@ -145,11 +145,11 @@ export default function HomePage() {
           {ui.pages.homeFinancingHeading}
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="border-t-4 border-brand bg-surface p-6">
+          <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
             <h3 className="mb-2 text-lg font-bold text-ink">{site.financing.headline}</h3>
             <p className="text-sm leading-relaxed text-ink-body">{site.financing.detail}</p>
           </div>
-          <div className="border-t-4 border-brand bg-surface p-6">
+          <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
             <h3 className="mb-2 text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
             <p className="text-sm leading-relaxed text-ink-body">{site.tradeIn.detail}</p>
           </div>

@@ -67,7 +67,7 @@ export default function KontaktPage() {
             ) : null}
           </div>
 
-          <aside className="flex flex-col gap-8 border-t-4 border-brand bg-surface-alt p-6">
+          <aside className="flex flex-col gap-8 rounded-ui border-t-4 border-brand bg-surface-alt p-6">
             <div>
               <h2 className="mb-3 text-sm font-bold tracking-widest text-brand-text uppercase">
                 {ui.contact.detailsHeading}

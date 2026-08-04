@@ -15,12 +15,18 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden">
+      {/* Orange Fläche mit dunklen Balken — auf sunward.eu ist der Toggle
+          orange. Die Balken bleiben trotzdem --color-on-accent (#14212b)
+          statt Weiss: Weiss auf #f39a2e ergibt 2,21:1 und reisst die
+          3:1-Schwelle von WCAG 1.4.11 für grafische Objekte, dieser Ton
+          7,26:1. Dieselbe bewusste Abweichung wie bei allen orangen CTAs.
+          Der graue Rahmen entfällt — auf der Fläche nur noch Rauschen. */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="mobile-nav"
-        className="flex size-9 items-center justify-center border border-line-strong text-ink"
+        className="flex size-9 items-center justify-center rounded-ui bg-accent text-on-accent hover:bg-accent-strong"
       >
         <span className="sr-only">{open ? ui.nav.mobileClose : ui.nav.mobileOpen}</span>
         <svg

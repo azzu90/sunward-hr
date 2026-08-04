@@ -29,7 +29,7 @@ export interface ContactFormProps {
 type Status = "idle" | "sending" | "ok" | "error";
 
 const fieldClass =
-  "w-full border border-line-strong bg-surface px-3 py-2 text-sm text-ink " +
+  "w-full rounded-ui border border-line-strong bg-surface px-3 py-2 text-sm text-ink " +
   "focus:border-brand focus:outline-2 focus:outline-offset-2 focus:outline-brand";
 const labelClass = "mb-1 block text-sm font-bold text-ink";
 
@@ -82,7 +82,7 @@ export function ContactForm({ options, fallback }: ContactFormProps) {
 
   if (status === "ok") {
     return (
-      <div className="border-t-4 border-brand bg-surface-alt p-6" role="status">
+      <div className="rounded-ui border-t-4 border-brand bg-surface-alt p-6" role="status">
         <h3 className="text-lg font-bold text-ink">{ui.contact.successHeading}</h3>
         <p className="mt-2 text-sm leading-relaxed text-ink-body">{ui.contact.successBody}</p>
       </div>
@@ -172,7 +172,7 @@ export function ContactForm({ options, fallback }: ContactFormProps) {
 
       <div aria-live="polite">
         {status === "error" ? (
-          <div className="border-l-4 border-notice bg-notice-soft p-4">
+          <div className="rounded-ui border-l-4 border-notice bg-notice-soft p-4">
             <p className="text-sm font-bold text-ink">{ui.contact.errorHeading}</p>
             <p className="mt-1 text-sm text-ink-body">{ui.contact.errorBody}</p>
             <p className="mt-2 flex flex-wrap gap-x-4 text-sm font-bold">
@@ -191,7 +191,7 @@ export function ContactForm({ options, fallback }: ContactFormProps) {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text disabled:opacity-60"
+          className="rounded-ui bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text disabled:opacity-60"
         >
           {status === "sending" ? ui.contact.sending : ui.contact.submit}
         </button>

@@ -103,7 +103,14 @@
   --color-danger: #b42318; /* ← ABGELEITET */
 
   /* ── Layout ───────────────────────────────────────────────────────────── */
-  --radius-card: 2px;
+  /* Ein Radius-Token für alles Bedienbare und alle Flächen: Buttons, Karten,
+     Formularfelder, Badges. sunward.eu liegt live bei 4–5px — dezent, kein
+     Pill-Design. Ersetzt das frühere --radius-card: 2px, das in keiner
+     einzigen Klasse benutzt wurde und deshalb nie im CSS ankam.
+     Ausgenommen bleiben randlose Bänder (TrustBar, Filter-Leiste,
+     Cookie-Banner): dort gibt es keine anliegende Seitenkante, ein Radius
+     würde abgeschnitten wirken. */
+  --radius-ui: 4px;
   --container-site: 80rem;
 }
 

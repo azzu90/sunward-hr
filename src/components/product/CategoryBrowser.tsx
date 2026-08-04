@@ -185,7 +185,7 @@ export function CategoryBrowser({
                   id="sort"
                   value={state.sort}
                   onChange={(event) => apply({ ...state, sort: event.target.value as SortKey })}
-                  className="border border-line-strong bg-surface px-3 py-2 text-sm text-ink focus:border-brand focus:outline-2 focus:outline-offset-2 focus:outline-brand"
+                  className="rounded-ui border border-line-strong bg-surface px-3 py-2 text-sm text-ink focus:border-brand focus:outline-2 focus:outline-offset-2 focus:outline-brand"
                 >
                   {sortOptions.map((option) => (
                     <option key={option.value} value={option.value}>

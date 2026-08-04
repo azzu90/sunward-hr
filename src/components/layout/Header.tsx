@@ -54,7 +54,7 @@ export function Header() {
                 <Link href={item.href ?? "#"} className="text-sm text-ink hover:text-brand-text">
                   {item.label}
                   {item.badge ? (
-                    <span className="ml-1.5 bg-accent px-1 py-0.5 align-middle text-[10px] font-bold text-on-accent">
+                    <span className="ml-1.5 rounded-ui bg-accent px-1 py-0.5 align-middle text-[10px] font-bold text-on-accent">
                       {item.badge}
                     </span>
                   ) : null}

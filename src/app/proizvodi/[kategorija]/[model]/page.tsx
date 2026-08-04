@@ -77,7 +77,7 @@ export default async function ProductPage({ params }: Params) {
           <PageHeader eyebrow={category.nameSingular} title={product.name}>
             {product.electric ? (
               <p className="mt-2">
-                <span className="bg-accent px-2 py-0.5 text-xs font-bold tracking-wide text-on-accent uppercase">
+                <span className="rounded-ui bg-accent px-2 py-0.5 text-xs font-bold tracking-wide text-on-accent uppercase">
                   {ui.product.electric}
                 </span>
               </p>
@@ -93,13 +93,13 @@ export default async function ProductPage({ params }: Params) {
             <ShortSpecList specs={product.shortSpecs} />
           </div>
 
-          <div className="flex flex-col gap-3 border border-line bg-surface-alt p-5">
+          <div className="flex flex-col gap-3 rounded-ui border border-line bg-surface-alt p-5">
             <PriceTag price={product.price} size="lg" />
             <div className="flex flex-wrap gap-2">
               {primaryEmail ? (
                 <a
                   href={`mailto:${primaryEmail.address}?subject=${encodeURIComponent(`Upit: ${product.fullName}`)}`}
-                  className="bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+                  className="rounded-ui bg-accent px-5 py-3 text-sm font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
                 >
                   {ui.cta.requestQuote}
                 </a>
@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: Params) {
               {salesPhone ? (
                 <a
                   href={salesPhone.href}
-                  className="border border-line-strong px-5 py-3 text-sm font-bold tracking-wide text-ink uppercase hover:bg-surface"
+                  className="rounded-ui border border-line-strong px-5 py-3 text-sm font-bold tracking-wide text-ink uppercase hover:bg-surface"
                 >
                   {salesPhone.display}
                 </a>
@@ -158,7 +158,7 @@ export default async function ProductPage({ params }: Params) {
         {product.brochure && !isTbd(product.brochure) ? (
           <a
             href={product.brochure}
-            className="inline-block bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+            className="inline-block rounded-ui bg-brand-strong px-5 py-3 text-sm font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
           >
             {ui.product.brochureHeading}
           </a>
@@ -177,7 +177,7 @@ export default async function ProductPage({ params }: Params) {
               <li key={related.slug}>
                 <Link
                   href={routes.product(related)}
-                  className="border border-line px-4 py-2 text-sm font-bold text-brand-text hover:bg-surface-alt"
+                  className="rounded-ui border border-line px-4 py-2 text-sm font-bold text-brand-text hover:bg-surface-alt"
                 >
                   {related.name}
                 </Link>

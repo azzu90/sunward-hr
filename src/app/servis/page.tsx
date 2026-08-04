@@ -45,7 +45,7 @@ export default function ServisPage() {
       {/* Netzwerkvorteil, nicht eigenes Lieferversprechen — die Einordnung
           steht im Fliesstext und die Einschränkung direkt darunter. */}
       <Section alt labelledBy="dostupnost">
-        <div className="max-w-3xl border-t-4 border-brand bg-surface p-6">
+        <div className="max-w-3xl rounded-ui border-t-4 border-brand bg-surface p-6">
           <h2 id="dostupnost" className="text-xl font-bold text-ink">
             {parts.availabilityHeadline}
           </h2>
@@ -63,7 +63,7 @@ export default function ServisPage() {
           {parts.categories.map((category) => (
             <li
               key={category.id}
-              className="flex items-center gap-3 border border-line bg-surface p-4"
+              className="flex items-center gap-3 rounded-ui border border-line bg-surface p-4"
             >
               <PartIcon id={category.id} className="size-7 flex-none text-brand" />
               <span className="text-sm font-bold text-ink">{category.label}</span>
@@ -74,7 +74,7 @@ export default function ServisPage() {
 
       <Section alt labelledBy="paketi">
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="border-l-4 border-accent bg-surface p-6">
+          <div className="rounded-ui border-l-4 border-accent bg-surface p-6">
             <h2 id="paketi" className="text-lg font-bold text-ink">
               {parts.kitsHeading}
             </h2>
@@ -82,7 +82,7 @@ export default function ServisPage() {
           </div>
           {/* Zorans eigene, bestätigte Zusage (PRD §4) — eigener Kasten,
               damit sie nicht mit der Lagerzusage oben verschmilzt. */}
-          <div className="border-l-4 border-brand bg-surface p-6">
+          <div className="rounded-ui border-l-4 border-brand bg-surface p-6">
             <h2 className="text-lg font-bold text-ink">{parts.serviceHeading}</h2>
             <p className="mt-2 text-sm font-bold text-brand-text">{site.service.headline}</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-body">{site.service.detail}</p>
@@ -99,14 +99,14 @@ export default function ServisPage() {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href={`${routes.kontakt()}?tema=${PARTS_ENQUIRY_SLUG}`}
-              className="bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+              className="rounded-ui bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
             >
               {parts.ctaLabel}
             </Link>
             {salesPhone ? (
               <a
                 href={salesPhone.href}
-                className="border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
+                className="rounded-ui border border-line-strong px-6 py-3 text-base font-bold tracking-wide text-ink uppercase hover:border-brand hover:text-brand-text"
               >
                 {salesPhone.display}
               </a>
