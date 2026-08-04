@@ -48,14 +48,6 @@ export const images = {
     aspect: "729/166",
     source: "sunward.eu",
   },
-  "brand/drvosped-logo": {
-    id: "brand/drvosped-logo",
-    alt: "Logotip Hidraulika Drvošped d.o.o.",
-    hint: "HD logotip Hidraulika Drvošped (navy/bijelo s crveno-žutim prugama)",
-    aspect: "2371/327",
-    source: "drvosped",
-  },
-
   /* Freigestellte Weiss-Fassungen für die türkise Markenfläche im Footer,
      erzeugt von scripts/make-white-logos.py. Die aspect-Werte sind die
      Pixelmasse der erzeugten Dateien — beim Sunward-Logo nach Beschnitt
