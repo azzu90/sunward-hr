@@ -89,6 +89,11 @@ export const site: SiteData = {
       url: "https://www.facebook.com/p/Hidraulika-Drvo%C5%A1ped-doo-Sunward-Hrvatska-PSC-100063506295594/",
     },
     {
+      id: "instagram",
+      label: "Instagram",
+      url: "https://www.instagram.com/hidraulika_drvosped_sunward/",
+    },
+    {
       id: "tiktok",
       label: "TikTok",
       url: "https://www.tiktok.com/@zox932",

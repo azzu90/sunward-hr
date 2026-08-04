@@ -19,6 +19,26 @@ const paths: Record<string, ReactNode> = {
   tiktok: (
     <path d="M16.5 3c.4 2 1.9 3.6 3.9 3.9v2.7c-1.5 0-2.9-.4-4-1.2v6.8c0 3.1-2.5 5.6-5.6 5.6S5.2 17.3 5.2 14.2s2.5-5.6 5.6-5.6c.4 0 .8 0 1.2.1v2.8a2.9 2.9 0 1 0 2 2.7V3z" />
   ),
+  /* Kamerakörper + Objektiv als Ring statt Fläche (evenodd wäre bei der
+     Eckrundung fehleranfällig ohne Renderer zum Prüfen) — deshalb per
+     stroke gezeichnet. strokeWidth 2.6 gegen Facebook/TikTok kalibriert:
+     bei 1.8 wirkte der Rahmen neben deren fetten Flächen zu dünn. */
+  instagram: (
+    <>
+      <rect
+        x="3.6"
+        y="3.6"
+        width="16.8"
+        height="16.8"
+        rx="5.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.6"
+      />
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="2.6" />
+      <circle cx="17.3" cy="6.7" r="1.3" />
+    </>
+  ),
 };
 
 const fallback = <circle cx="12" cy="12" r="4" />;
