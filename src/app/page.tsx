@@ -32,60 +32,96 @@ export default function HomePage() {
           damit der Kontrast nicht am Bildinhalt hängt. Davor steht in der
           rechten Spalte ein freigestelltes Modellfoto bei voller Deckkraft —
           bis Zoran ein eigenes Hero-Motiv liefert, trägt das den Hero. */}
-      <section className="relative overflow-hidden bg-surface-alt">
+      <section className="relative overflow-hidden bg-surface-alt lg:overflow-visible">
         <SiteImage id="pocetna/hero" priority overlay className="opacity-30" sizes="100vw" />
         <Container className="relative z-10 py-16 sm:py-24">
-          {/* Zwei Spalten, Text links — genau die Aufteilung, die der
-              Manifest-Hint von pocetna/hero ohnehin vorsieht („mjesta za
-              tekst s lijeve strane"). Nötig, weil die 51 Fotos freigestellte
-              Produktrenders sind und keine breiten Gradilište-Aufnahmen: als
-              21/9-Hintergrund bei 30 % Deckkraft wären sie ein blasser
-              Geist. Der Overlay-Slot darüber bleibt unangetastet und wird
-              zum echten Foto, sobald Zoran eines liefert. */}
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
-            <div>
-              <p className="mb-3 text-xs font-bold tracking-widest text-brand-text uppercase">
-                {site.role}
-              </p>
-              <h1 className="max-w-3xl text-3xl leading-tight font-black sm:text-5xl">
-                {site.tagline}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">
-                {`Bageri od 1 do 34 tone, utovarivači, radne platforme i kompletna dodatna oprema — cijeli Sunward program iz jedne ruke. ${site.warranty.headline}.`}
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href={routes.proizvodi()}
-                  className="rounded-ui bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
-                >
-                  {ui.cta.allProducts}
-                </Link>
-                {/* Primäre Handlungs-CTA → Orange (ANALYSIS.md §7 Nachtrag).
-                    „Svi strojevi" daneben bleibt Türkis: navigatorisch, kommt
-                    site-weit wiederholt vor. */}
-                <Link
-                  href={routes.kontakt()}
-                  className="rounded-ui bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
-                >
-                  {ui.cta.requestQuote}
-                </Link>
-              </div>
+          {/* Ab lg bricht das Foto rechts aus dem Grid/Container aus (siehe
+              Bild-Wrapper unten) — der Text braucht dafür eine feste
+              Höchstbreite statt der Grid-Spalte, sonst würde er unter das
+              nun absolut positionierte Bild laufen. 34rem ist bei der
+              schmalsten Breite, an der dieses Layout greift (1024px),
+              gegen den Bild-Wrapper durchgemessen (dort bleiben ~150px
+              Luft zwischen Text und Bild). */}
+          <div className="lg:max-w-[34rem]">
+            <p className="mb-3 text-xs font-bold tracking-widest text-brand-text uppercase">
+              {site.role}
+            </p>
+            <h1 className="max-w-3xl text-3xl leading-tight font-black sm:text-5xl">
+              {site.tagline}
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">
+              {`Bageri od 1 do 34 tone, utovarivači, radne platforme i kompletna dodatna oprema — cijeli Sunward program iz jedne ruke. ${site.warranty.headline}.`}
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href={routes.proizvodi()}
+                className="rounded-ui bg-brand-strong px-6 py-3 text-base font-bold tracking-wide text-on-brand uppercase hover:bg-brand-text"
+              >
+                {ui.cta.allProducts}
+              </Link>
+              {/* Primäre Handlungs-CTA → Orange (ANALYSIS.md §7 Nachtrag).
+                  „Svi strojevi" daneben bleibt Türkis: navigatorisch, kommt
+                  site-weit wiederholt vor. */}
+              <Link
+                href={routes.kontakt()}
+                className="rounded-ui bg-accent px-6 py-3 text-base font-bold tracking-wide text-on-accent uppercase hover:bg-accent-strong"
+              >
+                {ui.cta.requestQuote}
+              </Link>
             </div>
+          </div>
 
-            {/* Interims-Hero-Motiv: referenziert bewusst das bestehende
-                Produktbild statt eines eigenen Manifest-Eintrags — kein
-                zweiter Dateipfad, der gepflegt werden müsste, und der
-                Alt-Text ist dort schon final. object-contain, damit der
-                Ausleger garantiert nicht angeschnitten wird (die Renders
-                sind 1:1, der Manifest-Aspect der Modellbilder ist 4/3). */}
+          {/* Unter lg: dasselbe Bild wie im Desktop-Wrapper unten, aber im
+              normalen Fluss unter dem Text — genau die vorherige Reihenfolge
+              (Text oben, Bild darunter, gestapelt), unangetastet. Zwei
+              SiteImage-Instanzen statt einer umgeschalteten, weil die eine
+              im Fluss steht und die andere absolut positioniert ist — keine
+              gemeinsame Klasse hätte beides angemessen bedient. */}
+          <div className="mt-10 lg:hidden">
             <SiteImage
               id="proizvodi/swe155f/glavna"
               priority
               imgClassName="object-contain"
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 416px"
+              sizes="(max-width: 640px) 90vw, 60vw"
             />
           </div>
         </Container>
+
+        {/* Bild bricht rechts aus dem Container aus statt in dessen
+            Grid-Spalte zu bleiben — das ist die "Dynamik", nach der
+            gefragt war: eine feste Grid-Spalte hätte das Foto immer
+            im selben Verhältnis zur Textspalte gehalten, egal wie breit
+            der Viewport ist. `right-0` bezieht sich auf die <section>,
+            die (anders als Container) keine eigene Padding hat, das Bild
+            geht also bis an die echte Viewport-Kante.
+
+            Eigener Wrapper NUR für Position/Größe, nicht auf der
+            SiteImage-Box selbst: die setzt bereits `w-full` und die
+            `aspect-ratio` als Inline-Style — ein zusätzliches top/bottom
+            auf demselben Element hätte dagegen konkurriert (siehe
+            PartnerBadge.tsx/Logo.tsx, derselbe Bug). `items-center`
+            statt `stretch`, sonst zwingt der Flex-Container eine eigene
+            Höhe auf und die aspect-ratio-Rechnung der Box greift nicht.
+
+            max(26rem,40vw): 26rem ist die alte Breite von vorher (nie
+            schmaler als das), 40vw lässt es mit dem Viewport wachsen. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-y-0 right-0 hidden w-[max(26rem,40vw)] items-center lg:flex"
+        >
+          {/* Interims-Hero-Motiv: referenziert bewusst das bestehende
+              Produktbild statt eines eigenen Manifest-Eintrags — kein
+              zweiter Dateipfad, der gepflegt werden müsste, und der
+              Alt-Text ist dort schon final. object-contain, damit der
+              Ausleger garantiert nicht angeschnitten wird (die Renders
+              sind 1:1, der Manifest-Aspect der Modellbilder ist 4/3). */}
+          <SiteImage
+            id="proizvodi/swe155f/glavna"
+            priority
+            imgClassName="object-contain"
+            sizes="40vw"
+          />
+        </div>
       </section>
 
       {/* Zašto Sunward? — 4 USP-Kacheln (ANALYSIS.md §2, eigenständig
