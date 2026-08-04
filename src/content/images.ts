@@ -19,18 +19,46 @@ import type { ImageEntry } from "./types";
  */
 export const images = {
   /* ── Marke / Chrome ─────────────────────────────────────────────────── */
+  /* Die Farb-Fassungen liegen als …-color.png in public/slike/brand und sind
+     ABSICHTLICH nicht unter diesen IDs abgelegt: die Auto-Discovery in
+     src/lib/assets.ts würde sonst Header-Wortmarke und Drvošped-Badge
+     automatisch auf das Bild umschalten, und beide sollen so bleiben, wie
+     sie sind. Diese zwei Einträge bleiben damit vorerst offen — sie stehen
+     für einen noch nicht entschiedenen Logo-Slot auf hellem Grund. Die
+     aspect-Werte sind die tatsächlichen Masse der vorliegenden Dateien
+     (vorher 4/1 bzw. 3/2 — geraten und beides falsch; 3/2 hätte das
+     7,25:1-Logo zu einem 3 px hohen Streifen gequetscht). */
   "brand/sunward-logo": {
     id: "brand/sunward-logo",
     alt: "Sunward logotip",
     hint: "Službeni Sunward logotip, po mogućnosti SVG s prozirnom pozadinom",
-    aspect: "4/1",
+    aspect: "808/212",
     source: "sunward.eu",
   },
   "brand/drvosped-logo": {
     id: "brand/drvosped-logo",
     alt: "Logotip Hidraulika Drvošped d.o.o.",
     hint: "HD logotip Hidraulika Drvošped (navy/bijelo s crveno-žutim prugama)",
-    aspect: "3/2",
+    aspect: "2371/327",
+    source: "drvosped",
+  },
+
+  /* Freigestellte Weiss-Fassungen für die türkise Markenfläche im Footer,
+     erzeugt von scripts/make-white-logos.py. Die aspect-Werte sind die
+     Pixelmasse der erzeugten Dateien — beim Sunward-Logo nach Beschnitt
+     des Rand-Paddings, deshalb 729/166 statt 808/212. */
+  "brand/sunward-logo-white": {
+    id: "brand/sunward-logo-white",
+    alt: "Sunward Hrvatska",
+    aspect: "729/166",
+    hint: "Freigestellte Weiss-Fassung des Sunward-Hrvatska-Logos für den Footer — npm run make-white-logos",
+    source: "sunward.eu",
+  },
+  "brand/drvosped-logo-white": {
+    id: "brand/drvosped-logo-white",
+    alt: "Hidraulika Drvošped d.o.o.",
+    aspect: "2371/327",
+    hint: "Freigestellte Weiss-Fassung des HD-Logos für den Footer — npm run make-white-logos",
     source: "drvosped",
   },
 

@@ -3,9 +3,10 @@ import Link from "next/link";
 import { footerColumns } from "@/content/nav";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
+import { SiteImage } from "../media/SiteImage";
 import { SocialIcon } from "../media/SocialIcon";
 
-import { PartnerBadge } from "./PartnerBadge";
+import { PartnerLogo } from "./PartnerLogo";
 
 const primaryEmail = site.emails.find((e) => e.primary);
 
@@ -16,13 +17,17 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Spalte 1: Firma + Adresse (ANALYSIS.md §1 Footer-Struktur) */}
           <div className="flex flex-col gap-3">
-            <p className="font-heading text-lg leading-none font-black tracking-tight">
-              {"SUNWARD"}
-              <span className="text-accent">{"."}</span>
-              <span className="ml-1.5 align-middle text-xs font-normal text-on-brand-muted">
-                {"HR"}
-              </span>
-            </p>
+            {/* Freigestellte Weiss-Fassung statt der typografischen Wortmarke.
+                208px breit bei 4,39:1 ≈ 47px hoch — bewusst dominant, das
+                Drvošped-Logo weiter unten ist demgegenüber untergeordnet.
+                Feste Wrapper-Breite, weil SiteImage selbst `w-full` setzt. */}
+            <span className="block w-52">
+              <SiteImage
+                id="brand/sunward-logo-white"
+                imgClassName="object-contain object-left"
+                sizes="208px"
+              />
+            </span>
             <address className="text-sm leading-relaxed text-on-brand-muted not-italic">
               {site.legalName}
               <br />
@@ -32,7 +37,7 @@ export function Footer() {
               <br />
               {site.address.country}
             </address>
-            <PartnerBadge />
+            <PartnerLogo />
 
             {/* Text-Box statt Logo-Grafiken (PRD §3, §13 — "ISO 9001
                 certificirano" ist dort explizit dem Footer zugewiesen).

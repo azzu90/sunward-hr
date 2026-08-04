@@ -18,6 +18,7 @@
     "report": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/resolve-ts.mjs scripts/report-placeholders.mts",
     "fetch-images": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/fetch-sunward-images.mts",
     "strip-badges": "python3 scripts/strip-new-badges.py",
+    "make-white-logos": "python3 scripts/make-white-logos.py",
     "check": "npm run typecheck && npm run lint && npm run format:check && npm run build"
   },
   "dependencies": {
