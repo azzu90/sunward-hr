@@ -19,20 +19,33 @@ import type { ImageEntry } from "./types";
  */
 export const images = {
   /* ── Marke / Chrome ─────────────────────────────────────────────────── */
-  /* Die Farb-Fassungen liegen als …-color.png in public/slike/brand und sind
-     ABSICHTLICH nicht unter diesen IDs abgelegt: die Auto-Discovery in
-     src/lib/assets.ts würde sonst Header-Wortmarke und Drvošped-Badge
-     automatisch auf das Bild umschalten, und beide sollen so bleiben, wie
-     sie sind. Diese zwei Einträge bleiben damit vorerst offen — sie stehen
-     für einen noch nicht entschiedenen Logo-Slot auf hellem Grund. Die
-     aspect-Werte sind die tatsächlichen Masse der vorliegenden Dateien
-     (vorher 4/1 bzw. 3/2 — geraten und beides falsch; 3/2 hätte das
-     7,25:1-Logo zu einem 3 px hohen Streifen gequetscht). */
+  /* Das Header-Logo. Die Datei heisst …-color.png und nicht sunward-logo.png,
+     weil `Logo.tsx` sie explizit über diese ID zieht — die Auto-Discovery in
+     src/lib/assets.ts greift also nicht versehentlich, und der Slot bleibt
+     bewusst gesteuert.
+
+     Das Original hatte 10% Breiten- und 22% Höhen-Padding um die Wortmarke
+     (808×212 Leinwand, 729×166 Tinte). Bei object-left hätte das ~11px totes
+     Weiss links erzeugt und das Logo gegenüber allem darunter eingerückt
+     aussehen lassen — deshalb ist die Datei auf die Tinte beschnitten. Daher
+     4,39:1 statt der 3,81:1 der Rohdatei; dieselbe Operation, die die
+     Weiss-Fassung schon hatte. Beschneiden ist verlustfrei für die Marke,
+     es fällt nur leere Fläche weg. */
+  "brand/sunward-logo-color": {
+    id: "brand/sunward-logo-color",
+    alt: "Sunward Hrvatska",
+    hint: "Službeni Sunward Hrvatska logotip u boji (navy/crveno), po mogućnosti SVG",
+    aspect: "729/166",
+    source: "sunward.eu",
+    priority: true,
+  },
+  /* Bleibt offen: eine echte SVG-Fassung vom Hersteller. Die vorliegende
+     PNG-Datei ist niedrig aufgelöst (PRD §489). */
   "brand/sunward-logo": {
     id: "brand/sunward-logo",
     alt: "Sunward logotip",
     hint: "Službeni Sunward logotip, po mogućnosti SVG s prozirnom pozadinom",
-    aspect: "808/212",
+    aspect: "729/166",
     source: "sunward.eu",
   },
   "brand/drvosped-logo": {
