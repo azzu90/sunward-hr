@@ -62,9 +62,11 @@
      Handlungs-CTA, genau 1× pro Seite/Sektion — plus „NEW"-Badges und
      Pfeile. Die frühere Zuordnung „sekundäre CTAs" war unvollständig.
 
-     NUR als Fläche mit dunkler Schrift verwenden: auf Weiss kommt der Ton
+     Als FLÄCHE nur mit dunkler Schrift verwenden: auf Weiss kommt der Ton
      auf 2.22:1 und ist damit weder als Text noch als UI-Rahmen zulässig.
-     Als Fläche mit --color-on-accent darauf: 7.39:1.
+     Als Fläche mit --color-on-accent darauf: 7.39:1. Für Text-Verwendung
+     (z.B. Hover-Farbe auf Links) --color-accent-text bzw.
+     --color-accent-text-on-brand weiter unten nehmen, nicht diesen Ton direkt.
 
      ⚠️ sunward.eu selbst setzt WEISSE Schrift auf diese Fläche — das sind
      2.22:1 und damit ein klarer AA-Verstoss, derselbe Fehlertyp wie beim
@@ -76,6 +78,17 @@
      Kontrast zur dunklen Schrift, nicht mehr — deshalb nachgerechnet.
      --color-on-accent darauf: 6.10:1, bleibt komfortabel über AA. */
   --color-accent-strong: #e08a1e; /* ← ABGELEITET */
+
+  /* Orange als TEXT-Hover (Hauptnav, Footer-Links) — live auf sunward.eu
+     bestätigt: a:hover { color: #F39A2E }. Der reine Ton selbst ist dafür
+     nicht zulässig (2.22:1 auf Weiss, 3.13:1 auf --color-brand-deep, beide
+     unter der 4,5:1-Schwelle für Normaltext — Nav ist 14px fett, Footer
+     14px regular, beides unter den 18,66px, ab denen 3:1 genügen würde).
+     Zwei Ableitungen in derselben Farbfamilie (H≈33°, nur Helligkeit
+     verschoben), je nach Untergrund — derselbe Ansatz wie bei
+     --color-brand-text/--color-accent-strong. */
+  --color-accent-text: #a35f0a; /* ← ABGELEITET — 5.00:1 auf Weiss */
+  --color-accent-text-on-brand: #facb90; /* ← ABGELEITET — 4.63:1 auf --color-brand-deep */
 
   /* ── Flächen ──────────────────────────────────────────────────────────── */
   --color-surface: #ffffff;

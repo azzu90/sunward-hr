@@ -64,11 +64,14 @@ export function Footer() {
               <ul className="flex items-center gap-4">
                 {site.social.map((profile) => (
                   <li key={profile.id}>
+                    {/* Hover zu Orange wie die übrigen Footer-Links —
+                        SocialIcon setzt fill="currentColor", die Hover-Farbe
+                        greift also automatisch auch auf das Icon durch. */}
                     <a
                       href={profile.url}
                       target="_blank"
                       rel="noopener"
-                      className="text-on-brand-muted hover:text-on-brand"
+                      className="text-on-brand-muted hover:text-accent-text-on-brand"
                     >
                       <SocialIcon id={profile.id} className="size-7" />
                       <span className="sr-only">{profile.label}</span>
@@ -101,6 +104,11 @@ export function Footer() {
               <h2 className="text-sm font-bold tracking-wider text-on-brand uppercase">
                 {column.heading}
               </h2>
+              {/* Hover zu Orange, live auf sunward.eu bestätigt
+                  (a:hover { color: #F39A2E }) — aber --color-accent-text-on-brand
+                  (#facb90) statt des reinen #F39A2E: das ergibt auf
+                  --color-brand-deep nur 3,13:1, --color-accent-text-on-brand
+                  liegt bei 4,63:1. */}
               <ul className="flex flex-col gap-1.5">
                 {column.links.map((link) => (
                   <li key={link.id}>
@@ -114,14 +122,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener"
-                        className="text-sm text-on-brand-muted underline-offset-2 hover:text-on-brand hover:underline"
+                        className="text-sm text-on-brand-muted underline-offset-2 hover:text-accent-text-on-brand hover:underline"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href ?? "#"}
-                        className="text-sm text-on-brand-muted hover:text-on-brand"
+                        className="text-sm text-on-brand-muted hover:text-accent-text-on-brand"
                       >
                         {link.label}
                       </Link>
@@ -143,8 +151,19 @@ export function Footer() {
             <ul className="flex flex-col gap-1.5 text-sm">
               {site.phones.map((phone) => (
                 <li key={phone.id}>
-                  <a href={phone.href} className="text-on-brand-muted hover:text-on-brand">
-                    <span className="text-on-brand">{phone.label}</span>
+                  {/* Das Label (z.B. "Ured") steht in einem eigenen <span>
+                      mit eigener Farbe (text-on-brand, heller als die Nummer)
+                      — die erbt die Hover-Farbe der <a> nicht automatisch,
+                      weil eine eigene color-Angabe die Vererbung stoppt.
+                      group/group-hover, damit Label UND Nummer zusammen
+                      Orange werden statt nur die Nummer. */}
+                  <a
+                    href={phone.href}
+                    className="group text-on-brand-muted hover:text-accent-text-on-brand"
+                  >
+                    <span className="text-on-brand group-hover:text-accent-text-on-brand">
+                      {phone.label}
+                    </span>
                     {": "}
                     {phone.display}
                   </a>
@@ -154,7 +173,7 @@ export function Footer() {
                 <li>
                   <a
                     href={`mailto:${primaryEmail.address}`}
-                    className="text-on-brand-muted hover:text-on-brand"
+                    className="text-on-brand-muted hover:text-accent-text-on-brand"
                   >
                     {primaryEmail.address}
                   </a>

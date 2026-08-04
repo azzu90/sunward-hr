@@ -71,10 +71,15 @@ export function Header() {
                     auch mit font-weight 700 bleibt er unter den 18,66px, ab
                     denen 3:1 genügen würde, zählt also als Normaltext.
                     #00726d liegt bei 5,79:1 und ist im Projekt genau für
-                    diesen Zweck abgeleitet. */}
+                    diesen Zweck abgeleitet.
+
+                    Hover zu Orange, ebenfalls live auf sunward.eu bestätigt
+                    (a:hover { color: #F39A2E }) — aber --color-accent-text
+                    (#a35f0a) statt des reinen #F39A2E: das ergibt auf Weiss
+                    nur 2,22:1, --color-accent-text liegt bei 5,00:1. */}
                 <Link
                   href={item.href ?? "#"}
-                  className="text-sm font-bold text-brand-text hover:text-ink"
+                  className="text-sm font-bold text-brand-text hover:text-accent-text"
                 >
                   {item.label}
                   {item.badge ? (
