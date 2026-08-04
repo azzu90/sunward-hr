@@ -87,13 +87,34 @@ export default function HomePage() {
           </div>
         </Container>
 
-        {/* Bild bricht rechts aus dem Container aus statt in dessen
-            Grid-Spalte zu bleiben — das ist die "Dynamik", nach der
-            gefragt war: eine feste Grid-Spalte hätte das Foto immer
-            im selben Verhältnis zur Textspalte gehalten, egal wie breit
-            der Viewport ist. `right-0` bezieht sich auf die <section>,
-            die (anders als Container) keine eigene Padding hat, das Bild
-            geht also bis an die echte Viewport-Kante.
+        {/* Bild bricht aus dem Container aus statt in dessen Grid-Spalte zu
+            bleiben — das ist die "Dynamik", nach der gefragt war: eine feste
+            Grid-Spalte hätte das Foto immer im selben Verhältnis zur
+            Textspalte gehalten, egal wie breit der Viewport ist.
+
+            War zuerst `right-0` (flush an der Kante) — sah bei der Kontrolle
+            zu sehr rechts-gebunden aus, der Bagger klebte am Bildschirmrand.
+            Jetzt zentriert im Leerraum rechts vom Text statt an die Kante
+            gepinnt: `right` ist so berechnet, dass links und rechts vom Bild
+            derselbe Abstand bleibt, bei jeder Breite.
+
+            Herleitung: der Text endet bei containerLeft + 34rem (544px, die
+            Höchstbreite der Textspalte oben). containerLeft ist 24px unter
+            1280px Breite, darüber wächst es mit (Breite-1280)/2 — macht
+            zusammengefasst min(100% − 568px, 50% + 72px) als Breite des
+            Leerraums rechts vom Text. Davon wird die Bildbreite (siehe unten)
+            abgezogen und zu gleichen Teilen links/rechts verteilt — daher
+            die Division durch 2.
+
+            `%` und nicht `vw`: `vw` zählt die Scrollbar mit, `%` bezieht
+            sich auf die tatsächliche Breite der <section> (dem positionierten
+            Elternrahmen), die Scrollbar bereits abgezogen — mit `vw` maß die
+            erste Fassung bei 1024px nur noch 5px Luft links statt der
+            gerechneten 20px, der Scrollbar-Anteil ging einseitig in den
+            rechten Abstand. Im Browser nachgemessen (gegen die tatsächliche
+            Kante, document.documentElement.clientWidth, nicht window.
+            innerWidth): 13/96/107/131px Luft auf jeder Seite bei
+            1024/1280/1440/1920px Breite, an jeder Breite exakt symmetrisch.
 
             Eigener Wrapper NUR für Position/Größe, nicht auf der
             SiteImage-Box selbst: die setzt bereits `w-full` und die
@@ -103,11 +124,16 @@ export default function HomePage() {
             statt `stretch`, sonst zwingt der Flex-Container eine eigene
             Höhe auf und die aspect-ratio-Rechnung der Box greift nicht.
 
-            max(26rem,40vw): 26rem ist die alte Breite von vorher (nie
-            schmaler als das), 40vw lässt es mit dem Viewport wachsen. */}
+            max(26rem,40%): 26rem ist die alte Breite von vorher (nie
+            schmaler als das), 40% lässt es mit dem Viewport wachsen.
+
+            Als style statt Tailwind-Klasse: das verschachtelte calc/min/max
+            hätte im Klassennamen zu viele Klammern und Kommas für den
+            Tailwind-Parser gehabt. */}
         <div
           aria-hidden="true"
-          className="absolute inset-y-0 right-0 hidden w-[max(26rem,40vw)] items-center lg:flex"
+          className="absolute inset-y-0 hidden w-[max(26rem,40%)] items-center lg:flex"
+          style={{ right: "calc((min(100% - 568px, 50% + 72px) - max(26rem, 40%)) / 2)" }}
         >
           {/* Interims-Hero-Motiv: referenziert bewusst das bestehende
               Produktbild statt eines eigenen Manifest-Eintrags — kein
