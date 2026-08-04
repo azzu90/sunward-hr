@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import { AttachmentIcon } from "@/components/attachments/AttachmentIcon";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
+import { PriceTag } from "@/components/product/PriceTag";
 import { attachments } from "@/content/attachments";
 import { routes } from "@/content/routes";
 import { ui } from "@/content/ui";
@@ -42,12 +44,23 @@ export default function AttachmentsPage() {
                   className="aspect-[4/3]"
                 />
                 <span className="flex flex-1 flex-col gap-1 p-4">
-                  <span className="text-base font-bold text-ink">{attachment.name}</span>
+                  <span className="flex items-center gap-2">
+                    <AttachmentIcon
+                      slug={attachment.slug}
+                      className="size-5 flex-none text-brand"
+                    />
+                    <span className="text-base font-bold text-ink">{attachment.name}</span>
+                  </span>
                   <span className="text-xs text-brand-text">{attachment.useCase}</span>
                   <span className="mt-1 line-clamp-3 text-xs leading-relaxed text-ink-body">
                     {attachment.intro}
                   </span>
-                  <span className="mt-2 text-sm font-bold text-ink">{ui.price.onRequest}</span>
+                  {/* Vorher stand hier ui.price.onRequest hart im Markup —
+                      attachment.price wurde nie gelesen, ein echter Preis
+                      wäre also unsichtbar geblieben. */}
+                  <span className="mt-2">
+                    <PriceTag price={attachment.price} as="span" />
+                  </span>
                 </span>
               </Link>
             </li>

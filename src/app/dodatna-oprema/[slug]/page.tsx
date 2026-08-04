@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/JsonLd";
+import { AttachmentIcon } from "@/components/attachments/AttachmentIcon";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SiteImage } from "@/components/media/SiteImage";
 import { SiteVideo } from "@/components/media/SiteVideo";
+import { PriceTag } from "@/components/product/PriceTag";
 import { attachments, getAttachment } from "@/content/attachments";
 import { val } from "@/content/placeholder";
 import { routes } from "@/content/routes";
@@ -60,6 +62,9 @@ export default async function AttachmentPage({ params }: Params) {
         />
 
         <div className="flex flex-col gap-5">
+          {/* Familienmarke des Anbaugeräts, ohne Icon-Tile (DESIGN.md §25). */}
+          <AttachmentIcon slug={attachment.slug} className="size-8 text-brand" />
+
           <PageHeader eyebrow={attachment.useCase} title={attachment.name} />
 
           <p className="text-base leading-relaxed text-ink-body">{attachment.intro}</p>
@@ -83,7 +88,10 @@ export default async function AttachmentPage({ params }: Params) {
           </ul>
 
           <div className="flex flex-col gap-3 rounded-ui border border-line bg-surface-alt p-5">
-            <p className="text-2xl font-bold text-ink">{ui.price.onRequest}</p>
+            {/* Vorher stand hier ui.price.onRequest hart im Markup —
+                attachment.price wurde nie gelesen, ein bestätigter Preis
+                wäre also trotz korrekter Daten unsichtbar geblieben. */}
+            <PriceTag price={attachment.price} size="lg" />
             {primaryEmail ? (
               <a
                 href={`mailto:${primaryEmail.address}?subject=${encodeURIComponent(`Upit: ${attachment.name}`)}`}

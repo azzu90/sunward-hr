@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container, Section } from "@/components/layout/Container";
 import { SiteImage } from "@/components/media/SiteImage";
 import { ProductCard } from "@/components/product/ProductCard";
+import { FeatureIcon } from "@/components/marketing/FeatureIcon";
 import { TrustBar } from "@/components/marketing/TrustBar";
 import { home } from "@/content/home";
 import { products } from "@/content/products";
@@ -96,7 +97,10 @@ export default function HomePage() {
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {home.whySunwardTiles.map((tile) => (
             <li key={tile.id} className="rounded-ui border-t-4 border-brand bg-surface p-6">
-              <h3 className="mb-2 text-lg font-bold text-ink">{tile.headline}</h3>
+              <div className="mb-2 flex items-start gap-3">
+                <FeatureIcon id={tile.id} className="size-7 flex-none text-brand" />
+                <h3 className="text-lg font-bold text-ink">{tile.headline}</h3>
+              </div>
               <p className="text-sm leading-relaxed text-ink-body">{tile.body}</p>
             </li>
           ))}
@@ -146,11 +150,17 @@ export default function HomePage() {
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
           <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
-            <h3 className="mb-2 text-lg font-bold text-ink">{site.financing.headline}</h3>
+            <div className="mb-2 flex items-start gap-3">
+              <FeatureIcon id="financiranje" className="size-7 flex-none text-brand" />
+              <h3 className="text-lg font-bold text-ink">{site.financing.headline}</h3>
+            </div>
             <p className="text-sm leading-relaxed text-ink-body">{site.financing.detail}</p>
           </div>
           <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
-            <h3 className="mb-2 text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
+            <div className="mb-2 flex items-start gap-3">
+              <FeatureIcon id="staro-za-novo" className="size-7 flex-none text-brand" />
+              <h3 className="text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
+            </div>
             <p className="text-sm leading-relaxed text-ink-body">{site.tradeIn.detail}</p>
           </div>
         </div>

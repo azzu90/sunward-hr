@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container, Section } from "@/components/layout/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { FeatureIcon } from "@/components/marketing/FeatureIcon";
 import { financing } from "@/content/financing";
 import { routes } from "@/content/routes";
 import { site } from "@/content/site";
@@ -46,11 +47,17 @@ export default function FinanciranjePage() {
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
           <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
-            <h3 className="mb-2 text-lg font-bold text-ink">{site.financing.headline}</h3>
+            <div className="mb-2 flex items-start gap-3">
+              <FeatureIcon id="financiranje" className="size-7 flex-none text-brand" />
+              <h3 className="text-lg font-bold text-ink">{site.financing.headline}</h3>
+            </div>
             <p className="text-sm leading-relaxed text-ink-body">{site.financing.detail}</p>
           </div>
           <div className="rounded-ui border-t-4 border-brand bg-surface p-6">
-            <h3 className="mb-2 text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
+            <div className="mb-2 flex items-start gap-3">
+              <FeatureIcon id="staro-za-novo" className="size-7 flex-none text-brand" />
+              <h3 className="text-lg font-bold text-ink">{site.tradeIn.headline}</h3>
+            </div>
             <p className="text-sm leading-relaxed text-ink-body">{site.tradeIn.detail}</p>
           </div>
         </div>
@@ -81,9 +88,12 @@ export default function FinanciranjePage() {
 
       <Section labelledBy="garancija">
         <div className="max-w-3xl rounded-ui border-l-4 border-accent bg-surface-alt p-6">
-          <h2 id="garancija" className="mb-2 text-lg font-bold text-ink">
-            {financing.warrantyHeading}
-          </h2>
+          <div className="mb-2 flex items-start gap-3">
+            <FeatureIcon id="garancija" className="size-7 flex-none text-brand" />
+            <h2 id="garancija" className="text-lg font-bold text-ink">
+              {financing.warrantyHeading}
+            </h2>
+          </div>
           <p className="text-sm leading-relaxed text-ink-body">{financing.warrantyBody}</p>
         </div>
       </Section>
