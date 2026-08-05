@@ -140,3 +140,20 @@ Pre-Launch-Checkliste aus PRD Abschnitt 18 komplett durchgehen, insbesondere:
 ## Phase 7 — Go-Live
 
 - Nach Freigabe: Domain-Umzug auf produktive sunward.hr
+
+---
+
+## Phase 8 — Datenblatt-Tiefe: zusätzliche Spec-Felder (später, nicht launchkritisch)
+
+Die Datenblatt-Recherche (`reference-docs/DATASHEET-RESEARCH.md`) enthält rund zehn Kennwerte, für die es in `SpecKey` (`src/content/types.ts`) noch kein Feld gibt und die deshalb bei der Übernahme liegen geblieben sind. **Die Daten sind schon recherchiert** — es fehlt nur die Struktur, nichts muss neu beschafft werden:
+
+- Motor: max. Drehmoment (Nm bei U/min), Tankvolumen Diesel, AdBlue-Volumen
+- Hydraulik: Volumen Hydrauliköltank
+- Fahrwerk/Abmessungen: Bodenfreiheit, Kettenschuhbreite, Kettenbreite, Oberwagenbreite, Heckschwenkradius, Radstand/Spurbreite
+- Arbeitsbereich: Auslegerlänge, Armlänge, max. Grabhöhe, Abkippreichweite
+- Bühnen/Kran: Plattformmaße, Plattformverlängerung, Plattformdrehung, Wendekreis, Auslegerlängen
+- Bohrgeräte: max. Bohrtiefe, max. Drehmoment (kN·m), Rotationsgeschwindigkeit, Windenzugkraft
+
+Vorgehen: `SpecKey` nur **erweitern** (types.ts warnt oben selbst davor, Bestehendes zu ändern), kroatische Labels in `specs.ts` ergänzen, dann Werte aus dem Recherche-Dokument nachtragen. Zu klären ist vorher, welche dieser Felder auf einer Vertriebsseite überhaupt Kaufentscheidungen stützen — sunward.eu selbst zeigt sie teils nur im PDF, nicht auf der Produktseite. Kandidat für ein Aufklappen („Detaljni podaci") statt für die Hauptansicht.
+
+📌 **Modell-Empfehlung:** Sonnet 5, Effort **medium** (Struktur erweitern + Massen-Dateneingabe nach bestehendem Muster).

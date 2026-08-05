@@ -8,10 +8,11 @@ Kroatische Vertriebsseite für Sunward-Baumaschinen, Generalvertreter Hidraulika
 
 **Vollständige Anforderungen:** `PRD-sunward.hr.md`
 **sunward.eu-Referenz (verifiziert, nicht geraten):** `ANALYSIS.md`
+**Datenblatt-Recherche je Modell (Brochure-PDFs + Produktseiten, mit Quellenangabe):** `reference-docs/DATASHEET-RESEARCH.md`
 **Design-Tokens/Richtung:** `DESIGN.md`
 **Phasenplan:** `TASK.md`
 
-Bei Widerspruch zwischen dieser Datei und den vier oben: die vier oben gewinnen, diese Datei ist nur die Kurzfassung.
+Bei Widerspruch zwischen dieser Datei und den fünf oben: die fünf oben gewinnen, diese Datei ist nur die Kurzfassung.
 
 ## Tech-Stack
 
