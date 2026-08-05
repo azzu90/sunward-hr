@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { ui } from "@/content/ui";
-import type { ImageId } from "@/content/types";
+import type { AspectRatio, ImageId } from "@/content/types";
 import { resolveImage } from "@/lib/assets";
 import { IS_DEV } from "@/lib/flags";
 
@@ -12,6 +12,10 @@ import { IS_DEV } from "@/lib/flags";
  * Beide Zweige — echtes Bild und Platzhalter — rendern DIESELBE äussere
  * Box mit derselben `aspect-ratio`. Deshalb springt beim Tausch nichts:
  * es erscheinen nur Pixel, wo vorher eine gestrichelte Fläche war.
+ *
+ * Die Ratio kommt aus `resolveImage`: bei vorhandener Datei aus deren
+ * echten Pixelmassen, sonst aus dem Manifest-Wunsch. Wer eine feste Höhe
+ * braucht (Kartenraster), setzt `ratio` — siehe dort.
  *
  * Der Alt-Text kommt in beiden Fällen aus dem Manifest und ist final.
  * Der Platzhalter trägt ihn als aria-label auf role="img", damit
@@ -24,6 +28,20 @@ export interface SiteImageProps {
   className?: string;
   /** object-cover (Standard) oder object-contain. */
   imgClassName?: string;
+  /**
+   * Feste Box-Ratio für Raster, in denen alle Kacheln gleich hoch sein
+   * müssen — unabhängig davon, welche Masse die Datei dahinter hat.
+   *
+   * Muss ein Prop sein und darf nicht als `aspect-[4/3]` per className
+   * kommen: die Box setzt die Ratio als Inline-Style, und der gewinnt gegen
+   * jede Klasse. Genau dieser Fehler lief zweimal im Projekt als toter Code
+   * mit (Kategorie-Kacheln, Anbaugeräte-Raster).
+   *
+   * Wer hier pinnt, gibt der Box bewusst ein anderes Verhältnis als dem
+   * Bild und braucht deshalb `imgClassName="object-contain"`, sonst
+   * schneidet object-cover die Differenz weg.
+   */
+  ratio?: AspectRatio;
   sizes?: string;
   priority?: boolean;
   /** Ersetzt die gestrichelte Box, z.B. durch eine Wortmarke beim Logo. */
@@ -70,12 +88,13 @@ export function SiteImage({
   priority,
   fallback,
   overlay = false,
+  ratio,
 }: SiteImageProps) {
   const resolved = resolveImage(id);
   const boxClass = overlay
     ? `absolute inset-0 h-full w-full overflow-hidden ${className ?? ""}`
     : `relative w-full overflow-hidden ${className ?? ""}`;
-  const boxStyle = overlay ? undefined : { aspectRatio: resolved.aspect };
+  const boxStyle = overlay ? undefined : { aspectRatio: ratio ?? resolved.aspect };
 
   if (resolved.status === "real") {
     return (

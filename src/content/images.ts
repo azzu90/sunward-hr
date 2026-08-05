@@ -16,6 +16,10 @@ import type { ImageEntry } from "./types";
  * Kein Code wird angefasst — src/lib/assets.ts findet die Datei selbst.
  *
  * `id` ist zugleich der Dateipfad. ASCII, keine Diakritika.
+ *
+ * `aspect` beschreibt den WUNSCH für den noch leeren Slot. Liegt eine Datei
+ * vor, gewinnen deren echte Pixelmasse — der Wert hier muss also nicht
+ * nachgezogen werden, wenn ein Foto in anderem Zuschnitt eintrifft.
  */
 export const images = {
   /* ── Marke / Chrome ─────────────────────────────────────────────────── */

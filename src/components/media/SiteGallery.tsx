@@ -34,13 +34,18 @@ export function SiteGallery({ gallery, priority }: { gallery: GalleryRef; priori
         >
           {extras.map((extra) => (
             <li key={extra.src} className="w-24 flex-none snap-start">
+              {/* Gepinnte 4/3-Kästchen für eine ruhige Leiste, aber
+                  object-contain: die Extras liegen einfach als 02.jpg, 03.jpg…
+                  im Ordner, ihre Masse sind unbekannt, und mit object-cover
+                  schnitte jedes abweichende Format oben/unten weg — genau der
+                  Fehler, der beim Hauptbild darüber behoben ist. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={extra.src}
                 alt={extra.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/3] w-full border border-line object-cover"
+                className="aspect-[4/3] w-full border border-line object-contain p-1"
               />
             </li>
           ))}

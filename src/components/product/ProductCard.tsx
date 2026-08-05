@@ -26,15 +26,23 @@ export function ProductCard({ product }: { product: ProductModel }) {
        die 4-Spec-Karten hatten Preis und Button rund 30 px höher als ihre
        Nachbarn. Alle anderen Karten im Projekt tragen h-full bereits. */
     <article className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface transition-shadow hover:shadow-md">
-      {/* object-contain statt des Standards object-cover: die Manifest-Ratio
-          der Modellbilder ist 4/3, die Dateien selbst sind 1:1 — mit cover
-          schneidet jede Karte oben und unten je ~12,5 % ab, was bei hohen,
-          schmalen Maschinen (Škarasti podizni strojevi, Teleskopske dizalice)
-          Plattform und Fahrwerk gekappt hat. `p-4` spiegelt den Innenabstand,
-          den die Platzhalter-Variante derselben Box schon hat, damit echtes
-          Bild und Platzhalter denselben Abstand zum Rand halten. */}
+      {/* Die 4/3-Box ist eine Layout-Entscheidung, keine Aussage über die
+          Datei: in einer Rasterzeile müssen alle Bildflächen gleich hoch sein,
+          sonst startet der Text der Nachbarkarten auf verschiedener Höhe. Bis
+          eben kam der Wert stillschweigend aus dem Manifest — dass er dort 4/3
+          hiess, war für das Raster Glück, nicht Absicht. Jetzt steht er
+          explizit hier, und `resolveImage` liefert daneben unbeeinflusst das
+          echte Verhältnis der Datei.
+
+          Deshalb object-contain statt des Standards object-cover: die Dateien
+          sind 1:1, mit cover schnitte jede Karte oben und unten je ~12,5 % ab —
+          bei hohen, schmalen Maschinen (Škarasti podizni strojevi, Teleskopske
+          dizalice) Plattform und Fahrwerk. `p-4` spiegelt den Innenabstand, den
+          die Platzhalter-Variante derselben Box schon hat, damit echtes Bild
+          und Platzhalter denselben Abstand zum Rand halten. */}
       <SiteImage
         id={product.gallery.main}
+        ratio="4/3"
         className="p-4"
         imgClassName="object-contain"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"

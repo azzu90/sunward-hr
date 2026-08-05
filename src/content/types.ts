@@ -419,6 +419,14 @@ export interface ImageEntry {
   readonly alt: string;
   /** Welches Foto konkret hierhin gehört — auf Kroatisch, für Zoran. */
   readonly hint: string;
+  /**
+   * Gewünschtes Verhältnis, solange nur der Platzhalter steht — es
+   * reserviert die Fläche und sagt Zoran, welcher Zuschnitt gebraucht wird.
+   *
+   * Sobald eine Datei existiert, gewinnen deren echte Pixelmasse
+   * (src/lib/image-size.ts). Dieser Wert ist also kein Versprechen über die
+   * Datei, und ein Foto mit anderem Zuschnitt braucht hier keine Korrektur.
+   */
   readonly aspect: AspectRatio;
   readonly source: AssetSource;
   readonly priority?: boolean;

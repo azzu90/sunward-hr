@@ -38,10 +38,17 @@ export default function AttachmentsPage() {
                 href={routes.attachment(attachment)}
                 className="flex h-full flex-col overflow-hidden rounded-ui border border-line bg-surface hover:shadow-md"
               >
+                {/* `aspect-[4/3]` stand hier als className und war toter Code
+                    — die Box setzt ihre Ratio als Inline-Style, der gewinnt.
+                    Gleiches Raster, gleiche Begründung wie bei ProductCard:
+                    Ratio gepinnt für gleich hohe Kacheln, object-contain,
+                    damit die 1:1-Dateien nicht beschnitten werden. */}
                 <SiteImage
                   id={attachment.image}
+                  ratio="4/3"
                   sizes="(max-width: 640px) 100vw, 360px"
-                  className="aspect-[4/3]"
+                  className="p-4"
+                  imgClassName="object-contain"
                 />
                 <span className="flex flex-1 flex-col gap-1 p-4">
                   <span className="flex items-center gap-2">

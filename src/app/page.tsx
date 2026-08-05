@@ -81,6 +81,7 @@ export default function HomePage() {
             <SiteImage
               id="proizvodi/swe155f/glavna"
               priority
+              ratio="4/3"
               imgClassName="object-contain"
               sizes="(max-width: 640px) 90vw, 60vw"
             />
@@ -139,11 +140,19 @@ export default function HomePage() {
               Produktbild statt eines eigenen Manifest-Eintrags — kein
               zweiter Dateipfad, der gepflegt werden müsste, und der
               Alt-Text ist dort schon final. object-contain, damit der
-              Ausleger garantiert nicht angeschnitten wird (die Renders
-              sind 1:1, der Manifest-Aspect der Modellbilder ist 4/3). */}
+              Ausleger garantiert nicht angeschnitten wird.
+
+              `ratio` gepinnt, weil die Box hier die Höhe der Bühne bestimmt
+              und nicht das Foto: der Kasten ist nur so breit wie der
+              Leerraum rechts vom Text, seine Höhe folgt daraus. Bei 1920px
+              wären das 762px Höhe gegen 510px Sektionshöhe — der Ausleger
+              lief oben durch die Hauptnavigation. Mit 4/3 bleibt es bei den
+              in a2a6f50 eingestellten 31px Überstand je Seite. Zuschnitt
+              ist dabei kein Thema, object-contain schneidet nichts ab. */}
           <SiteImage
             id="proizvodi/swe155f/glavna"
             priority
+            ratio="4/3"
             imgClassName="object-contain"
             sizes="40vw"
           />

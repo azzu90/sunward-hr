@@ -3,6 +3,7 @@ import { extname, join } from "node:path";
 
 import { images } from "@/content/images";
 import type { AssetSource, AspectRatio, ImageEntry, ImageId } from "@/content/types";
+import { aspectFromSize, intrinsicSize } from "@/lib/image-size";
 
 /**
  * `images` ist mit `as const satisfies` deklariert, damit ImageId eine
@@ -76,6 +77,27 @@ export type ResolvedImage =
       readonly source: AssetSource;
     };
 
+/**
+ * Seitenverhältnis einer vorhandenen Datei: die echten Pixelmasse gewinnen,
+ * der Manifest-Wert ist nur noch Rückfallebene.
+ *
+ * Das ist die zentrale Stelle, an der aus einer Absicht („dieser Slot soll
+ * 4/3 werden") eine Tatsache wird („die Datei ist 1000×1000"). Vorher hat
+ * jede Box die Manifest-Ratio gesetzt und object-cover den Unterschied
+ * weggeschnitten — auf den Karten (siehe ProductCard.tsx) und, unbemerkt
+ * mitkorrigiert-nicht-worden, auf dem Hauptbild der Detailseite.
+ *
+ * Folge fürs Weiterarbeiten: ein neues Foto von Zoran wird automatisch
+ * richtig dargestellt, egal in welchem Format es kommt. Der Manifest-Wert
+ * beschreibt weiter den WUNSCH und reserviert die Fläche, solange nur der
+ * Platzhalter steht — er ist damit kein toter Wert, aber auch keine
+ * Behauptung mehr über eine Datei, die er nicht kennt.
+ */
+function realAspect(src: string, fallback: AspectRatio): AspectRatio {
+  const size = intrinsicSize(join(process.cwd(), "public", src.replace(/^\//, "")));
+  return size ? aspectFromSize(size) : fallback;
+}
+
 export function resolveImage(id: ImageId): ResolvedImage {
   const entry = imageEntries[id];
   const src = assetIndex().get(entry.id);
@@ -85,7 +107,7 @@ export function resolveImage(id: ImageId): ResolvedImage {
       status: "real",
       src,
       alt: entry.alt,
-      aspect: entry.aspect,
+      aspect: realAspect(src, entry.aspect),
       priority: entry.priority ?? false,
       sizes: entry.sizes,
     };
