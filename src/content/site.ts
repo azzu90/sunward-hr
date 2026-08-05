@@ -139,7 +139,24 @@ export const site: SiteData = {
       "Popravak hidraulike na području cijele Hrvatske. Za Sunward strojeve dolazimo na teren i izlazimo na lice mjesta u roku od 24 sata, uz izvještaj greške.",
   },
 
-  componentBrands: ["Kubota", "Yanmar", "Cummins", "BOSCH Rexroth", "EATON", "KYB", "ALFAGOMMA"],
+  /**
+   * Vollständig alle 8 von Zoran bestätigten Komponentenmarken (Phase 9).
+   * EATON ist auf Zorans aktueller Seite nicht sichtbar, wurde von ihm aber
+   * ausdrücklich bestätigt — bleibt drin, unabhängig davon, was drvosped.hr
+   * gerade zeigt. Reihenfolge: Motoren zuerst (Kubota/Yanmar/Cummins/Isuzu),
+   * dann Hydraulik/Antrieb (Rexroth/EATON/KYB/ALFAGOMMA) — dieselbe Gruppierung
+   * wie die Logo-Reihe in ComponentBrands.tsx.
+   */
+  componentBrands: [
+    "Kubota",
+    "Yanmar",
+    "Cummins",
+    "Isuzu",
+    "BOSCH Rexroth",
+    "EATON",
+    "KYB",
+    "ALFAGOMMA",
+  ],
 
   parent: {
     name: "Hidraulika Drvošped d.o.o.",

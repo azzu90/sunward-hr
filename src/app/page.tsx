@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container, Section } from "@/components/layout/Container";
 import { SiteImage } from "@/components/media/SiteImage";
 import { ProductCard } from "@/components/product/ProductCard";
+import { ComponentBrands } from "@/components/marketing/ComponentBrands";
 import { FeatureIcon } from "@/components/marketing/FeatureIcon";
 import { TrustBar } from "@/components/marketing/TrustBar";
 import { home } from "@/content/home";
@@ -177,6 +178,11 @@ export default function HomePage() {
           ))}
         </ul>
       </Section>
+
+      {/* Logo-Reihe der Komponentenmarken — direkter visueller Beleg zur
+          "Provjerene komponente"-Kachel darüber, die dieselben Marken nur
+          als Fliesstext nennt. */}
+      <ComponentBrands />
 
       {/* Naši proizvodi — alle 8 Kategorien. */}
       <Section labelledBy="kategorije">

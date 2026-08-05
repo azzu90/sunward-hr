@@ -44,6 +44,8 @@ export const ui = {
         Startseite gibt es kein Bezugsmodell, dieselbe Zeichenfolge stünde dort
         für etwas anderes. */
     homeFeaturedHeading: "Istaknuti strojevi",
+    /** H2 der Logo-Reihe der Komponentenmarken (Phase 9). */
+    homeComponentBrandsHeading: "Provjereni dobavljači komponenti",
   },
 
   cta: {
