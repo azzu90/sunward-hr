@@ -1,7 +1,8 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
 
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
+const ASK_20F1 = "Potvrditi vrijednosti za varijantu 20F-1";
+const BASIS_20F = "Vrijednosti iz datasheeta SWE 20F; varijanta 20F-1 nije zasebno dokumentirana";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +14,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe20f1 = {
   slug: "swe20f-1",
@@ -51,6 +55,9 @@ export const swe20f1 = {
           operatingWeight: "1.910 kg",
           width: "990–1.360 mm",
         }),
+        { key: "bucketCapacity", value: tbd("0,04 m³", ASK_20F1, BASIS_20F) },
+        { key: "shippingLength", value: tbd("3.905 mm", ASK_20F1, BASIS_20F) },
+        { key: "heightOverCabin", value: tbd("2.235 mm", ASK_20F1, BASIS_20F) },
       ],
     },
     {
@@ -60,18 +67,25 @@ export const swe20f1 = {
           emission: "EU Stage V",
           power: "13,4 kW",
         }),
+        { key: "engineModel", value: tbd("Yanmar 3TNV80-SSU", ASK_20F1, BASIS_20F) },
+        { key: "displacement", value: tbd("1,267 l", ASK_20F1, BASIS_20F) },
+        { key: "ratedSpeed", value: tbd("2.200 o/min", ASK_20F1, BASIS_20F) },
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
+      rows: [
         {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
+          key: "hydraulicType",
+          value: tbd(
+            "Dvije klipne pumpe s varijabilnim protokom + zupčasta i pilot pumpa",
+            ASK_20F1,
+            BASIS_20F,
+          ),
         },
-        ASK,
-      ),
+        { key: "pumpFlow", value: tbd("2 × 21 + 13 + 6 l/min", ASK_20F1, BASIS_20F) },
+        { key: "hydraulicPressure", value: tbd("21 / 16 MPa", ASK_20F1, BASIS_20F) },
+      ],
     },
     {
       id: "workingRange",
@@ -79,6 +93,9 @@ export const swe20f1 = {
         ...rows({
           diggingDepth: "2.260 mm",
         }),
+        { key: "diggingReach", value: tbd("4.040 mm", ASK_20F1, BASIS_20F) },
+        { key: "bucketForce", value: tbd("22,7 kN", ASK_20F1, BASIS_20F) },
+        { key: "armForce", value: tbd("9,8 kN", ASK_20F1, BASIS_20F) },
       ],
     },
   ],

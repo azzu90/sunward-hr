@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swsl1623rt = {
   slug: "swsl1623rt",
@@ -50,6 +51,7 @@ export const swsl1623rt = {
         ...rows({
           operatingWeight: "9.200 kg",
           width: "2,39 m",
+          shippingLength: "5,33 m",
         }),
       ],
     },
@@ -57,21 +59,20 @@ export const swsl1623rt = {
       id: "powertrain",
       rows: [
         ...rows({
+          engineModel: "Kubota V2403-CR-T-E5",
+          emission: "EU Stage V",
+          power: "36,5 kW",
           driveType: "Dizel / hidraulički",
+          travelSpeed: "0,6 / 7,2 km/h (podignuto / spušteno)",
+          gradeability: "40 %",
         }),
-        ...tbdRows(
-          {
-            travelSpeed: "—",
-            gradeability: "—",
-          },
-          ASK,
-        ),
       ],
     },
     {
       id: "performance",
       rows: [
         ...rows({
+          liftHeight: "14,5 m",
           workingHeight: "16,5 m",
           platformCapacity: "780 kg",
         }),

@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const sl06w = {
   slug: "sl06w",
@@ -49,6 +52,9 @@ export const sl06w = {
         ...rows({
           operatingWeight: "1.700 kg",
           bucketCapacity: "0,26 m³",
+          width: "1.120 mm",
+          shippingLength: "3.669 mm (s lopatom)",
+          heightOverCabin: "2.310 mm (do ROPS-a)",
         }),
       ],
     },
@@ -56,7 +62,10 @@ export const sl06w = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Kubota D1105",
+          emission: "EU Stage V",
           power: "18,2 kW",
+          ratedSpeed: "2.400 o/min",
         }),
       ],
     },
@@ -76,6 +85,8 @@ export const sl06w = {
       rows: [
         ...rows({
           ratedCapacity: "600 kg",
+          breakoutForce: "13 kN",
+          travelSpeed: "12 km/h",
         }),
       ],
     },

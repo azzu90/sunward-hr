@@ -1,6 +1,9 @@
 import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
 
+const ASK_TRGOVAC = "Potvrditi iz službenog sunward.eu datasheeta";
+const BASIS_TRGOVAC = "Sunward datasheet distribuiran preko ovlaštenog trgovca, nije sa sunward.eu";
+
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
  * ANALYSIS.md §9, direkt von sunward.eu übernommen.
@@ -11,6 +14,9 @@ import type { ProductModel } from "../types";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swtc5d = {
   slug: "swtc5d",
@@ -55,6 +61,9 @@ export const swtc5d = {
         ...rows({
           emission: "EU Stage V",
         }),
+        { key: "engineModel", value: tbd("Yanmar 4TNV98C", ASK_TRGOVAC, BASIS_TRGOVAC) },
+        { key: "displacement", value: tbd("3,319 l", ASK_TRGOVAC, BASIS_TRGOVAC) },
+        { key: "power", value: tbd("46,2 kW", ASK_TRGOVAC, BASIS_TRGOVAC) },
       ],
     },
     {

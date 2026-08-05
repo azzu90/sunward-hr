@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe10fe = {
   slug: "swe10fe",
@@ -81,6 +84,9 @@ export const swe10fe = {
       rows: [
         ...rows({
           diggingDepth: "1.440 mm",
+          diggingReach: "2.845 mm",
+          bucketForce: "9,4 kN",
+          armForce: "5,8 kN",
         }),
       ],
     },

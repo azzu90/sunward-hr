@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe60uf = {
   slug: "swe60uf",
@@ -49,7 +50,10 @@ export const swe60uf = {
       rows: [
         ...rows({
           operatingWeight: "6.000 kg",
+          bucketCapacity: "0,18 m³",
           width: "2.000 mm",
+          shippingLength: "5.680 mm",
+          heightOverCabin: "2.570 mm",
         }),
       ],
     },
@@ -57,27 +61,31 @@ export const swe60uf = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Kubota V2607-DI-T",
           emission: "EU Stage V",
+          displacement: "2,6 l",
           power: "35 kW",
         }),
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Jedna klipna pumpa s varijabilnim protokom",
+          pumpFlow: "158,4 l/min",
+          hydraulicPressure: "25 MPa",
+        }),
+      ],
     },
     {
       id: "workingRange",
       rows: [
         ...rows({
           diggingDepth: "3.700 mm",
+          diggingReach: "6.260 mm",
+          bucketForce: "47 kN",
+          armForce: "31 kN",
         }),
       ],
     },

@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swsl1008dc = {
   slug: "swsl1008dc",
@@ -50,6 +51,7 @@ export const swsl1008dc = {
         ...rows({
           operatingWeight: "2.100 kg",
           width: "0,83 m",
+          shippingLength: "2,46 m",
         }),
       ],
     },
@@ -58,20 +60,16 @@ export const swsl1008dc = {
       rows: [
         ...rows({
           driveType: "Električni",
+          travelSpeed: "0,8 / 4,5 km/h (podignuto / spušteno)",
+          gradeability: "25 %",
         }),
-        ...tbdRows(
-          {
-            travelSpeed: "—",
-            gradeability: "—",
-          },
-          ASK,
-        ),
       ],
     },
     {
       id: "performance",
       rows: [
         ...rows({
+          liftHeight: "8 m",
           workingHeight: "10 m",
           platformCapacity: "230 kg",
         }),

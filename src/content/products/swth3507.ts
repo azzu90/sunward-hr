@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swth3507 = {
   slug: "swth3507",
@@ -49,6 +52,9 @@ export const swth3507 = {
       rows: [
         ...rows({
           operatingWeight: "8.300 kg",
+          width: "2.410 mm",
+          shippingLength: "5.090 mm",
+          heightOverCabin: "2.390 mm",
         }),
       ],
     },
@@ -56,6 +62,7 @@ export const swth3507 = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins F3.8",
           emission: "EU Stage V",
           power: "55 kW",
         }),
@@ -76,8 +83,10 @@ export const swth3507 = {
       id: "performance",
       rows: [
         ...rows({
+          maxLoad: "3.500 kg",
           liftHeight: "7,43 m",
           maxOutreach: "3,83 m",
+          travelSpeed: "30 km/h",
         }),
       ],
     },

@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swdm165s = {
   slug: "swdm165s",
@@ -48,6 +49,7 @@ export const swdm165s = {
       rows: [
         ...rows({
           operatingWeight: "45.000 kg",
+          width: "2.550–3.800 mm (gusjenice uvučene / izvučene)",
         }),
       ],
     },
@@ -55,21 +57,22 @@ export const swdm165s = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins QSB6.7",
           emission: "EU Stage V",
           power: "186 kW",
+          ratedSpeed: "2.000 o/min",
         }),
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Dvije glavne pumpe",
+          pumpFlow: "2 × 247 l/min",
+          hydraulicPressure: "32 MPa (320 bar)",
+        }),
+      ],
     },
     {
       id: "performance",

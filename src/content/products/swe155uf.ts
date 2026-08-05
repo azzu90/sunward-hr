@@ -1,6 +1,10 @@
 import { rows, tbd, tbdRows } from "../placeholder";
 import type { ProductModel } from "../types";
 
+const ASK_EU = "Potvrditi iz EU (metričkog) datasheeta";
+const BASIS_US =
+  "Preračunato iz imperijalnih jedinica US datasheeta (Sunward America); masa, širina i dubina kopanja poklapaju se s potvrđenim metričkim vrijednostima";
+
 const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
@@ -13,6 +17,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe155uf = {
   slug: "swe155uf",
@@ -51,12 +58,15 @@ export const swe155uf = {
           operatingWeight: "16.500 kg",
           width: "2.600 mm",
         }),
+        { key: "bucketCapacity", value: tbd("0,61 m³", ASK_EU, BASIS_US) },
+        { key: "shippingLength", value: tbd("7.340 mm", ASK_EU, BASIS_US) },
       ],
     },
     {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins QSF3.8",
           emission: "EU Stage V",
           power: "90 kW",
         }),
@@ -79,6 +89,9 @@ export const swe155uf = {
         ...rows({
           diggingDepth: "5.525 mm",
         }),
+        { key: "diggingReach", value: tbd("8.360 mm", ASK_EU, BASIS_US) },
+        { key: "bucketForce", value: tbd("100 kN", ASK_EU, BASIS_US) },
+        { key: "armForce", value: tbd("76 kN", ASK_EU, BASIS_US) },
       ],
     },
   ],

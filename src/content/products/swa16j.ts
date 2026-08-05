@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swa16j = {
   slug: "swa16j",
@@ -48,24 +49,29 @@ export const swa16j = {
       rows: [
         ...rows({
           operatingWeight: "7.650 kg",
+          width: "2,3 m",
+          shippingLength: "6,93 m",
         }),
       ],
     },
     {
       id: "powertrain",
-      rows: tbdRows(
-        {
-          driveType: "—",
-          travelSpeed: "—",
-          gradeability: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          engineModel: "Kubota V2403",
+          power: "47,9 kW",
+          ratedSpeed: "2.700 o/min",
+          driveType: "Dizel",
+          travelSpeed: "6,8 / 0,8 km/h (uvučeno / izvučeno)",
+          gradeability: "45 %",
+        }),
+      ],
     },
     {
       id: "performance",
       rows: [
         ...rows({
+          liftHeight: "14 m",
           workingHeight: "16 m",
           workRadius: "8,02 m",
           platformCapacity: "250 kg",

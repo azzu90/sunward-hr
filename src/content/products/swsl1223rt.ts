@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swsl1223rt = {
   slug: "swsl1223rt",
@@ -57,12 +60,15 @@ export const swsl1223rt = {
       id: "powertrain",
       rows: [
         ...rows({
+          engineModel: "Kubota V2403",
+          emission: "EU Stage V",
+          power: "36,5 kW",
           driveType: "Dizel / hidraulički",
+          gradeability: "do 40 %",
         }),
         ...tbdRows(
           {
             travelSpeed: "—",
-            gradeability: "—",
           },
           ASK,
         ),

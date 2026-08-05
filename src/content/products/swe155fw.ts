@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe155fw = {
   slug: "swe155fw",
@@ -49,7 +52,10 @@ export const swe155fw = {
       rows: [
         ...rows({
           operatingWeight: "14.700–15.400 kg",
+          bucketCapacity: "0,6 m³",
           width: "2.515 mm",
+          shippingLength: "8.585 mm",
+          heightOverCabin: "3.150 mm",
         }),
       ],
     },
@@ -57,27 +63,37 @@ export const swe155fw = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins F3.8",
           emission: "EU Stage V",
+          displacement: "3,8 l",
           power: "115 kW",
+          ratedSpeed: "2.200 o/min",
         }),
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Positive Flow sustav",
+        }),
+        ...tbdRows(
+          {
+            pumpFlow: "—",
+            hydraulicPressure: "—",
+          },
+          ASK,
+        ),
+      ],
     },
     {
       id: "workingRange",
       rows: [
         ...rows({
           diggingDepth: "5.100 mm",
+          diggingReach: "8.610 mm",
+          bucketForce: "100 kN",
+          armForce: "84 kN",
         }),
       ],
     },

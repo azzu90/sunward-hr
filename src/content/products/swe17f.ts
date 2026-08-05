@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe17f = {
   slug: "swe17f",
@@ -49,7 +50,11 @@ export const swe17f = {
       rows: [
         ...rows({
           operatingWeight: "1.780 kg",
+          bucketCapacity: "0,035 m³",
           width: "990–1.360 mm",
+          shippingLength: "3.840 mm",
+          shippingWidth: "990 mm",
+          heightOverCabin: "2.360 mm",
         }),
       ],
     },
@@ -57,27 +62,31 @@ export const swe17f = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Yanmar 3TNV80F-SSU",
           emission: "EU Stage V",
+          displacement: "1,267 l",
           power: "13,4 kW",
         }),
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Jedna aksijalna klipna pumpa s varijabilnim protokom",
+          pumpFlow: "62 l/min",
+          hydraulicPressure: "24,5 MPa",
+        }),
+      ],
     },
     {
       id: "workingRange",
       rows: [
         ...rows({
           diggingDepth: "2.060 mm",
+          diggingReach: "3.885 mm",
+          bucketForce: "21 kN",
+          armForce: "12 kN",
         }),
       ],
     },

@@ -11,6 +11,9 @@ import type { ProductModel } from "../types";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swtc10 = {
   slug: "swtc10",
@@ -46,6 +49,9 @@ export const swtc10 = {
       rows: [
         ...rows({
           operatingWeight: "20.500 kg",
+          shippingLength: "9.073 mm",
+          shippingWidth: "2.800 mm",
+          heightOverCabin: "3.070 mm",
         }),
       ],
     },
@@ -53,7 +59,10 @@ export const swtc10 = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins QSB6.7",
           emission: "EU Stage V",
+          displacement: "6,7 l",
+          power: "129 kW",
         }),
       ],
     },
@@ -62,6 +71,7 @@ export const swtc10 = {
       rows: [
         ...rows({
           maxLoad: "10.000 kg",
+          liftHeight: "26 m (s najdužom strelom)",
           workingHeight: "21,5 m",
         }),
       ],

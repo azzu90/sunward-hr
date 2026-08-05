@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe155uf2pb = {
   slug: "swe155uf-2pb",
@@ -57,6 +60,7 @@ export const swe155uf2pb = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins QSF3.8",
           emission: "EU Stage V",
           power: "90 kW",
         }),

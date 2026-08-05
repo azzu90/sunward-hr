@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe155f = {
   slug: "swe155f",
@@ -49,7 +50,10 @@ export const swe155f = {
       rows: [
         ...rows({
           operatingWeight: "14.700 kg",
+          bucketCapacity: "0,6 m³",
           width: "2.490 mm",
+          shippingLength: "8.270 mm",
+          heightOverCabin: "2.860 mm",
         }),
       ],
     },
@@ -57,27 +61,31 @@ export const swe155f = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Cummins QSF3.8",
           emission: "EU Stage V",
+          displacement: "3,8 l",
           power: "90 kW",
         }),
       ],
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Dvije klipne pumpe s varijabilnim protokom",
+          pumpFlow: "2 × 165 l/min",
+          hydraulicPressure: "31,4 / 34,3 MPa",
+        }),
+      ],
     },
     {
       id: "workingRange",
       rows: [
         ...rows({
           diggingDepth: "5.530 mm",
+          diggingReach: "8.330 mm",
+          bucketForce: "100 kN",
+          armForce: "76 kN",
         }),
       ],
     },

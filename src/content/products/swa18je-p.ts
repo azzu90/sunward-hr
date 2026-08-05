@@ -1,7 +1,5 @@
-import { rows, tbd, tbdRows } from "../placeholder";
+import { rows, tbd } from "../placeholder";
 import type { ProductModel } from "../types";
-
-const ASK = "Potvrditi iz službenog Sunward datasheeta";
 
 /**
  * Lesart dieser Datei: die Kurzspecs sind BESTÄTIGTE Werte aus
@@ -13,6 +11,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swa18jep = {
   slug: "swa18je-p",
@@ -48,24 +49,26 @@ export const swa18jep = {
       rows: [
         ...rows({
           operatingWeight: "8.270 kg",
+          width: "2,3 m",
+          shippingLength: "7,5 m",
         }),
       ],
     },
     {
       id: "powertrain",
-      rows: tbdRows(
-        {
-          driveType: "—",
-          travelSpeed: "—",
-          gradeability: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          driveType: "Električni (litij-ionska baterija)",
+          travelSpeed: "5,8 / 0,8 km/h (uvučeno / izvučeno)",
+          gradeability: "40 %",
+        }),
+      ],
     },
     {
       id: "performance",
       rows: [
         ...rows({
+          liftHeight: "16 m",
           workingHeight: "18 m",
           workRadius: "9,6 m",
           platformCapacity: "260/360 kg",

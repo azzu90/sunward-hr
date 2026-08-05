@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swl2830 = {
   slug: "swl2830",
@@ -49,6 +52,9 @@ export const swl2830 = {
       rows: [
         ...rows({
           operatingWeight: "2.830 kg",
+          width: "1.293 mm",
+          shippingLength: "3.318 mm (s lopatom)",
+          heightOverCabin: "2.014 mm (do ROPS-a)",
         }),
       ],
     },
@@ -56,6 +62,8 @@ export const swl2830 = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Kubota V2403-CR-TE4B",
+          emission: "EU Stage V",
           power: "48,6 kW",
         }),
       ],
@@ -77,8 +85,9 @@ export const swl2830 = {
         ...rows({
           ratedCapacity: "750 kg",
           tippingLoad: "1.500 kg",
-          liftHeight: "2.320 mm",
           breakoutForce: "2.000 kg",
+          liftHeight: "2.320 mm",
+          travelSpeed: "13 km/h",
         }),
       ],
     },

@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const swe90uf2pb = {
   slug: "swe90uf-2pb",
@@ -57,6 +60,7 @@ export const swe90uf2pb = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Yanmar 4TNV98C",
           emission: "EU Stage V",
           power: "46,2 kW",
         }),
@@ -64,14 +68,18 @@ export const swe90uf2pb = {
     },
     {
       id: "hydraulics",
-      rows: tbdRows(
-        {
-          hydraulicType: "—",
-          pumpFlow: "—",
-          hydraulicPressure: "—",
-        },
-        ASK,
-      ),
+      rows: [
+        ...rows({
+          hydraulicType: "Sustav protoka neovisan o teretu (LUDFF)",
+        }),
+        ...tbdRows(
+          {
+            pumpFlow: "—",
+            hydraulicPressure: "—",
+          },
+          ASK,
+        ),
+      ],
     },
     {
       id: "workingRange",

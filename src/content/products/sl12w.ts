@@ -13,6 +13,9 @@ const ASK = "Potvrditi iz službenog Sunward datasheeta";
  *
  * Der Preis steht bei allen Modellen aus (PRD §16) und erscheint bis dahin
  * als „Cijena na upit".
+ *
+ * Die Zeilen in `datasheet` stammen aus der sunward.eu-Recherche (Brochure-PDF
+ * bzw. Produktseite je Modell). Bestätigte Werte wurden dabei nicht angetastet.
  */
 export const sl12w = {
   slug: "sl12w",
@@ -49,6 +52,9 @@ export const sl12w = {
         ...rows({
           operatingWeight: "2.500 kg",
           bucketCapacity: "0,38 m³",
+          width: "1.310 mm",
+          shippingLength: "4.210 mm",
+          heightOverCabin: "2.316 mm",
         }),
       ],
     },
@@ -56,7 +62,9 @@ export const sl12w = {
       id: "engine",
       rows: [
         ...rows({
+          engineModel: "Kubota D1703",
           power: "18,5 kW",
+          ratedSpeed: "2.200 o/min",
         }),
       ],
     },
@@ -76,6 +84,8 @@ export const sl12w = {
       rows: [
         ...rows({
           ratedCapacity: "1.300 kg",
+          breakoutForce: "19 kN",
+          dumpHeight: "2.029 mm",
         }),
       ],
     },
