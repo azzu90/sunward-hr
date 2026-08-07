@@ -23,7 +23,7 @@ export const swsl0607dcs = {
   group: "skarasti-elektricni",
   order: 10,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 9000, tax: "net" },
 
   intro:
     "Najmanje škarasto dizalo u programu: radna visina 5,6 metara pri širini od samo 76 centimetara. Prolazi kroz standardna vrata i stane u teretno dizalo.",

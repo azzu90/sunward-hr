@@ -23,7 +23,7 @@ export const swe08f = {
   group: "mini-bageri",
   order: 10,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 16000, tax: "net" },
 
   intro:
     "Najmanji bager u ponudi — s radnom masom od 1.010 kg prolazi kroz vrtna vrata i standardni prolaz između kuća. Namijenjen je komunalnim radovima, uređenju okućnica i iskopima na mjestima gdje veći stroj jednostavno ne stane.",

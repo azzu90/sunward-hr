@@ -23,7 +23,7 @@ export const swsl0807dc = {
   group: "skarasti-elektricni",
   order: 30,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 14200, tax: "net" },
 
   intro:
     "Osam metara radne visine uz nepromijenjenu širinu od 0,76 metra. Najviši doseg koji Sunward nudi u uskoj izvedbi.",

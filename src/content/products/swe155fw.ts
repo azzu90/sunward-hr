@@ -25,7 +25,7 @@ export const swe155fw = {
   group: "kotacni-bageri",
   order: 170,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 132000, tax: "net" },
 
   intro:
     "Jedini kotačni bager u programu. Prelazi između radilišta vlastitim pogonom po asfaltu, bez prikolice i bez oštećivanja podloge — presudno za komunalne službe i održavanje cesta.",

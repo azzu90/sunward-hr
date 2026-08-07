@@ -25,7 +25,7 @@ export const swtl4538 = {
   group: "gusjenicni-utovarivaci",
   order: 10,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 45000, tax: "net" },
 
   intro:
     "Gusjenični utovarivač nosivosti 1.200 kg. Gusjenice raspoređuju masu po velikoj površini, pa stroj radi na blatu, pijesku i svježe nasutom terenu gdje kotačni utovarivač propada.",

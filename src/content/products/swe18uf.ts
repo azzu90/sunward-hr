@@ -23,7 +23,7 @@ export const swe18uf = {
   group: "mini-bageri",
   order: 40,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 22900, tax: "net" },
 
   intro:
     "UF izvedba znači smanjeni pretek stražnjeg dijela — stroj se okreće gotovo unutar širine gusjenica. To je razlika koja odlučuje kad se radi uz zid, ogradu ili u prometnom traku.",

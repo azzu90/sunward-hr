@@ -26,7 +26,7 @@ export const swe20f1 = {
   group: "mini-bageri",
   order: 50,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 23500, tax: "net" },
 
   intro:
     "Dvotonski razred, klasična izvedba s punim protuutegom. Stabilniji od lakših modela pri radu s punom žlicom na dosegu, uz istu mogućnost prolaza kroz uske prolaze.",

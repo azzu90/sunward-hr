@@ -23,7 +23,7 @@ export const swe50uf = {
   group: "mini-bageri",
   order: 100,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 45500, tax: "net" },
 
   intro:
     "Najveći stroj koji sunward.eu još vodi u mini razredu: 5.480 kg i 29,7 kW. Snaga srednjeg bagera u gabaritu koji se prevozi bez posebne dozvole.",

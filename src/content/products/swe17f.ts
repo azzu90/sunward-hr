@@ -23,7 +23,7 @@ export const swe17f = {
   group: "mini-bageri",
   order: 30,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 22800, tax: "net" },
 
   intro:
     "Bager od 1,8 tone s dubinom kopanja preko dva metra — dovoljno za temelje, vodovodne i kanalizacijske rovove, a još uvijek dovoljno lagan za prijevoz običnom prikolicom.",

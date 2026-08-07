@@ -25,7 +25,7 @@ export const swe90uf2pb = {
   group: "kompaktni-bageri",
   order: 130,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 68000, tax: "net" },
 
   intro:
     "SWE 90UF s dvodijelnom strelom. Zglob na streli daje bitno veću slobodu pozicioniranja žlice — stroj radi blizu sebe i ispod prepreka bez premještanja.",

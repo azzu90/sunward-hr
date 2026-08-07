@@ -23,7 +23,7 @@ export const swsl1412dc = {
   group: "skarasti-elektricni",
   order: 60,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 18600, tax: "net" },
 
   intro:
     "Najviše električno škarasto dizalo u programu: 14 metara radne visine uz nosivost od 320 kg.",

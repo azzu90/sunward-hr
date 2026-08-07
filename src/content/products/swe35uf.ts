@@ -23,7 +23,7 @@ export const swe35uf = {
   group: "mini-bageri",
   order: 90,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 33500, tax: "net" },
 
   intro:
     "Bager od blizu četiri tone s dubinom kopanja od 3.320 mm. Granica na kojoj mini bager prestaje biti pomoćni stroj i postaje glavni stroj na gradilištu.",

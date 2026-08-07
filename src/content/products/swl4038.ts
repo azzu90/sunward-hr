@@ -25,7 +25,7 @@ export const swl4038 = {
   group: "kotacni-mini-utovarivaci",
   order: 50,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 38000, tax: "net" },
 
   intro:
     "Najveći kotačni mini utovarivač u programu: nosivost 1.300 kg i sila otkidanja od 3.385 kg. Kapacitet gusjeničnog stroja uz brzinu i jednostavnost kotača.",

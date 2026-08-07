@@ -23,7 +23,7 @@ export const swsl1212dc = {
   group: "skarasti-elektricni",
   order: 50,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 17500, tax: "net" },
 
   intro:
     "Dvanaest metara radne visine i nosivost od 320 kg — šira platforma za rad s više ljudi i težim materijalom.",

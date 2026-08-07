@@ -26,7 +26,7 @@ export const swe10fe = {
   order: 20,
   electric: true,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 29000, tax: "net" },
 
   intro:
     "Baterijska verzija najmanjeg Sunward bagera. Ista masa i isti doseg kao SWE 08F, ali bez ispušnih plinova i uz bitno nižu buku — jedini način da se kopa u zatvorenom prostoru, u podrumu ili noću u naselju.",

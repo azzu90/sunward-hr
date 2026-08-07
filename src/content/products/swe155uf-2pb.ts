@@ -25,7 +25,7 @@ export const swe155uf2pb = {
   group: "srednji-bageri",
   order: 160,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 118000, tax: "net" },
 
   intro:
     "Srednji bager koji spaja obje prednosti: smanjeni pretek i dvodijelnu strelu. Najfleksibilniji stroj u petnaesttonskom razredu za rad u skučenom i zauzetom prostoru.",

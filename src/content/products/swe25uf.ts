@@ -23,7 +23,7 @@ export const swe25uf = {
   group: "mini-bageri",
   order: 80,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 29500, tax: "net" },
 
   intro:
     "Tritonski bager sa smanjenim pretekom stražnjeg dijela i dubinom kopanja od 2.800 mm — kombinacija snage i gabarita koja pokriva najveći dio građevinskih poslova u naseljima.",

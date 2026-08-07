@@ -23,7 +23,7 @@ export const swe60uf = {
   group: "kompaktni-bageri",
   order: 110,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 50000, tax: "net" },
 
   intro:
     "Početak kompaktnog razreda kod Sunwarda: šest tona, 35 kW i dubina kopanja od 3.700 mm. Stroj za izvođače koji rade cijelu sezonu, a ne povremene zahvate.",

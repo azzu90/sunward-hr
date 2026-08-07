@@ -25,7 +25,7 @@ export const swe215f5a = {
   group: "srednji-bageri",
   order: 180,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 133000, tax: "net" },
 
   intro:
     "Dvadesettonski razred: 21,8 tona, 129 kW i dubina kopanja od 6.635 mm. Stroj za velike zemljane radove, kamenolome i kontinuirani utovar.",

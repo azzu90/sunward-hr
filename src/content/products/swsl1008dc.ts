@@ -23,7 +23,7 @@ export const swsl1008dc = {
   group: "skarasti-elektricni",
   order: 40,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 15900, tax: "net" },
 
   intro:
     "Deset metara radne visine pri širini od 0,83 metra. Prelazak u razred u kojem se radi na visini industrijskih hala i skladišta.",

@@ -23,7 +23,7 @@ export const swe90uf = {
   group: "kompaktni-bageri",
   order: 120,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 63000, tax: "net" },
 
   intro:
     "Bager od 8,75 tone s dubinom kopanja preko 4,5 metra. Razred u kojem se rade cjeloviti iskopi za objekte, a ne samo priprema i dorada.",

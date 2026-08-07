@@ -25,7 +25,7 @@ export const swl3230 = {
   group: "kotacni-mini-utovarivaci",
   order: 40,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 34000, tax: "net" },
 
   intro:
     "Kotačni mini utovarivač nosivosti 1.100 kg — srednja veličina programa, s dovoljno snage za kontinuirani rad i još uvijek kompaktnim gabaritom.",

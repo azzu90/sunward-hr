@@ -29,7 +29,7 @@ export const swe155uf = {
   group: "srednji-bageri",
   order: 150,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 113000, tax: "net" },
 
   intro:
     "Srednji bager sa smanjenim pretekom — 16,5 tona snage u stroju koji se okreće bez izlaska stražnjeg dijela izvan gabarita gusjenica.",

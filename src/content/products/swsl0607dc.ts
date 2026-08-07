@@ -23,7 +23,7 @@ export const swsl0607dc = {
   group: "skarasti-elektricni",
   order: 20,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 12000, tax: "net" },
 
   intro:
     "Radna visina 6,5 metara uz istu širinu od 0,76 metra i istu masu kao model 0607DC-S — gotovo metar više dosega bez ikakvog gubitka u prolaznosti.",

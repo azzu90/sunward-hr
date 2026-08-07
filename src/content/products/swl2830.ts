@@ -25,7 +25,7 @@ export const swl2830 = {
   group: "kotacni-mini-utovarivaci",
   order: 30,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 33000, tax: "net" },
 
   intro:
     "Ulazni kotačni mini utovarivač nosivosti 750 kg. Okreće se u mjestu, radi na tvrdoj podlozi i prolazi kroz otvore kroz koje veći stroj ne stane.",
