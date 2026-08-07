@@ -58,16 +58,10 @@ export const site: SiteData = {
 
   emails: [
     {
-      id: "sunward",
-      label: "Sunward prodaja i servis",
-      address: "sunward.hrvatska@gmail.com",
-      primary: true,
-    },
-    {
       id: "general",
       label: "Hidraulika Drvošped",
       address: "drvosped@gmail.com",
-      primary: false,
+      primary: true,
     },
   ],
 
