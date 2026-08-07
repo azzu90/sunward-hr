@@ -26,7 +26,7 @@ export const swe50uf = {
   price: { kind: "eur", amount: 45500, tax: "net" },
 
   intro:
-    "Najveći stroj koji sunward.eu još vodi u mini razredu: 5.480 kg i 29,7 kW. Snaga srednjeg bagera u gabaritu koji se prevozi bez posebne dozvole.",
+    "Najveći stroj koji sunward.eu još vodi u mini razredu: 5.350 kg i 29,7 kW. Snaga srednjeg bagera u gabaritu koji se prevozi bez posebne dozvole.",
 
   description: {
     heading: "Sunward SWE 50UF bager",
@@ -38,7 +38,7 @@ export const swe50uf = {
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "5.480 kg", n: 5480, unitCode: "KGM" },
+    { key: "operatingWeight", value: "5.350 kg", n: 5350, unitCode: "KGM" },
     { key: "power", value: "29,7 kW" },
     { key: "diggingDepth", value: "3.375 mm" },
     { key: "width", value: "2.000 mm" },
@@ -49,7 +49,7 @@ export const swe50uf = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "5.480 kg",
+          operatingWeight: "5.350 kg",
           bucketCapacity: "0,14 m³",
           width: "2.000 mm",
           shippingLength: "5.435 mm",

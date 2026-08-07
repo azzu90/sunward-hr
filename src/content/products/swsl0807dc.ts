@@ -31,7 +31,7 @@ export const swsl0807dc = {
   description: {
     heading: "Sunward SWSL 0807DC škarasto dizalo",
     paragraphs: [
-      "SWSL 0807DC zadržava prolaznost kroz standardna vrata, ali doseže visine koje traže veće hale i dvoetažni prostori. Masa raste na 1.545 kg, pa treba provjeriti nosivost podloge pri radu na katovima.",
+      "SWSL 0807DC zadržava prolaznost kroz standardna vrata, ali doseže visine koje traže veće hale i dvoetažni prostori. Masa raste na 1.530 kg, pa treba provjeriti nosivost podloge pri radu na katovima.",
       "Nosivost košare od 230 kg i električni pogon ostaju na razini manjih modela u seriji.",
     ],
   },
@@ -40,7 +40,7 @@ export const swsl0807dc = {
     { key: "workingHeight", value: "8 m" },
     { key: "platformCapacity", value: "230 kg" },
     { key: "width", value: "0,76 m" },
-    { key: "operatingWeight", value: "1.545 kg", n: 1545, unitCode: "KGM" },
+    { key: "operatingWeight", value: "1.530 kg", n: 1530, unitCode: "KGM" },
     { key: "driveType", value: "Električni" },
   ],
 
@@ -49,7 +49,7 @@ export const swsl0807dc = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "1.545 kg",
+          operatingWeight: "1.530 kg",
           width: "0,76 m",
           shippingLength: "1,86 m",
         }),

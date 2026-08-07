@@ -29,7 +29,7 @@ export const swe10fe = {
   price: { kind: "eur", amount: 29000, tax: "net" },
 
   intro:
-    "Baterijska verzija najmanjeg Sunward bagera. Ista masa i isti doseg kao SWE 08F, ali bez ispušnih plinova i uz bitno nižu buku — jedini način da se kopa u zatvorenom prostoru, u podrumu ili noću u naselju.",
+    "Baterijska verzija najmanjeg Sunward bagera. Sličan doseg kao SWE 08F, uz nešto veću masu zbog baterije, ali bez ispušnih plinova i uz bitno nižu buku — jedini način da se kopa u zatvorenom prostoru, u podrumu ili noću u naselju.",
 
   description: {
     heading: "Sunward SWE 10FE električni mini bager",
@@ -41,7 +41,7 @@ export const swe10fe = {
 
   shortSpecs: [
     { key: "emission", value: "Bez emisija — električni pogon" },
-    { key: "operatingWeight", value: "1.010 kg", n: 1010, unitCode: "KGM" },
+    { key: "operatingWeight", value: "1.100 kg", n: 1100, unitCode: "KGM" },
     { key: "power", value: "5,5 kW" },
     { key: "diggingDepth", value: "1.440 mm" },
     { key: "width", value: "750–1.000 mm" },
@@ -52,7 +52,7 @@ export const swe10fe = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "1.010 kg",
+          operatingWeight: "1.100 kg",
           width: "750–1.000 mm",
         }),
       ],

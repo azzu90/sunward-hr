@@ -26,19 +26,19 @@ export const swdm165s = {
   price: { kind: "onRequest" },
 
   intro:
-    "Garnitura od 45 tona s istim pogonom kao SWDM 135, ali teža i stabilnija — veća masa znači mirniji rad na punom dosegu i veće dubine bušenja.",
+    "Garnitura od 47 tona s istim pogonom kao SWDM 135, ali teža i stabilnija — veća masa znači mirniji rad na punom dosegu i veće dubine bušenja.",
 
   description: {
     heading: "Sunward SWDM 165S bušača garnitura",
     paragraphs: [
-      "Dodatnih šest tona u odnosu na SWDM 135 nije samo masa nego stabilnost: garnitura zadržava geometriju pri dubokom bušenju i radu s teškom kelly šipkom, što izravno utječe na točnost pilota.",
+      "Dodatnih osam tona u odnosu na SWDM 135 nije samo masa nego stabilnost: garnitura zadržava geometriju pri dubokom bušenju i radu s teškom kelly šipkom, što izravno utječe na točnost pilota.",
       "Snaga od 186 kW i promjer do 1.500 mm ostaju nepromijenjeni. Izvedba S namijenjena je zahtjevnijim uvjetima tla i dužim radnim ciklusima.",
     ],
   },
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "45.000 kg", n: 45000, unitCode: "KGM" },
+    { key: "operatingWeight", value: "47.000 kg", n: 47000, unitCode: "KGM" },
     { key: "power", value: "186 kW" },
     { key: "drillDiameter", value: "1.500 mm" },
   ],
@@ -48,7 +48,7 @@ export const swdm165s = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "45.000 kg",
+          operatingWeight: "47.000 kg",
           width: "2.550–3.800 mm (gusjenice uvučene / izvučene)",
         }),
       ],
