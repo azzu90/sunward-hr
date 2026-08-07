@@ -32,7 +32,7 @@ export const swe25uf = {
     heading: "Sunward SWE 25UF mini bager sa smanjenim pretekom",
     paragraphs: [
       "U odnosu na SWE 25F, UF izvedba dobiva kratki rep i nešto jači motor. Rezultat je stroj koji radi uz sam zid ili rub prometnice bez stalne brige o stražnjem gabaritu, uz gotovo tri metra dubine kopanja.",
-      "To je razred u kojem se najčešće kupuje prvi ozbiljan stroj za tvrtku. Uz 30% učešća rješavamo leasing i za tek osnovane firme — d.o.o., obrt i OPG.",
+      "To je razred u kojem se najčešće kupuje prvi ozbiljan stroj za tvrtku. Uz 30% učešća rješavamo leasing i za tek osnovane firme — d.o.o., j.d.o.o., d.d., obrt i OPG.",
     ],
   },
 

@@ -7,7 +7,7 @@ import { site } from "./site";
  * H1, Intro und in der ersten FAQ-Frage, und nicht nur im Title-Tag.
  *
  * 🔴 Regel für diese Datei: hier stehen ausschliesslich BESTÄTIGTE Fakten
- * aus PRD §4/§5 — 30 % Anzahlung, Geltung für d.o.o./obrt/OPG inklusive
+ * aus PRD §4/§5 — 30 % Anzahlung, Geltung für d.o.o./j.d.o.o./d.d./obrt/OPG inklusive
  * Neugründungen, Eintausch-Mechanik, Garantie. Zinssatz, Laufzeit,
  * Monatsrate, Bearbeitungsdauer und der Name des Leasingpartners sind NICHT
  * bekannt und werden auch nicht plausibel geschätzt: eine erfundene Rate in
@@ -22,7 +22,7 @@ export const financing = {
 
   intro:
     `Bager na rate bez čekanja na cijeli iznos — uz ${percent}% učešća sredimo leasing za ostatak. ` +
-    "Vrijedi za d.o.o., obrt i OPG, uključujući i tek osnovane firme. Kao generalni zastupnik " +
+    "Vrijedi za d.o.o., j.d.o.o., d.d., obrt i OPG, uključujući i tek osnovane firme. Kao generalni zastupnik " +
     "Sunwarda za Hrvatsku financiranje dogovaramo za cijeli program: bagere, utovarivače, " +
     "bušače garniture, radne platforme i dodatnu opremu.",
 
@@ -40,7 +40,7 @@ export const financing = {
     {
       id: "na-rate",
       q: "Mogu li Sunward bager kupiti na rate?",
-      a: `Da. Uz ${percent}% učešća sredimo leasing za ostatak iznosa. Ponuda vrijedi za d.o.o., obrt i OPG.`,
+      a: `Da. Uz ${percent}% učešća sredimo leasing za ostatak iznosa. Ponuda vrijedi za d.o.o., j.d.o.o., d.d., obrt i OPG.`,
     },
     {
       id: "novootvorene",

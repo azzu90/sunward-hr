@@ -123,7 +123,7 @@ export const site: SiteData = {
     downPaymentPercent: 30,
     headline: "Financiranje uz 30% učešća",
     detail:
-      "Uz 30% učešća sredimo leasing za novootvorene firme! U ponedjeljak otvorite firmu, u četvrtak već kopate sa svojim novim bagerom! Vrijedi za d.o.o., obrt i OPG.",
+      "Uz 30% učešća sredimo leasing za novootvorene firme! U ponedjeljak otvorite firmu, u četvrtak već kopate sa svojim novim bagerom! Vrijedi za d.o.o., j.d.o.o., d.d., obrt i OPG.",
   },
 
   tradeIn: {

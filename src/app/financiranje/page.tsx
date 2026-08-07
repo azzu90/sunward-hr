@@ -25,7 +25,7 @@ const trail = [{ name: ui.crumbs.home, href: routes.home() }, { name: ui.crumbs.
 export const metadata = pageMetadata({
   // Keyword steht vorne im Title — unter 60 Zeichen, damit Google nicht kürzt.
   title: `Bager na rate — financiranje uz ${site.financing.downPaymentPercent}% učešća`,
-  description: `Bager na rate uz ${site.financing.downPaymentPercent}% učešća — leasing i za novootvorene firme (d.o.o., obrt, OPG). Staro za novo: stari Sunward stroj priznajemo kao učešće.`,
+  description: `Bager na rate uz ${site.financing.downPaymentPercent}% učešća — leasing i za novootvorene firme (d.o.o., j.d.o.o., d.d., obrt, OPG). Staro za novo: stari Sunward stroj priznajemo kao učešće.`,
   path: routes.financiranje(),
 });
 
