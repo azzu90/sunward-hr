@@ -17,7 +17,7 @@ const primaryEmail = site.emails.find((e) => e.primary);
  * eigene Hauptspalte, Kontakt als eigener Block darunter und Pratite nas
  * als dritter Block mit eigener Überschrift.
  *
- * Bewusst NICHT 1:1 sunward.eu: mehr Nav-Punkte, drei Telefonnummern statt
+ * Bewusst NICHT 1:1 sunward.eu: mehr Nav-Punkte, zwei Telefonnummern statt
  * einer, vier Zertifikate statt drei — unser tatsächlicher Umfang, nicht
  * deren Struktur um jeden Preis kopiert.
  */
@@ -142,7 +142,7 @@ export function Footer() {
 
           {/* Spalte 4: Kontakt — jetzt eine normale Hauptspalte statt eines
               eigenen, abgetrennten Bereichs unter dem Raster. Inhalt
-              unverändert: die drei Nummern (Ured/Vlado/Zoran) + E-Mail,
+              unverändert: die zwei Nummern (Ured/Zoran) + E-Mail,
               nur als vertikale Spaltenliste statt einer umbrechenden Zeile. */}
           <div className="flex flex-col gap-3">
             <h2 className="text-sm font-bold tracking-wider text-on-brand uppercase">

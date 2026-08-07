@@ -48,13 +48,6 @@ export const site: SiteData = {
       href: "tel:+38547641200",
     },
     {
-      id: "vlado",
-      label: "Vlado",
-      display: "091 641 2000",
-      href: "tel:+385916412000",
-      role: "Prodaja",
-    },
-    {
       id: "zoran",
       label: "Zoran Lovrinović",
       display: "091 641 2001",
