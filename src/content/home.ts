@@ -7,10 +7,8 @@ import { site } from "./site";
  *
  * Eigenständig formuliert, keine Übersetzung von sunward.eu — dort heissen
  * die vier USP-Kacheln laut ANALYSIS.md §2 "European HQ 24h-Lieferung /
- * Premium Components / Best Value for Money / 5-Jahres-Garantie". Die
- * 5-Jahres-Garantie ist für sunward.hr schlicht falsch (bestätigt sind
- * 3 Jahre / 5.000 h, siehe site.warranty) — deshalb eigene Themen statt
- * Übersetzung.
+ * Premium Components / Best Value for Money / 5-Jahres-Garantie" — deshalb
+ * eigene Themen statt Übersetzung (Garantiedauer siehe site.warranty).
  */
 export const home = {
   categoriesHeading: "Naši proizvodi",

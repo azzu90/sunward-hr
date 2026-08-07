@@ -31,7 +31,7 @@ export const swe225fn = {
     heading: "Sunward SWE 225FN bager",
     paragraphs: [
       "Radna masa, snaga i doseg poklapaju se sa SWE 215F-5A — razlika je u izvedbi i opremljenosti stroja. Koja je konfiguracija prava za vaš posao, najbrže rješavamo u razgovoru o konkretnim radilištima.",
-      "Za oba stroja vrijede iste garancije i isti servisni uvjeti: garancija do 3 godine ili 5.000 radnih sati te izlazak na teren u roku od 24 sata.",
+      "Za oba stroja vrijede iste garancije i isti servisni uvjeti: garancija do 5 godina ili 5.000 radnih sati te izlazak na teren u roku od 24 sata.",
     ],
   },
 

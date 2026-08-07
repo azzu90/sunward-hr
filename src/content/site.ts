@@ -113,9 +113,9 @@ export const site: SiteData = {
   ],
 
   warranty: {
-    years: 3,
+    years: 5,
     hours: 5000,
-    headline: "Garancija do 3 godine ili 5.000 radnih sati",
+    headline: "Garancija do 5 godina ili 5.000 radnih sati",
     detail: "Svi dijelovi i rad BESPLATNI u garantnom roku.",
   },
 

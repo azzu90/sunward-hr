@@ -3,7 +3,7 @@ import { formatNumber } from "@/lib/format";
 
 /**
  * Trust-Leiste (TASK.md Phase 2 Punkt 3):
- * Generalni zastupnik · 27 zaposlenika · Garancija 3 god / 5.000 h ·
+ * Generalni zastupnik · 27 zaposlenika · Garancija 5 god / 5.000 h ·
  * Servis na terenu.
  *
  * Die Kennzahlen sind bewusst NICHT hier hartkodiert, sondern kommen aus

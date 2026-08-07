@@ -31,7 +31,7 @@ export const swdm215s = {
     heading: "Sunward SWDM 215S bušača garnitura",
     paragraphs: [
       "Sa 252 kW i 65 tona radne mase SWDM 215S dosiže dubine koje manje garniture ne pokrivaju. Pogon i masa dimenzionirani su za kontinuirani rad u tvrdim i heterogenim tlima.",
-      "Za velike infrastrukturne projekte odlučuje kombinacija dubine, promjera i pouzdanosti u dugim smjenama. Garancija do 3 godine ili 5.000 radnih sati vrijedi i za ovu klasu strojeva.",
+      "Za velike infrastrukturne projekte odlučuje kombinacija dubine, promjera i pouzdanosti u dugim smjenama. Garancija do 5 godina ili 5.000 radnih sati vrijedi i za ovu klasu strojeva.",
     ],
   },
 

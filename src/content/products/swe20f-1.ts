@@ -35,7 +35,7 @@ export const swe20f1 = {
     heading: "Sunward SWE 20F-1 mini bager",
     paragraphs: [
       "SWE 20F-1 je izbor za one kojima je stabilnost važnija od minimalnog gabarita. Uz 1.910 kg radne mase i 2.260 mm dubine kopanja pokriva iste poslove kao SWE 17F, ali mirnije radi na dosegu i pri podizanju tereta.",
-      "Sužavajuće gusjenice zadržavaju prolaznost od 990 mm. Za novootvorene firme rješavamo financiranje uz 30% učešća, a stroj je pokriven garancijom do 3 godine ili 5.000 radnih sati.",
+      "Sužavajuće gusjenice zadržavaju prolaznost od 990 mm. Za novootvorene firme rješavamo financiranje uz 30% učešća, a stroj je pokriven garancijom do 5 godina ili 5.000 radnih sati.",
     ],
   },
 

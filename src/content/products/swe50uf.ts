@@ -32,7 +32,7 @@ export const swe50uf = {
     heading: "Sunward SWE 50UF bager",
     paragraphs: [
       "Skok s 18,2 na 29,7 kW mijenja karakter stroja. SWE 50UF kontinuirano radi s hidrauličkim čekićem, probija tvrdu podlogu i utovaruje kamion bez čekanja između ciklusa. Dubina kopanja od 3.375 mm pokriva i dublje infrastrukturne rovove.",
-      "Za tvrtke koje rade više radilišta u nizu ovo je najisplativija točka u programu — dovoljno stroja za ozbiljan posao, još uvijek jednostavan za premještanje. Za sve Sunward strojeve dolazimo na teren; garancija je do 3 godine ili 5.000 radnih sati.",
+      "Za tvrtke koje rade više radilišta u nizu ovo je najisplativija točka u programu — dovoljno stroja za ozbiljan posao, još uvijek jednostavan za premještanje. Za sve Sunward strojeve dolazimo na teren; garancija je do 5 godina ili 5.000 radnih sati.",
     ],
   },
 
