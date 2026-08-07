@@ -334,6 +334,26 @@ export const images = {
     altTemplate: "Sunward SWE 155F bager — fotografija {n}",
     sizes: "(max-width: 768px) 100vw, 640px",
   },
+  /* SWE 155F-5 / SWE 155F-5A: kein sunward.eu-Eintrag (Modell wird dort
+     noch nicht geführt) — Foto kommt direkt von Zoran, kein Fetch möglich. */
+  "proizvodi/swe155f-5/glavna": {
+    id: "proizvodi/swe155f-5/glavna",
+    alt: "Sunward SWE 155F-5 bager — pogled s prednje lijeve strane",
+    hint: "SWE 155F-5, cijeli stroj, prednji lijevi kut, ruka spuštena, gradilište ili neutralna pozadina — foto dostavlja Zoran, model nije na sunward.eu",
+    aspect: "4/3",
+    source: "zoran",
+    altTemplate: "Sunward SWE 155F-5 bager — fotografija {n}",
+    sizes: "(max-width: 768px) 100vw, 640px",
+  },
+  "proizvodi/swe155f-5a/glavna": {
+    id: "proizvodi/swe155f-5a/glavna",
+    alt: "Sunward SWE 155F-5A bager — pogled s prednje lijeve strane",
+    hint: "SWE 155F-5A, cijeli stroj, prednji lijevi kut, ruka spuštena, gradilište ili neutralna pozadina — foto dostavlja Zoran, model nije na sunward.eu",
+    aspect: "4/3",
+    source: "zoran",
+    altTemplate: "Sunward SWE 155F-5A bager — fotografija {n}",
+    sizes: "(max-width: 768px) 100vw, 640px",
+  },
   "proizvodi/swe155uf/glavna": {
     id: "proizvodi/swe155uf/glavna",
     alt: "Sunward SWE 155UF bager — pogled s prednje lijeve strane",

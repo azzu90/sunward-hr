@@ -18,6 +18,8 @@ import { swdm85 } from "./swdm85";
 import { swe08f } from "./swe08f";
 import { swe10fe } from "./swe10fe";
 import { swe155f } from "./swe155f";
+import { swe155f5 } from "./swe155f-5";
+import { swe155f5a } from "./swe155f-5a";
 import { swe155fw } from "./swe155fw";
 import { swe155uf } from "./swe155uf";
 import { swe155uf2pb } from "./swe155uf-2pb";
@@ -119,6 +121,8 @@ export const products: readonly ProductModel[] = [
   swe08f,
   swe10fe,
   swe155f,
+  swe155f5,
+  swe155f5a,
   swe155fw,
   swe155uf,
   swe155uf2pb,
