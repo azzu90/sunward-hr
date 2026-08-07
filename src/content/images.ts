@@ -244,15 +244,6 @@ export const images = {
     altTemplate: "Sunward SWE 10FE bager — fotografija {n}",
     sizes: "(max-width: 768px) 100vw, 640px",
   },
-  "proizvodi/swe17f/glavna": {
-    id: "proizvodi/swe17f/glavna",
-    alt: "Sunward SWE 17F bager — pogled s prednje lijeve strane",
-    hint: "SWE 17F, cijeli stroj, prednji lijevi kut, ruka spuštena, gradilište ili neutralna pozadina",
-    aspect: "4/3",
-    source: "sunward.eu",
-    altTemplate: "Sunward SWE 17F bager — fotografija {n}",
-    sizes: "(max-width: 768px) 100vw, 640px",
-  },
   "proizvodi/swe18uf/glavna": {
     id: "proizvodi/swe18uf/glavna",
     alt: "Sunward SWE 18UF bager — pogled s prednje lijeve strane",
@@ -278,15 +269,6 @@ export const images = {
     aspect: "4/3",
     source: "sunward.eu",
     altTemplate: "Sunward SWE 20FE bager — fotografija {n}",
-    sizes: "(max-width: 768px) 100vw, 640px",
-  },
-  "proizvodi/swe25f/glavna": {
-    id: "proizvodi/swe25f/glavna",
-    alt: "Sunward SWE 25F bager — pogled s prednje lijeve strane",
-    hint: "SWE 25F, cijeli stroj, prednji lijevi kut, ruka spuštena, gradilište ili neutralna pozadina",
-    aspect: "4/3",
-    source: "sunward.eu",
-    altTemplate: "Sunward SWE 25F bager — fotografija {n}",
     sizes: "(max-width: 768px) 100vw, 640px",
   },
   "proizvodi/swe25uf/glavna": {

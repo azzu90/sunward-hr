@@ -107,5 +107,5 @@ export const swe08f = {
   video: tbd("", "Dostaviti YouTube poveznicu za SWE 08F"),
   brochure: tbd("", "Dostaviti PDF brošuru za SWE 08F"),
 
-  related: ["swe10fe", "swe17f"],
+  related: ["swe10fe", "swe18uf"],
 } as const satisfies ProductModel;

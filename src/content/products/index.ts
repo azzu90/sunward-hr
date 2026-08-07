@@ -21,14 +21,12 @@ import { swe155f } from "./swe155f";
 import { swe155fw } from "./swe155fw";
 import { swe155uf } from "./swe155uf";
 import { swe155uf2pb } from "./swe155uf-2pb";
-import { swe17f } from "./swe17f";
 import { swe18uf } from "./swe18uf";
 import { swe20f1 } from "./swe20f-1";
 import { swe20fe } from "./swe20fe";
 import { swe215f5a } from "./swe215f-5a";
 import { swe225fn } from "./swe225fn";
 import { swe240fe } from "./swe240fe";
-import { swe25f } from "./swe25f";
 import { swe25uf } from "./swe25uf";
 import { swe335f5 } from "./swe335f-5";
 import { swe35uf } from "./swe35uf";
@@ -124,14 +122,12 @@ export const products: readonly ProductModel[] = [
   swe155fw,
   swe155uf,
   swe155uf2pb,
-  swe17f,
   swe18uf,
   swe20f1,
   swe20fe,
   swe215f5a,
   swe225fn,
   swe240fe,
-  swe25f,
   swe25uf,
   swe335f5,
   swe35uf,

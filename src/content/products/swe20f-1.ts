@@ -34,7 +34,7 @@ export const swe20f1 = {
   description: {
     heading: "Sunward SWE 20F-1 mini bager",
     paragraphs: [
-      "SWE 20F-1 je izbor za one kojima je stabilnost važnija od minimalnog gabarita. Uz 1.910 kg radne mase i 2.260 mm dubine kopanja pokriva iste poslove kao SWE 17F, ali mirnije radi na dosegu i pri podizanju tereta.",
+      "SWE 20F-1 je izbor za one kojima je stabilnost važnija od minimalnog gabarita. Uz 1.910 kg radne mase i 2.260 mm dubine kopanja pokriva zahtjevne poslove u istoj klasi, a puni protuuteg mu daje mirniji rad na dosegu i pri podizanju tereta.",
       "Sužavajuće gusjenice zadržavaju prolaznost od 990 mm. Za novootvorene firme rješavamo financiranje uz 30% učešća, a stroj je pokriven garancijom do 5 godina ili 5.000 radnih sati.",
     ],
   },
@@ -114,5 +114,5 @@ export const swe20f1 = {
   video: tbd("", "Dostaviti YouTube poveznicu za SWE 20F-1"),
   brochure: tbd("", "Dostaviti PDF brošuru za SWE 20F-1"),
 
-  related: ["swe18uf", "swe25f"],
+  related: ["swe18uf", "swe25uf"],
 } as const satisfies ProductModel;

@@ -31,7 +31,7 @@ export const swe18uf = {
   description: {
     heading: "Sunward SWE 18UF mini bager sa smanjenim pretekom",
     paragraphs: [
-      "Uz 1.880 kg i 2.390 mm dubine kopanja SWE 18UF je nešto sposobniji od SWE 17F, a zbog kratkog repa bitno upotrebljiviji u skučenom prostoru. Operater ne mora računati koliko mu stražnji dio izlazi izvan gabarita pri svakom zakretu.",
+      "Uz 1.880 kg i 2.390 mm dubine kopanja SWE 18UF pokriva zahtjevnije poslove nego lakši modeli u mini-bager razredu, a zbog kratkog repa bitno je upotrebljiviji u skučenom prostoru. Operater ne mora računati koliko mu stražnji dio izlazi izvan gabarita pri svakom zakretu.",
       "Tipični posao su radovi u naseljima, uz postojeće objekte i na parcelama gdje nema mjesta za manevar. Sužavajuće gusjenice i puna priključna hidraulika su serijski.",
     ],
   },
@@ -107,5 +107,5 @@ export const swe18uf = {
   video: tbd("", "Dostaviti YouTube poveznicu za SWE 18UF"),
   brochure: tbd("", "Dostaviti PDF brošuru za SWE 18UF"),
 
-  related: ["swe17f", "swe20f-1"],
+  related: ["swe20f-1", "swe20fe"],
 } as const satisfies ProductModel;
