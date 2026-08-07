@@ -23,7 +23,7 @@ export const swe20fe = {
   order: 60,
   electric: true,
 
-  price: { kind: "onRequest" },
+  price: { kind: "eur", amount: 45000, tax: "net", note: "bez kabine: 43.700 €" },
 
   intro:
     "Baterijski bager dvotonskog razreda s dubinom kopanja od 2.380 mm — najveći električni Sunward mini bager, namijenjen radu bez ispuha uz zadržan doseg dizelskog ekvivalenta.",

@@ -33,15 +33,18 @@ export function PriceTag({
   }
 
   return (
-    <Tag className="flex flex-wrap items-baseline gap-x-2">
-      <span
-        className={big ? "font-heading text-3xl font-black text-ink" : "text-lg font-bold text-ink"}
-      >
-        {formatEur(price.amount)}
+    <Tag className="flex flex-col gap-0.5">
+      <span className="flex flex-wrap items-baseline gap-x-2">
+        <span
+          className={big ? "font-heading text-3xl font-black text-ink" : "text-lg font-bold text-ink"}
+        >
+          {formatEur(price.amount)}
+        </span>
+        <span className="text-xs text-ink-muted">
+          {price.tax === "net" ? ui.price.net : ui.price.gross}
+        </span>
       </span>
-      <span className="text-xs text-ink-muted">
-        {price.tax === "net" ? ui.price.net : ui.price.gross}
-      </span>
+      {price.note ? <span className="text-xs text-ink-muted">{price.note}</span> : null}
     </Tag>
   );
 }
