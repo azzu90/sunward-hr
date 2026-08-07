@@ -43,7 +43,7 @@ export const home = {
     {
       id: "program",
       headline: "Cijeli Sunward program",
-      body: "51 model u 8 kategorija — bageri, utovarivači, platforme, bušače garniture i dodatna oprema iz jedne ruke.",
+      body: "Svi modeli u 8 kategorija — bageri, utovarivači, platforme, bušače garniture i dodatna oprema iz jedne ruke.",
     },
     {
       id: "komponente",

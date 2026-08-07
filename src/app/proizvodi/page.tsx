@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Sunward strojevi — cijeli program za Hrvatsku",
   description:
-    "Svih 51 Sunward model u osam kategorija: bageri od 1 do 34 tone, kompaktni i zglobni utovarivači, bušače garniture, radne platforme, teleskopske dizalice i teleskopski utovarivač.",
+    "Svi Sunward modeli u osam kategorija: bageri od 1 do 34 tone, kompaktni i zglobni utovarivači, bušače garniture, radne platforme, teleskopske dizalice i teleskopski utovarivač.",
   path: routes.proizvodi(),
 });
 
