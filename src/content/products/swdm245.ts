@@ -25,21 +25,21 @@ export const swdm245 = {
   price: { kind: "onRequest" },
 
   intro:
-    "Garnitura od gotovo 78 tona s promjerom bušenja do 2.000 mm — prvi stroj u programu koji izlazi iz standardnih promjera pilota.",
+    "Garnitura od 78 tona s promjerom bušenja do 2.000 mm — prvi stroj u programu koji izlazi iz standardnih promjera pilota.",
 
   description: {
     heading: "Sunward SWDM 245 bušača garnitura",
     paragraphs: [
-      "Promjer do 2.000 mm otvara projekte velikih temeljnih pilota: mostovni stupovi, visoke građevine i objekti na slabo nosivom tlu. Masa od 77 tona osigurava stabilnost pri tim promjerima.",
+      "Promjer do 2.000 mm otvara projekte velikih temeljnih pilota: mostovni stupovi, visoke građevine i objekti na slabo nosivom tlu. Masa od 78 tona osigurava stabilnost pri tim promjerima.",
       "Pogon od 252 kW dijeli sa SWDM 215S, ali s bitno većim kapacitetom bušenja. Konfiguraciju kelly sustava usklađujemo s projektiranim dubinama.",
     ],
   },
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "77.000–78.000 kg", n: 77000, unitCode: "KGM" },
+    { key: "operatingWeight", value: "78.000 kg", n: 78000, unitCode: "KGM" },
     { key: "power", value: "252 kW" },
-    { key: "drillDiameter", value: "1.800–2.000 mm" },
+    { key: "drillDiameter", value: "2.000 mm" },
   ],
 
   datasheet: [
@@ -47,7 +47,7 @@ export const swdm245 = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "77.000–78.000 kg",
+          operatingWeight: "78.000 kg",
         }),
       ],
     },
@@ -75,7 +75,7 @@ export const swdm245 = {
       id: "performance",
       rows: [
         ...rows({
-          drillDiameter: "1.800–2.000 mm",
+          drillDiameter: "2.000 mm",
         }),
       ],
     },

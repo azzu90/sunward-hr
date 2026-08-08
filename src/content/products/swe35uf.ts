@@ -38,7 +38,7 @@ export const swe35uf = {
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "3.750–3.850 kg", n: 3750, unitCode: "KGM" },
+    { key: "operatingWeight", value: "3.850 kg", n: 3850, unitCode: "KGM" },
     { key: "power", value: "18,2 kW" },
     { key: "diggingDepth", value: "3.320 mm" },
     { key: "width", value: "1.700 mm" },
@@ -49,7 +49,7 @@ export const swe35uf = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "3.750–3.850 kg",
+          operatingWeight: "3.850 kg",
           bucketCapacity: "0,11 m³",
           width: "1.700 mm",
           shippingLength: "4.890 mm",

@@ -39,7 +39,7 @@ export const swdm325 = {
     { key: "emission", value: "EU Stage V" },
     { key: "operatingWeight", value: "107.000 kg", n: 107000, unitCode: "KGM" },
     { key: "power", value: "321 kW" },
-    { key: "drillDiameter", value: "2.300–2.500 mm" },
+    { key: "drillDiameter", value: "2.500 mm" },
   ],
 
   datasheet: [
@@ -75,7 +75,7 @@ export const swdm325 = {
       id: "performance",
       rows: [
         ...rows({
-          drillDiameter: "2.300–2.500 mm",
+          drillDiameter: "2.500 mm",
         }),
       ],
     },

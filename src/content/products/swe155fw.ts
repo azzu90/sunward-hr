@@ -40,7 +40,7 @@ export const swe155fw = {
 
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
-    { key: "operatingWeight", value: "14.700–15.400 kg", n: 14700, unitCode: "KGM" },
+    { key: "operatingWeight", value: "15.400 kg", n: 15400, unitCode: "KGM" },
     { key: "power", value: "115 kW" },
     { key: "diggingDepth", value: "5.210 mm" },
     { key: "width", value: "2.515 mm" },
@@ -51,7 +51,7 @@ export const swe155fw = {
       id: "dimensions",
       rows: [
         ...rows({
-          operatingWeight: "14.700–15.400 kg",
+          operatingWeight: "15.400 kg",
           bucketCapacity: "0,6 m³",
           width: "2.515 mm",
           shippingLength: "8.585 mm",

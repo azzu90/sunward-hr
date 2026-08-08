@@ -39,7 +39,7 @@ export const swe18uf = {
   shortSpecs: [
     { key: "emission", value: "EU Stage V" },
     { key: "operatingWeight", value: "1.880 kg", n: 1880, unitCode: "KGM" },
-    { key: "power", value: "13,4–14 kW" },
+    { key: "power", value: "14 kW" },
     { key: "diggingDepth", value: "2.390 mm" },
     { key: "width", value: "990–1.360 mm" },
   ],
@@ -64,7 +64,7 @@ export const swe18uf = {
           engineModel: "Yanmar 3TNV80-SSU (alternativno Kubota D1105)",
           emission: "EU Stage V",
           displacement: "1,267 l (Yanmar) / 1,123 l (Kubota)",
-          power: "13,4–14 kW",
+          power: "14 kW",
           ratedSpeed: "2.200 o/min",
         }),
       ],
