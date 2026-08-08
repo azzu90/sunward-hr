@@ -22,7 +22,7 @@ export const categories = {
     slug: "bageri",
     name: "Bageri",
     nameSingular: "bager",
-    lede: "Sunward bageri od 1 do 34 tone — od mini bagera koji prolazi kroz vrtna vrata do velikih strojeva za zemljane radove. Kao generalni zastupnik za Hrvatsku isporučujemo, servisiramo i financiramo cijeli program.",
+    lede: "Sunward bageri od 1 do 160 tona — od mini bagera koji prolazi kroz vrtna vrata do velikih strojeva za zemljane radove. Kao generalni zastupnik za Hrvatsku isporučujemo, servisiramo i financiramo cijeli program.",
     heroImage: "kategorije/bageri/hero",
     keywords: [
       "kineski bager",

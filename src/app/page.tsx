@@ -51,7 +51,7 @@ export default function HomePage() {
               {site.tagline}
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-body">
-              {`Bageri od 1 do 34 tone, utovarivači, radne platforme i kompletna dodatna oprema — cijeli Sunward program iz jedne ruke. ${site.warranty.headline}.`}
+              {`Bageri od 1 do 160 tona, utovarivači, radne platforme i kompletna dodatna oprema — cijeli Sunward program iz jedne ruke. ${site.warranty.headline}.`}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
@@ -80,7 +80,7 @@ export default function HomePage() {
               gemeinsame Klasse hätte beides angemessen bedient. */}
           <div className="mt-10 lg:hidden">
             <SiteImage
-              id="proizvodi/swe155f/glavna"
+              id="proizvodi/swe240fe/glavna"
               priority
               ratio="4/3"
               imgClassName="object-contain"
@@ -143,6 +143,12 @@ export default function HomePage() {
               Alt-Text ist dort schon final. object-contain, damit der
               Ausleger garantiert nicht angeschnitten wird.
 
+              SWE 240FE als Motiv (vorher SWE 155F): der grösste Bagger
+              wirkt im Hero repräsentativer. Die eingebrannten englischen
+              Badges („ZERO EMISSION" + Blitzkreis) sind dafür aus allen
+              drei Elektro-Fotos entfernt worden — siehe
+              scripts/strip-badges.py, dort steht die Begründung.
+
               `ratio` gepinnt, weil die Box hier die Höhe der Bühne bestimmt
               und nicht das Foto: der Kasten ist nur so breit wie der
               Leerraum rechts vom Text, seine Höhe folgt daraus. Bei 1920px
@@ -151,7 +157,7 @@ export default function HomePage() {
               in a2a6f50 eingestellten 31px Überstand je Seite. Zuschnitt
               ist dabei kein Thema, object-contain schneidet nichts ab. */}
           <SiteImage
-            id="proizvodi/swe155f/glavna"
+            id="proizvodi/swe240fe/glavna"
             priority
             ratio="4/3"
             imgClassName="object-contain"
