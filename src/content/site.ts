@@ -85,6 +85,11 @@ export const site: SiteData = {
       label: "TikTok",
       url: "https://www.tiktok.com/@zox932",
     },
+    {
+      id: "youtube",
+      label: "YouTube",
+      url: "https://www.youtube.com/@zoranlovrinovic9399",
+    },
   ],
 
   banks: [

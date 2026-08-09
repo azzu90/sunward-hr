@@ -64,14 +64,20 @@ export function Footer() {
               <ul className="flex items-center gap-4">
                 {site.social.map((profile) => (
                   <li key={profile.id}>
-                    {/* Hover zu Orange wie die übrigen Footer-Links —
-                        SocialIcon setzt fill="currentColor", die Hover-Farbe
-                        greift also automatisch auch auf das Icon durch. */}
+                    {/* KEIN hover:text-accent-text-on-brand wie bei den
+                        übrigen Footer-Links: SocialIcon setzt jetzt feste
+                        Markenfarben (Facebook-Blau, Instagram-Verlauf, …)
+                        statt fill="currentColor" — die globale Orange-Hover-
+                        Farbe würde sie sonst stillschweigend überschreiben
+                        und genau der Markenfarbigkeit widersprechen, die
+                        hier eingeführt wurde. Stattdessen ein neutraler
+                        Opacity-/Scale-Effekt, der die Markenfarbe unberührt
+                        lässt. */}
                     <a
                       href={profile.url}
                       target="_blank"
                       rel="noopener"
-                      className="text-on-brand-muted hover:text-accent-text-on-brand"
+                      className="inline-flex opacity-80 transition duration-150 hover:scale-110 hover:opacity-100"
                     >
                       <SocialIcon id={profile.id} className="size-7" />
                       <span className="sr-only">{profile.label}</span>
