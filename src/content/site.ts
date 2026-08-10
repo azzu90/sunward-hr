@@ -34,7 +34,18 @@ export const site: SiteData = {
     oib: "64423111898",
     mb: "020035243",
     registeredAt: "14.09.2004.",
-    shareCapital: "2.000.000,00 kn",
+    /**
+     * Ursprünglich 2.000.000,00 kn (HRK) — Hrvatska ist seit 1.1.2023 im
+     * Euroraum, ein Kuna-Betrag im Impresum ist damit veraltet und falsch.
+     * Umrechnung mit dem gesetzlich fixierten Kurs 1 € = 7,53450 HRK
+     * (unverändert seit 12.7.2022, Zakon o uvođenju eura):
+     *   2.000.000 / 7,5345 = 265.445,6168… → 265.445,62 €
+     * Auf den Cent gerundet, nicht auf einen glatten Betrag: der temeljni
+     * kapital ist ein im Sudski registar eingetragener Rechtsfakt, keine
+     * Marketingzahl — ein gerundeter Schaufensterwert würde vom Eintrag
+     * abweichen.
+     */
+    shareCapital: "265.445,62 €",
   },
 
   director: "Zoran Lovrinović",
