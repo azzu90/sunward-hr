@@ -276,12 +276,34 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* Rücklink zu drvosped.hr (CLAUDE.md §11) */}
+      {/* Rücklink zu drvosped.hr (CLAUDE.md §11). Farblogo wiederverwendet
+          aus PartnerBadge.tsx (brand/drvosped-logo-color, echte Transparenz,
+          Navy verträgt sich mit --color-surface #ffffff hier problemlos —
+          selbe Prüfung wie beim Partner-Badge im Header, 16,3:1).
+
+          160px (bewusster Wunsch, 25% über der ersten Fassung mit 128px) —
+          damit inzwischen etwas breiter als die 144px im Header, nicht mehr
+          kleiner. Bleibt trotzdem deutlich unter der 176px breiten
+          Sunward-Wortmarke im Hero. Weiterhin komfortabel über der in
+          PartnerLogo.tsx gemessenen 116px-Schwelle, unter der der
+          zweizeilige Mikrotext „Hidraulika/Drvošped" im Logo zum weissen
+          Fleck statt zur Formerkennung wird (bei 160px: 22,1px Höhe bei
+          7,25:1). Nur Breite gesetzt, Höhe folgt aus der aspect-ratio der
+          Box (SiteImage) — anders als beim Header-Badge kein
+          konkurrierender Flex-Geschwisterinhalt, der eine zweite feste
+          Dimension bräuchte. */}
       <Section labelledBy="drvosped">
         <div className="flex flex-col items-start gap-3">
           <h2 id="drvosped" className="text-lg font-bold">
             {site.parent.crossLink}
           </h2>
+          <span className="block w-40">
+            <SiteImage
+              id="brand/drvosped-logo-color"
+              imgClassName="object-contain object-left"
+              sizes="160px"
+            />
+          </span>
           <a
             href={site.parent.url}
             target="_blank"
