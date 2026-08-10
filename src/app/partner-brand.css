@@ -17,34 +17,8 @@
 
 @layer components {
   .dsp-badge {
-    --dsp-navy: #1b3a6b;
-    --dsp-amber: #e8a020;
-
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    font-size: 0.6875rem;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
-    /* Das Badge steht auf zwei verschiedenen Flächen: hell im Header,
-       türkis im Footer. --dsp-on-surface wird von .surface-brand gesetzt;
-       ohne diese Variable gilt der Ton für hellen Grund. */
-    color: var(--dsp-on-surface, var(--color-ink-muted));
-  }
-
-  .dsp-badge__mark {
-    display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    flex: none;
-    border-radius: 1px;
-    background: linear-gradient(
-      135deg,
-      var(--dsp-navy) 0%,
-      var(--dsp-navy) 50%,
-      var(--dsp-amber) 50%,
-      var(--dsp-amber) 100%
-    );
   }
 
   .dsp-link {

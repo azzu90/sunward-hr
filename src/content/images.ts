@@ -66,6 +66,23 @@ export const images = {
     hint: "Freigestellte Weiss-Fassung des Sunward-Hrvatska-Logos für den Footer — npm run make-white-logos",
     source: "sunward.eu",
   },
+  /* Farbfassung fürs Partner-Badge im Header (PartnerBadge.tsx) — navy
+     Parallelogramm mit weiss ausgespartem Schriftzug „HD Hidraulika
+     Drvošped" und gelb-rotem Streifen rechts, echte Transparenz. NICHT im
+     Footer verwendet: dort bleibt es bei -white (siehe
+     scripts/make-white-logos.py-Kommentar, „Original ist navy und auf
+     Türkis matschig" — gemessen 2,54:1 Navy-Körper bzw. 1,74:1 roter
+     Streifen gegen --color-brand-deep, beides unter der 3:1-Schwelle für
+     grafische Objekte). Auf der hellen Header-Utility-Leiste (#f5f6f7)
+     dagegen unproblematisch: Navy 16,3:1, die Streifen sind dort
+     Nebensache. */
+  "brand/drvosped-logo-color": {
+    id: "brand/drvosped-logo-color",
+    alt: "Hidraulika Drvošped d.o.o.",
+    aspect: "2371/327",
+    hint: "Farbfassung des HD-Logos für das Partner-Badge im Header",
+    source: "drvosped",
+  },
   "brand/drvosped-logo-white": {
     id: "brand/drvosped-logo-white",
     alt: "Hidraulika Drvošped d.o.o.",
