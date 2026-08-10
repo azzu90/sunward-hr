@@ -25,21 +25,31 @@ export function Footer() {
   return (
     <footer className="surface-brand">
       <div className="mx-auto max-w-site px-4 py-10 sm:px-6">
+        {/* Eigene Kopfzeile über dem 4-Spalten-Raster, keine Zeile INNERHALB
+            von Spalte 1: sonst startet "Hidraulika Drvošped d.o.o." dort
+            spürbar tiefer als STROJEVI/TVRTKA/KONTAKT in den Nachbarspalten,
+            weil das Logo als erstes Kind die Spalte nach unten schiebt. Als
+            eigener Block darüber beginnen alle vier Spaltenüberschriften auf
+            derselben Höhe. */}
+        <div className="mb-8">
+          {/* Freigestellte Weiss-Fassung statt der typografischen Wortmarke.
+              208px breit bei 4,39:1 ≈ 47px hoch — bewusst dominant, das
+              Drvošped-Logo weiter unten ist demgegenüber untergeordnet.
+              Feste Wrapper-Breite, weil SiteImage selbst `w-full` setzt. */}
+          <span className="block w-52">
+            <SiteImage
+              id="brand/sunward-logo-white"
+              imgClassName="object-contain object-left"
+              sizes="208px"
+            />
+          </span>
+        </div>
+
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Spalte 1: Marke — Logo, Adresse, Partner-Badge, Social, Zertifikate
-              (ANALYSIS.md §1 Footer-Struktur). */}
+          {/* Spalte 1: Marke — Adresse, Partner-Badge, Social, Zertifikate
+              (ANALYSIS.md §1 Footer-Struktur). Logo steht jetzt in der
+              Kopfzeile oben, nicht mehr hier. */}
           <div className="flex flex-col gap-3">
-            {/* Freigestellte Weiss-Fassung statt der typografischen Wortmarke.
-                208px breit bei 4,39:1 ≈ 47px hoch — bewusst dominant, das
-                Drvošped-Logo weiter unten ist demgegenüber untergeordnet.
-                Feste Wrapper-Breite, weil SiteImage selbst `w-full` setzt. */}
-            <span className="block w-52">
-              <SiteImage
-                id="brand/sunward-logo-white"
-                imgClassName="object-contain object-left"
-                sizes="208px"
-              />
-            </span>
             <address className="text-sm leading-relaxed text-on-brand-muted not-italic">
               {site.legalName}
               <br />
