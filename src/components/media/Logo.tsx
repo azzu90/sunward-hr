@@ -11,7 +11,10 @@ import { SiteImage } from "./SiteImage";
  * auf der Box selbst `w-full`, eine reine Höhenangabe (vorher `h-8 w-auto`)
  * würde mit derselben CSS-Eigenschaft konkurrieren und die Breite je nach
  * Flex-Kontext anders ausfallen lassen. 176×40 entspricht dem
- * Seitenverhältnis der beschnittenen Datei (729×166 = 4,39:1) auf 0,02%.
+ * Seitenverhältnis der beschnittenen Datei (seit der hochauflösenden
+ * Fassung von Aug. 2026: 1515×342 = 4,43:1) auf 0,68% — minimal weiter von
+ * 4,4:1 entfernt als die alte 729×166-Datei (4,39:1, ~0,19%), aber
+ * weiterhin innerhalb dessen, was object-contain unsichtbar ausgleicht.
  *
  * Die typografische Wortmarke bleibt als Fallback stehen: sie greift nur,
  * wenn die Datei fehlt, und verhindert dann eine gestrichelte

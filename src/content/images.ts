@@ -28,23 +28,26 @@ export const images = {
      src/lib/assets.ts greift also nicht versehentlich, und der Slot bleibt
      bewusst gesteuert.
 
-     Das Original hatte 10% Breiten- und 22% Höhen-Padding um die Wortmarke
-     (808×212 Leinwand, 729×166 Tinte). Bei object-left hätte das ~11px totes
-     Weiss links erzeugt und das Logo gegenüber allem darunter eingerückt
-     aussehen lassen — deshalb ist die Datei auf die Tinte beschnitten. Daher
-     4,39:1 statt der 3,81:1 der Rohdatei; dieselbe Operation, die die
-     Weiss-Fassung schon hatte. Beschneiden ist verlustfrei für die Marke,
-     es fällt nur leere Fläche weg. */
+     Zweite, hochauflösende Fassung von Zoran (Aug. 2026) ersetzt das
+     alte 729×166-PNG. Die neue Rohdatei kam mit 1564×390 Leinwand und
+     eigenem Rand-Padding — exakt dasselbe Muster wie beim Original, nur mit
+     anderen Massen. Genauso behandelt: auf die Tinte beschnitten (Alpha-BBox
+     über scripts/make-white-logos.py ermittelt, dann 1:1 auf die Farbdatei
+     angewendet), jetzt 1515×342 = 4,43:1 statt 4,39:1 vorher — die
+     Wortmarke selbst ist unverändert, nur das Padding drumherum war anders
+     bemessen. `npm run make-white-logos` danach erneut gelaufen, damit die
+     Weiss-Fassung von derselben, jetzt geschärften Quelle ausgeht. */
   "brand/sunward-logo-color": {
     id: "brand/sunward-logo-color",
     alt: "Sunward Hrvatska",
     hint: "Službeni Sunward Hrvatska logotip u boji (navy/crveno), po mogućnosti SVG",
-    aspect: "729/166",
+    aspect: "1515/342",
     source: "sunward.eu",
     priority: true,
   },
   /* Bleibt offen: eine echte SVG-Fassung vom Hersteller. Die vorliegende
-     PNG-Datei ist niedrig aufgelöst (PRD §489). */
+     PNG-Datei ist zwar seit Aug. 2026 höher aufgelöst (siehe oben), aber
+     weiterhin Raster statt Vektor (PRD §489). */
   "brand/sunward-logo": {
     id: "brand/sunward-logo",
     alt: "Sunward logotip",
@@ -55,11 +58,11 @@ export const images = {
   /* Freigestellte Weiss-Fassungen für die türkise Markenfläche im Footer,
      erzeugt von scripts/make-white-logos.py. Die aspect-Werte sind die
      Pixelmasse der erzeugten Dateien — beim Sunward-Logo nach Beschnitt
-     des Rand-Paddings, deshalb 729/166 statt 808/212. */
+     des Rand-Paddings, deshalb 1515/342 statt der 1564/390-Rohdatei. */
   "brand/sunward-logo-white": {
     id: "brand/sunward-logo-white",
     alt: "Sunward Hrvatska",
-    aspect: "729/166",
+    aspect: "1515/342",
     hint: "Freigestellte Weiss-Fassung des Sunward-Hrvatska-Logos für den Footer — npm run make-white-logos",
     source: "sunward.eu",
   },
